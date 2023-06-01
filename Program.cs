@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Achievement_Management_System.USER;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Achievement_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main_page());
+            Application.Run(new Login_OK());
         }
     }
 }

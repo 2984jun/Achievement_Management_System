@@ -16,5 +16,27 @@ namespace Achievement_Management_System.USER
         {
             InitializeComponent();
         }
+
+        private void Login_OK_Load(object sender, EventArgs e)
+        {
+            Login_OK login_OK = new Login_OK();
+            login_OK.Owner = this;
+            login_OK.StartPosition = FormStartPosition.CenterScreen;
+
+        }
+
+        private void btnLoginIn_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            user.Owner = this;
+            user.StartPosition = FormStartPosition.CenterScreen;
+            user.ShowDialog();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

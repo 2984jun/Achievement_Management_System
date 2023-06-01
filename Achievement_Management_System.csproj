@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="College\Change_College_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="College\Change_College_Information.Designer.cs">
+      <DependentUpon>Change_College_Information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="College\CollegeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="College\CollegeAdd.Designer.cs">
+      <DependentUpon>CollegeAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="College\View_College.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="College\View_College.Designer.cs">
+      <DependentUpon>View_College.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main_page.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +90,15 @@
     <Compile Include="USER\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="College\Change_College_Information.resx">
+      <DependentUpon>Change_College_Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="College\CollegeAdd.resx">
+      <DependentUpon>CollegeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="College\View_College.resx">
+      <DependentUpon>View_College.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main_page.resx">
       <DependentUpon>Main_page.cs</DependentUpon>
     </EmbeddedResource>

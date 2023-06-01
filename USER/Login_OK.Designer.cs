@@ -29,27 +29,52 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.btnLoginIn = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(77, 78);
+            this.label1.Location = new System.Drawing.Point(73, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(362, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "登录成功！欢迎使用成绩管理系统！";
+            this.label1.Text = "欢迎使用成绩管理系统！请先登录！";
+            // 
+            // btnLoginIn
+            // 
+            this.btnLoginIn.Location = new System.Drawing.Point(122, 143);
+            this.btnLoginIn.Name = "btnLoginIn";
+            this.btnLoginIn.Size = new System.Drawing.Size(75, 23);
+            this.btnLoginIn.TabIndex = 1;
+            this.btnLoginIn.Text = "登录";
+            this.btnLoginIn.UseVisualStyleBackColor = true;
+            this.btnLoginIn.Click += new System.EventHandler(this.btnLoginIn_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(269, 143);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.Text = "退出";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Login_OK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 262);
+            this.ClientSize = new System.Drawing.Size(493, 262);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnLoginIn);
             this.Controls.Add(this.label1);
             this.Name = "Login_OK";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "                                               登录成功";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "                                               登录";
+            this.Load += new System.EventHandler(this.Login_OK_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,5 +83,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLoginIn;
+        private System.Windows.Forms.Button btnExit;
     }
 }

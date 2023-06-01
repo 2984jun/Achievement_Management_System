@@ -22,6 +22,10 @@ namespace Achievement_Management_System.USER
         private void User_Load(object sender, EventArgs e)
         {
             cmbIdentity.SelectedIndex = 0;
+            User user = new User();
+            user.Owner = this;
+            user.StartPosition = FormStartPosition.CenterParent;
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -56,10 +60,18 @@ namespace Achievement_Management_System.USER
                         SqlCommand cmd = new SqlCommand(sql1,con);
                         if (cmd.ExecuteScalar() != null)
                         {
-                            Login_OK frmLogin = new Login_OK();
-                            frmLogin.Owner = this;
-                            frmLogin.StartPosition = FormStartPosition.CenterParent;
-                            frmLogin.ShowDialog();
+                            MessageBox.Show("            登录成功！","提示", MessageBoxButtons.OK);
+
+                            this.Hide();
+
+                            Main_page main_Page = new Main_page();
+                            main_Page.Owner = this;
+                            main_Page.StartPosition=FormStartPosition.CenterParent;
+                            main_Page.ShowDialog();
+
+                            this.Close();
+
+
                         }
                         else 
                         {
