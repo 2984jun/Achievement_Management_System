@@ -42,14 +42,14 @@ namespace Achievement_Management_System.College
 
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM School WHERE college_id='"+this.txtCollegeId.Text.Trim()+"' OR Sname='"+this.txtCollegeName.Text.Trim()+"';",con);
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM College WHERE college_id='"+this.txtCollegeId.Text.Trim()+"' OR Sname='"+this.txtCollegeName.Text.Trim()+"';",con);
                         if (cmd.ExecuteScalar() != null)
                         {
                             MessageBox.Show("学院ID或学院名称重复，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else 
                         {
-                            string sql = "INSERT INTO School(college_id,Sname,major_amount,totle_people,Dean)VALUES('" + this.txtCollegeId.Text.Trim() + "','" + this.txtCollegeName.Text.Trim() +
+                            string sql = "INSERT INTO College(college_id,Sname,major_amount,totle_people,Dean)VALUES('" + this.txtCollegeId.Text.Trim() + "','" + this.txtCollegeName.Text.Trim() +
                                 "','" +this.txtMajorNumber.Text.Trim() + "','" + this.txtClePpleTotle.Text.Trim() + "','" + this.txtDean.Text.Trim() + "');";
 
                             cmd.CommandText = sql;

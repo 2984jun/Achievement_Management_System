@@ -161,7 +161,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Change_College_Information";
-            this.Text = "                                     更改学院信息";
+            this.Text = "                                     修改学院信息";
             this.Load += new System.EventHandler(this.Change_College_Information_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

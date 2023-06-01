@@ -39,7 +39,7 @@ namespace Achievement_Management_System.College
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (this.txtCollegeId.Text.Trim() == "" || this.txtCollegeName.Text.Trim() == "" || this.txtMajorNumber.Text.Trim() == "" ||
+                    if (this.txtCollegeId.Text.Trim() == "" || this.txtCollegeName.Text.Trim() == "" || this.txtMajorNumber.Text.Trim() == "" ||
                 this.txtClePpleTotle.Text.Trim() == "" || this.txtDean.Text.Trim() == "")
             {
                 MessageBox.Show("请输入学院的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -78,7 +78,7 @@ namespace Achievement_Management_System.College
                         }
                         */
                         
-                        string sql = "UPDATE School SET College_id='" + this.txtCollegeId.Text.Trim() + "',Sname='" + this.txtCollegeName.Text.Trim() +
+                        string sql = "UPDATE College SET College_id='" + this.txtCollegeId.Text.Trim() + "',Sname='" + this.txtCollegeName.Text.Trim() +
                                 "',major_amount='" + this.txtMajorNumber.Text.Trim() + "',totle_people='" + this.txtClePpleTotle.Text.Trim() + "',Dean='" + this.txtDean.Text.Trim() 
                                 + "'WHERE College_id='"+this.txtCollegeId.Text.Trim()+"';";
 

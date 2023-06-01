@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Achievement_Management_System.College;
+using Achievement_Management_System.Major;
 using Achievement_Management_System.USER;
 
 namespace Achievement_Management_System
@@ -46,6 +47,20 @@ namespace Achievement_Management_System
             view_College.ShowDialog();
         }
 
+        private void 添加专业ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MajorAdd majorAdd = new MajorAdd();
+            majorAdd.Owner = this;
+            majorAdd.StartPosition = FormStartPosition.CenterScreen;
+            majorAdd.ShowDialog();
+        }
 
+        private void 查看专业情况ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View_Major view_Major = new View_Major();
+            view_Major.Owner = this;
+            view_Major.StartPosition = FormStartPosition.CenterScreen;
+            view_Major.ShowDialog();
+        }
     }
 }

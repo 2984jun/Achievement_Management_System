@@ -70,6 +70,24 @@
     <Compile Include="Main_page.Designer.cs">
       <DependentUpon>Main_page.cs</DependentUpon>
     </Compile>
+    <Compile Include="Major\Change_Major_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Major\Change_Major_Information.Designer.cs">
+      <DependentUpon>Change_Major_Information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Major\MajorAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Major\MajorAdd.Designer.cs">
+      <DependentUpon>MajorAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Major\View_Major.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Major\View_Major.Designer.cs">
+      <DependentUpon>View_Major.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="USER\Login_OK.cs">
@@ -101,6 +119,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main_page.resx">
       <DependentUpon>Main_page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Major\Change_Major_Information.resx">
+      <DependentUpon>Change_Major_Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Major\MajorAdd.resx">
+      <DependentUpon>MajorAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Major\View_Major.resx">
+      <DependentUpon>View_Major.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

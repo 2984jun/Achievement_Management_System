@@ -9,18 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Achievement_Management_System.College
+namespace Achievement_Management_System.Major
 {
-    public partial class View_College : Form
+    public partial class View_Major : Form
     {
         public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog=Grade_System;Integrated Security=True";
 
-        public View_College()
+        public View_Major()
         {
             InitializeComponent();
         }
 
-        private void View_College_Load(object sender, EventArgs e)
+        private void View_Major_Load(object sender, EventArgs e)
         {
             showinf();
         }
@@ -36,12 +36,13 @@ namespace Achievement_Management_System.College
 
                 try
                 {
-                    string sql = "SELECT College_id AS 学院编号,Sname AS 学院名称,major_amount AS 专业数量,totle_people AS 学院总人数,Dean AS 院长 FROM College ORDER BY College_id";
+                    string sql = "SELECT Major_id AS 专业编号,college_id AS 学院编号,Cname AS 专业名称,Class_num AS 班级数量,totle_people AS 专业总人数,Gleader AS 专业组长 " +
+                                 "FROM Major ORDER BY Major_id";
                     SqlDataAdapter adp = new SqlDataAdapter(sql, con);
                     DataSet ds = new DataSet();
                     ds.Clear();
-                    adp.Fill(ds, "College");
-                    this.dgv_College.DataSource = ds.Tables[0].DefaultView;
+                    adp.Fill(ds, "Major");
+                    this.dgvMajor.DataSource = ds.Tables[0].DefaultView;
                 }
                 catch (Exception ex)
                 {
@@ -60,18 +61,19 @@ namespace Achievement_Management_System.College
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(this.dgv_College.CurrentCell!= null) 
+            if (this.dgvMajor.CurrentCell != null) 
             {
-                Change_College_Information change_College_Information = new Change_College_Information();
-                change_College_Information.strCollegeId = this.dgv_College[0,this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_College_Information.strSname= this.dgv_College[1, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_College_Information.strMajor_Amount= this.dgv_College[2, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_College_Information.strTotle_People= this.dgv_College[3, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_College_Information.strDean= this.dgv_College[4, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
+                Change_Major_Information change_Major_Information = new Change_Major_Information();
+                change_Major_Information.strMjrID= this.dgvMajor[0, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                change_Major_Information.strCleID= this.dgvMajor[1, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                change_Major_Information.strMname= this.dgvMajor[2, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                change_Major_Information.strClsNum= this.dgvMajor[3, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                change_Major_Information.strTotPle= this.dgvMajor[4, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                change_Major_Information.strLeader= this.dgvMajor[5, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
 
-                change_College_Information.StartPosition = FormStartPosition.CenterScreen;
-                change_College_Information.ShowDialog();
-                if (change_College_Information.DialogResult == DialogResult.OK)
+                change_Major_Information.StartPosition=FormStartPosition.CenterScreen;
+                change_Major_Information.ShowDialog();
+                if(change_Major_Information.DialogResult == DialogResult.OK) 
                 {
                     showinf();
                 }
@@ -80,34 +82,34 @@ namespace Achievement_Management_System.College
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            using(SqlConnection con=new SqlConnection(strConn)) 
+            using (SqlConnection con = new SqlConnection(strConn))
             {
-                if (con.State == ConnectionState.Closed) 
+                if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
                 };
 
-                try 
+                try
                 {
-                    if (this.dgv_College.CurrentCell != null)
+                    if (this.dgvMajor.CurrentCell != null)
                     {
-                        string sql = "SELECT * FROM College s INNER JOIN College c ON s.college_id=c.college_id WHERE s.college_id='" +
-                                this.dgv_College[0, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim() + "';";
+                        string sql = "SELECT * FROM Major m INNER JOIN Class c ON m.Major_id=c.Major_id WHERE m.Major_id='" +
+                                this.dgvMajor[0, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim() + "';";
 
                         SqlCommand cmd = new SqlCommand(sql, con);
                         SqlDataReader dr = cmd.ExecuteReader();
                         if (dr.Read())
                         {
-                            MessageBox.Show("删除" + this.dgv_College[1, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim() + "失败,请先删除与此学院相关的专业！", "错误提示",
+                            MessageBox.Show("删除" + this.dgvMajor[2,this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim() + "专业失败,请先删除与此专业相关的班级！", "错误提示",
                                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
                             dr.Close();
-                            sql = "DELETE FROM School WHERE college_id='" + this.dgv_College[0, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim() + "';";
+                            sql = "DELETE FROM Major WHERE Major_id='" + this.dgvMajor[0, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim() + "';";
                             cmd.CommandText = sql;
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("删除"+ this.dgv_College[1, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim()+"成功!","提示",MessageBoxButtons.OK);
+                            MessageBox.Show("删除" + this.dgvMajor[2, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim() + "专业成功!", "提示", MessageBoxButtons.OK);
                         }
                     }
                 }
@@ -131,5 +133,6 @@ namespace Achievement_Management_System.College
         {
             this.Close();
         }
+
     }
 }

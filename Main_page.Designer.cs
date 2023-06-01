@@ -148,12 +148,14 @@
             this.添加专业ToolStripMenuItem.Name = "添加专业ToolStripMenuItem";
             this.添加专业ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.添加专业ToolStripMenuItem.Text = "添加专业";
+            this.添加专业ToolStripMenuItem.Click += new System.EventHandler(this.添加专业ToolStripMenuItem_Click);
             // 
             // 查看专业情况ToolStripMenuItem
             // 
             this.查看专业情况ToolStripMenuItem.Name = "查看专业情况ToolStripMenuItem";
             this.查看专业情况ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.查看专业情况ToolStripMenuItem.Text = "查看专业情况";
+            this.查看专业情况ToolStripMenuItem.Click += new System.EventHandler(this.查看专业情况ToolStripMenuItem_Click);
             // 
             // 查看学院情况ToolStripMenuItem
             // 
