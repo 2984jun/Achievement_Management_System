@@ -38,15 +38,15 @@
             // dgv_College
             // 
             this.dgv_College.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_College.Location = new System.Drawing.Point(12, 23);
+            this.dgv_College.Location = new System.Drawing.Point(12, 12);
             this.dgv_College.Name = "dgv_College";
             this.dgv_College.RowTemplate.Height = 23;
-            this.dgv_College.Size = new System.Drawing.Size(641, 306);
+            this.dgv_College.Size = new System.Drawing.Size(569, 306);
             this.dgv_College.TabIndex = 0;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(48, 369);
+            this.btnUpdate.Location = new System.Drawing.Point(36, 345);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(287, 369);
+            this.btnDel.Location = new System.Drawing.Point(253, 345);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(544, 369);
+            this.btnExit.Location = new System.Drawing.Point(480, 345);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 3;
@@ -78,13 +78,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 450);
+            this.ClientSize = new System.Drawing.Size(593, 434);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgv_College);
             this.Name = "View_College";
-            this.Text = "                                                                     学院信息表";
+            this.Text = "                                                        学院信息表";
             this.Load += new System.EventHandler(this.View_College_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_College)).EndInit();
             this.ResumeLayout(false);

@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Change_Class_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class\Change_Class_Information.Designer.cs">
+      <DependentUpon>Change_Class_Information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\ClassAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class\ClassAdd.Designer.cs">
+      <DependentUpon>ClassAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\View_Class.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class\View_Class.Designer.cs">
+      <DependentUpon>View_Class.cs</DependentUpon>
+    </Compile>
     <Compile Include="College\Change_College_Information.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +126,15 @@
     <Compile Include="USER\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Class\Change_Class_Information.resx">
+      <DependentUpon>Change_Class_Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class\ClassAdd.resx">
+      <DependentUpon>ClassAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class\View_Class.resx">
+      <DependentUpon>View_Class.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="College\Change_College_Information.resx">
       <DependentUpon>Change_College_Information.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +186,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Person\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

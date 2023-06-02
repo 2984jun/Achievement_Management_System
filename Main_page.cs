@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Achievement_Management_System.Class;
 using Achievement_Management_System.College;
 using Achievement_Management_System.Major;
 using Achievement_Management_System.USER;
@@ -61,6 +62,22 @@ namespace Achievement_Management_System
             view_Major.Owner = this;
             view_Major.StartPosition = FormStartPosition.CenterScreen;
             view_Major.ShowDialog();
+        }
+
+        private void 添加班级ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClassAdd classAdd = new ClassAdd();
+            classAdd.Owner = this;
+            classAdd.StartPosition = FormStartPosition.CenterScreen;
+            classAdd.ShowDialog();
+        }
+
+        private void 查看班级情况ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View_Class view_Class = new View_Class();
+            view_Class.Owner = this;
+            view_Class.StartPosition = FormStartPosition.CenterScreen;
+            view_Class.ShowDialog();
         }
     }
 }

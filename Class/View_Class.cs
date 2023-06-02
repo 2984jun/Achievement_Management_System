@@ -9,18 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Achievement_Management_System.Major
+namespace Achievement_Management_System.Class
 {
-    public partial class View_Major : Form
+    public partial class View_Class : Form
     {
         public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
-        public View_Major()
+
+        public View_Class()
         {
             InitializeComponent();
         }
 
-        private void View_Major_Load(object sender, EventArgs e)
+        private void View_Class_Load(object sender, EventArgs e)
         {
             showinf();
         }
@@ -36,13 +37,12 @@ namespace Achievement_Management_System.Major
 
                 try
                 {
-                    string sql = "SELECT Major_id AS 专业编号,college_id AS 学院编号,Cname AS 专业名称,Class_num AS 班级数量,totle_people AS 专业总人数,Gleader AS 专业组长 " +
-                                 "FROM Major ORDER BY Major_id";
+                    string sql = "SELECT class_id AS 班级编号,Class_name AS 班级名称,major_id AS 专业编号,totle_student AS 班级人数,Head_teacher AS 班主任 FROM Class ORDER BY class_id ASC";
                     SqlDataAdapter adp = new SqlDataAdapter(sql, con);
                     DataSet ds = new DataSet();
                     ds.Clear();
-                    adp.Fill(ds, "Major");
-                    this.dgvMajor.DataSource = ds.Tables[0].DefaultView;
+                    adp.Fill(ds, "class");
+                    this.dgvClass.DataSource = ds.Tables[0].DefaultView;
                 }
                 catch (Exception ex)
                 {
@@ -61,19 +61,18 @@ namespace Achievement_Management_System.Major
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (this.dgvMajor.CurrentCell != null) 
+            if(this.dgvClass.CurrentCell != null)
             {
-                Change_Major_Information change_Major_Information = new Change_Major_Information();
-                change_Major_Information.strMjrID= this.dgvMajor[0, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Major_Information.strCleID= this.dgvMajor[1, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Major_Information.strMname= this.dgvMajor[2, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Major_Information.strClsNum= this.dgvMajor[3, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Major_Information.strTotPle= this.dgvMajor[4, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Major_Information.strLeader= this.dgvMajor[5, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                Change_Class_Information change_Class_Information = new Change_Class_Information();
+                change_Class_Information.strClsID = this.dgvClass[0, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                change_Class_Information.strClsName = this.dgvClass[1, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                change_Class_Information.strMjrID = this.dgvClass[2, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                change_Class_Information.strTteNum = this.dgvClass[3, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                change_Class_Information.strHeadTea = this.dgvClass[4, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
 
-                change_Major_Information.StartPosition=FormStartPosition.CenterScreen;
-                change_Major_Information.ShowDialog();
-                if(change_Major_Information.DialogResult == DialogResult.OK) 
+                change_Class_Information.StartPosition = FormStartPosition.CenterScreen;
+                change_Class_Information.ShowDialog();
+                if(change_Class_Information.DialogResult == DialogResult.OK) 
                 {
                     showinf();
                 }
@@ -91,25 +90,25 @@ namespace Achievement_Management_System.Major
 
                 try
                 {
-                    if (this.dgvMajor.CurrentCell != null)
+                    if (this.dgvClass.CurrentCell != null)
                     {
-                        string sql = "SELECT * FROM Major m INNER JOIN Class c ON m.Major_id=c.Major_id WHERE m.Major_id='" +
-                                this.dgvMajor[0, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim() + "';";
+                        string sql = "SELECT * FROM Class c INNER JOIN student s ON c.class_id=s.class_id WHERE c.class_id='" +
+                                this.dgvClass[2, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim() + "';";
 
                         SqlCommand cmd = new SqlCommand(sql, con);
                         SqlDataReader dr = cmd.ExecuteReader();
                         if (dr.Read())
                         {
-                            MessageBox.Show("删除" + this.dgvMajor[2,this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim() + "专业失败,请先删除与此专业相关的班级！", "错误提示",
+                            MessageBox.Show("删除" + this.dgvClass[1, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim() + "失败,请先删除与此班级相关的学生！", "错误提示",
                                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
                             dr.Close();
-                            sql = "DELETE FROM Major WHERE Major_id='" + this.dgvMajor[0, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim() + "';";
+                            sql = "DELETE FROM Class WHERE class_id='" + this.dgvClass[0, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim() + "';";
                             cmd.CommandText = sql;
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("删除" + this.dgvMajor[2, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim() + "专业成功!", "提示", MessageBoxButtons.OK);
+                            MessageBox.Show("删除" + this.dgvClass[1, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim() + "成功!", "提示", MessageBoxButtons.OK);
                         }
                     }
                 }
@@ -133,6 +132,5 @@ namespace Achievement_Management_System.Major
         {
             this.Close();
         }
-
     }
 }

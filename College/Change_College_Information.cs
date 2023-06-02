@@ -13,7 +13,7 @@ namespace Achievement_Management_System.College
 {
     public partial class Change_College_Information : Form
     {
-        public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog=Grade_System;Integrated Security=True";
+        public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
         public string strCollegeId = "";
         public string strSname = "";
@@ -39,7 +39,7 @@ namespace Achievement_Management_System.College
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-                    if (this.txtCollegeId.Text.Trim() == "" || this.txtCollegeName.Text.Trim() == "" || this.txtMajorNumber.Text.Trim() == "" ||
+            if (this.txtCollegeId.Text.Trim() == "" || this.txtCollegeName.Text.Trim() == "" || this.txtMajorNumber.Text.Trim() == "" ||
                 this.txtClePpleTotle.Text.Trim() == "" || this.txtDean.Text.Trim() == "")
             {
                 MessageBox.Show("请输入学院的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -55,28 +55,6 @@ namespace Achievement_Management_System.College
 
                     try
                     {
-                        /*
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM School WHERE college_id='" + this.txtCollegeId.Text.Trim() + "' OR Sname='" + this.txtCollegeName.Text.Trim() + "';", con);
-                        if (cmd.ExecuteScalar() != null)
-                        {
-                            MessageBox.Show("学院ID或学院名称重复，请重新输入！", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                        }
-                        else
-                        {
-                            string sql = "UPDATE School SET College_id='" + this.txtCollegeId.Text.Trim() + "',Sname='" + this.txtCollegeName.Text.Trim() +
-                                "',major_amount='" + this.txtMajorNumber.Text.Trim() + "',totle_people='" + this.txtClePpleTotle.Text.Trim() + "',Dean='" + this.txtDean.Text.Trim() + "');";
-
-                            cmd.CommandText = sql;
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("修改学院信息成功！", "提示", MessageBoxButtons.OK);
-
-                            this.txtCollegeId.Clear();
-                            this.txtCollegeName.Clear();
-                            this.txtMajorNumber.Clear();
-                            this.txtDean.Clear();
-                            this.txtClePpleTotle.Clear();
-                        }
-                        */
                         
                         string sql = "UPDATE College SET College_id='" + this.txtCollegeId.Text.Trim() + "',Sname='" + this.txtCollegeName.Text.Trim() +
                                 "',major_amount='" + this.txtMajorNumber.Text.Trim() + "',totle_people='" + this.txtClePpleTotle.Text.Trim() + "',Dean='" + this.txtDean.Text.Trim() 

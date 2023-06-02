@@ -13,7 +13,7 @@ namespace Achievement_Management_System.Major
 {
     public partial class MajorAdd : Form
     {
-        public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog=Grade_System;Integrated Security=True";
+        public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
         public MajorAdd()
         {

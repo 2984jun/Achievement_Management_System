@@ -13,8 +13,7 @@ namespace Achievement_Management_System.USER
 {
     public partial class Register : Form
     {
-        public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog=Grade_System;Integrated Security=True";
-
+        public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
         public Register()
         {
             InitializeComponent();
@@ -80,6 +79,11 @@ namespace Achievement_Management_System.USER
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Achievement_Management_System.Major
     public partial class Change_Major_Information : Form
     {
 
-        public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog=Grade_System;Integrated Security=True";
+        public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
         public string strMjrID = "";
         public string strCleID = "";
