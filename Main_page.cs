@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Achievement_Management_System.Class;
 using Achievement_Management_System.College;
 using Achievement_Management_System.Major;
+using Achievement_Management_System.Person;
 using Achievement_Management_System.USER;
 
 namespace Achievement_Management_System
@@ -45,7 +46,7 @@ namespace Achievement_Management_System
             View_College view_College = new View_College();
             view_College.Owner = this;
             view_College.StartPosition = FormStartPosition.CenterScreen;
-            view_College.ShowDialog();
+            view_College.Show();
         }
 
         private void 添加专业ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,7 +62,7 @@ namespace Achievement_Management_System
             View_Major view_Major = new View_Major();
             view_Major.Owner = this;
             view_Major.StartPosition = FormStartPosition.CenterScreen;
-            view_Major.ShowDialog();
+            view_Major.Show();
         }
 
         private void 添加班级ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,7 +78,28 @@ namespace Achievement_Management_System
             View_Class view_Class = new View_Class();
             view_Class.Owner = this;
             view_Class.StartPosition = FormStartPosition.CenterScreen;
-            view_Class.ShowDialog();
+            view_Class.Show();
+        }
+
+        private void 添加个人信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            personAdd personAdd= new personAdd();
+            personAdd.Owner = this;
+            personAdd.StartPosition = FormStartPosition.CenterScreen;
+            personAdd.ShowDialog();
+        }
+
+        private void 查看个人信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View_Person view_Person = new View_Person();
+            view_Person.Owner = this;
+            view_Person.StartPosition = FormStartPosition.CenterScreen;
+            view_Person.Show();
+        }
+
+        private void 倒序成绩ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -21,3 +21,6 @@ D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System
 D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.pdb
 D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.Class.View_Class.resources
 D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.Class.Change_Class_Information.resources
+D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.Person.personAdd.resources
+D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.Person.View_Person.resources
+D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.Person.Change_Person_Information.resources

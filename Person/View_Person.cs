@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Achievement_Management_System.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,25 +10,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Achievement_Management_System.Class
+namespace Achievement_Management_System.Person
 {
-    public partial class View_Class : Form
+
+    public partial class View_Person : Form
     {
         public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
-        public View_Class()
+        public View_Person()
         {
             InitializeComponent();
         }
-
-        private void View_Class_Load(object sender, EventArgs e)
+        private void View_Person_Load(object sender, EventArgs e)
         {
             showinf();
         }
 
+
+        private void dgvPerson_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
         private void showinf() 
         {
-            using (SqlConnection con = new SqlConnection(strConn))
+            using(SqlConnection con=new SqlConnection(strConn)) 
             {
                 if (con.State == ConnectionState.Closed)
                 {
@@ -36,12 +43,12 @@ namespace Achievement_Management_System.Class
 
                 try
                 {
-                    string sql = "SELECT class_id AS 班级编号,Class_name AS 班级名称,major_id AS 专业编号,totle_student AS 班级人数,Head_teacher AS 班主任 FROM Class ORDER BY class_id ASC";
+                    string sql = "SELECT student_id AS 学号,Sname AS 姓名,gender AS 性别,age AS 年龄,adress AS 家庭地址,phone AS 电话号码,class_id AS 班级ID FROM student ORDER BY student_id ASC";
                     SqlDataAdapter adp = new SqlDataAdapter(sql, con);
                     DataSet ds = new DataSet();
                     ds.Clear();
-                    adp.Fill(ds, "class");
-                    this.dgvClass.DataSource = ds.Tables[0].DefaultView;
+                    adp.Fill(ds, "person");
+                    this.dgvPerson.DataSource = ds.Tables[0].DefaultView;
                 }
                 catch (Exception ex)
                 {
@@ -60,18 +67,21 @@ namespace Achievement_Management_System.Class
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(this.dgvClass.CurrentCell != null)
+            if(this.dgvPerson.CurrentCell != null) 
             {
-                Change_Class_Information change_Class_Information = new Change_Class_Information();
-                change_Class_Information.strClsID = this.dgvClass[0, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Class_Information.strClsName = this.dgvClass[1, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Class_Information.strMjrID = this.dgvClass[2, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Class_Information.strTteNum = this.dgvClass[3, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Class_Information.strHeadTea = this.dgvClass[4, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                Change_Person_Information change_Person_Information = new Change_Person_Information();
 
-                change_Class_Information.StartPosition = FormStartPosition.CenterScreen;
-                change_Class_Information.ShowDialog();
-                if(change_Class_Information.DialogResult == DialogResult.OK) 
+                change_Person_Information.strSdtID = this.dgvPerson[0,this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
+                change_Person_Information.strSdtName= this.dgvPerson[1, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
+                change_Person_Information.strGender= this.dgvPerson[2, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
+                change_Person_Information.strAge= this.dgvPerson[3, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
+                change_Person_Information.strAdress= this.dgvPerson[4, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
+                change_Person_Information.strphone= this.dgvPerson[5, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
+                change_Person_Information.strClass_ID= this.dgvPerson[6, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
+
+                change_Person_Information.StartPosition = FormStartPosition.CenterScreen;
+                change_Person_Information.ShowDialog();
+                if(change_Person_Information.DialogResult == DialogResult.OK) 
                 {
                     showinf();
                 }
@@ -89,25 +99,25 @@ namespace Achievement_Management_System.Class
 
                 try
                 {
-                    if (this.dgvClass.CurrentCell != null)
+                    if (this.dgvPerson.CurrentCell != null)
                     {
-                        string sql = "SELECT * FROM Class c INNER JOIN student s ON c.class_id=s.class_id WHERE c.class_id='" +
-                                this.dgvClass[2, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim() + "';";
+                        string sql = "SELECT * FROM student s INNER JOIN Grade g ON s.student_id=g.student_id WHERE s.student_id='" +
+                                this.dgvPerson[0, this.dgvPerson.CurrentCell.RowIndex].Value.ToString().Trim() + "';";
 
                         SqlCommand cmd = new SqlCommand(sql, con);
                         SqlDataReader dr = cmd.ExecuteReader();
                         if (dr.Read())
                         {
-                            MessageBox.Show("删除" + this.dgvClass[1, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim() + "失败,请先删除与此班级相关的学生！", "错误提示",
+                            MessageBox.Show("删除学生:" + this.dgvPerson[1, this.dgvPerson.CurrentCell.RowIndex].Value.ToString().Trim() + "失败,请先删除与此学生相关的成绩！", "错误提示",
                                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
                             dr.Close();
-                            sql = "DELETE FROM Class WHERE class_id='" + this.dgvClass[0, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim() + "';";
+                            sql = "DELETE FROM student WHERE student_id='" + this.dgvPerson[0, this.dgvPerson.CurrentCell.RowIndex].Value.ToString().Trim() + "';";
                             cmd.CommandText = sql;
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("删除" + this.dgvClass[1, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim() + "成功!", "提示", MessageBoxButtons.OK);
+                            MessageBox.Show("删除学生:" + this.dgvPerson[1, this.dgvPerson.CurrentCell.RowIndex].Value.ToString().Trim() + "成功!", "提示", MessageBoxButtons.OK);
                         }
                     }
                 }

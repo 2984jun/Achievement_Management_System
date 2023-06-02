@@ -37,15 +37,15 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(73, 77);
+            this.label1.Location = new System.Drawing.Point(44, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(362, 21);
+            this.label1.Size = new System.Drawing.Size(406, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "欢迎使用成绩管理系统！请先登录！";
+            this.label1.Text = "欢迎使用简易学校管理系统！请先登录！";
             // 
             // btnLoginIn
             // 
-            this.btnLoginIn.Location = new System.Drawing.Point(122, 143);
+            this.btnLoginIn.Location = new System.Drawing.Point(123, 154);
             this.btnLoginIn.Name = "btnLoginIn";
             this.btnLoginIn.Size = new System.Drawing.Size(75, 23);
             this.btnLoginIn.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(269, 143);
+            this.btnExit.Location = new System.Drawing.Point(270, 154);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 2;
