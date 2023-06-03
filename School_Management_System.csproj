@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="%24RVYUPTC.cs" />
     <Compile Include="Class\Change_Class_Information.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +100,30 @@
     </Compile>
     <Compile Include="Course\View_Course.Designer.cs">
       <DependentUpon>View_Course.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grade\GradeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grade\GradeAdd.Designer.cs">
+      <DependentUpon>GradeAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grade\Grade_Class.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grade\Grade_Class.Designer.cs">
+      <DependentUpon>Grade_Class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grade\Grade_College.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grade\Grade_College.Designer.cs">
+      <DependentUpon>Grade_College.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grade\Grade_Major.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grade\Grade_Major.Designer.cs">
+      <DependentUpon>Grade_Major.cs</DependentUpon>
     </Compile>
     <Compile Include="Main_page.cs">
       <SubType>Form</SubType>
@@ -189,6 +214,12 @@
     <EmbeddedResource Include="Course\View_Course.resx">
       <DependentUpon>View_Course.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grade\GradeAdd.resx">
+      <DependentUpon>GradeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grade\Grade_College.resx">
+      <DependentUpon>Grade_College.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main_page.resx">
       <DependentUpon>Main_page.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +259,9 @@
     <EmbeddedResource Include="USER\User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="%24R4CR1SJ.xss" />
+    <None Include="%24RM4RYSZ.xsc" />
+    <None Include="%24RRNAI5E.xsd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -241,8 +275,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Grade\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
