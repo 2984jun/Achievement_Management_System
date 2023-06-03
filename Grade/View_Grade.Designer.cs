@@ -1,6 +1,6 @@
 ﻿namespace Achievement_Management_System.Grade
 {
-    partial class Grade_College
+    partial class View_Grade
     {
         /// <summary>
         /// Required designer variable.

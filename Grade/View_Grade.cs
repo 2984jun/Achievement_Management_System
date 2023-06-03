@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace Achievement_Management_System.Grade
 {
-    public partial class Grade_College : Form
+    public partial class View_Grade : Form
     {
 
         public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
         public string strSchema = "";
 
-        public Grade_College()
+        public View_Grade()
         {
             InitializeComponent();
         }

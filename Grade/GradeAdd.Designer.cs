@@ -161,6 +161,7 @@
             this.Controls.Add(this.button1);
             this.Name = "GradeAdd";
             this.Text = "                     添加学生成绩";
+            this.Load += new System.EventHandler(this.GradeAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

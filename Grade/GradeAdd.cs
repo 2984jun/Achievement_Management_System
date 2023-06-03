@@ -81,5 +81,10 @@ namespace Achievement_Management_System.Grade
         {
             this.Close();
         }
+
+        private void GradeAdd_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

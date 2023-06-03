@@ -28,4 +28,4 @@ D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System
 D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.Course.CourseAdd.resources
 D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.Course.View_Course.resources
 D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.Grade.GradeAdd.resources
-D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.Grade.Grade_College.resources
+D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.Grade.View_Grade.resources

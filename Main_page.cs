@@ -126,7 +126,7 @@ namespace Achievement_Management_System
 
         private void 成绩学院ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Grade_College grade_College = new Grade_College();
+            View_Grade grade_College = new View_Grade();
 
             grade_College.strSchema = "college";
 
@@ -156,7 +156,7 @@ namespace Achievement_Management_System
 
         private void 成绩专业ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Grade_College grade_College = new Grade_College();
+            View_Grade grade_College = new View_Grade();
 
             string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
             
@@ -186,7 +186,7 @@ namespace Achievement_Management_System
 
         private void 成绩班级ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Grade_College grade_College = new Grade_College();
+            View_Grade grade_College = new View_Grade();
 
             string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 

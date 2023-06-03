@@ -107,23 +107,11 @@
     <Compile Include="Grade\GradeAdd.Designer.cs">
       <DependentUpon>GradeAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grade\Grade_Class.cs">
+    <Compile Include="Grade\View_Grade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grade\Grade_Class.Designer.cs">
-      <DependentUpon>Grade_Class.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Grade\Grade_College.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Grade\Grade_College.Designer.cs">
-      <DependentUpon>Grade_College.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Grade\Grade_Major.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Grade\Grade_Major.Designer.cs">
-      <DependentUpon>Grade_Major.cs</DependentUpon>
+    <Compile Include="Grade\View_Grade.Designer.cs">
+      <DependentUpon>View_Grade.cs</DependentUpon>
     </Compile>
     <Compile Include="Main_page.cs">
       <SubType>Form</SubType>
@@ -217,8 +205,8 @@
     <EmbeddedResource Include="Grade\GradeAdd.resx">
       <DependentUpon>GradeAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grade\Grade_College.resx">
-      <DependentUpon>Grade_College.cs</DependentUpon>
+    <EmbeddedResource Include="Grade\View_Grade.resx">
+      <DependentUpon>View_Grade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_page.resx">
       <DependentUpon>Main_page.cs</DependentUpon>
