@@ -82,6 +82,24 @@
     <Compile Include="College\View_College.Designer.cs">
       <DependentUpon>View_College.cs</DependentUpon>
     </Compile>
+    <Compile Include="Course\Change_Course_Informaiton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\Change_Course_Informaiton.Designer.cs">
+      <DependentUpon>Change_Course_Informaiton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Course\CourseAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\CourseAdd.Designer.cs">
+      <DependentUpon>CourseAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Course\View_Course.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\View_Course.Designer.cs">
+      <DependentUpon>View_Course.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main_page.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +180,15 @@
     <EmbeddedResource Include="College\View_College.resx">
       <DependentUpon>View_College.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Course\Change_Course_Informaiton.resx">
+      <DependentUpon>Change_Course_Informaiton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Course\CourseAdd.resx">
+      <DependentUpon>CourseAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Course\View_Course.resx">
+      <DependentUpon>View_Course.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main_page.resx">
       <DependentUpon>Main_page.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,7 +242,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Course\" />
     <Folder Include="Grade\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

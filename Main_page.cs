@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Achievement_Management_System.Class;
 using Achievement_Management_System.College;
+using Achievement_Management_System.Course;
 using Achievement_Management_System.Major;
 using Achievement_Management_System.Person;
 using Achievement_Management_System.USER;
@@ -100,6 +101,22 @@ namespace Achievement_Management_System
         private void 倒序成绩ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void 添加课程ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CourseAdd courseAdd= new CourseAdd();
+            courseAdd.Owner = this;
+            courseAdd.StartPosition = FormStartPosition.CenterScreen;
+            courseAdd.ShowDialog();
+        }
+
+        private void 查看课程信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View_Course view_Course = new View_Course();
+            view_Course.Owner = this;
+            view_Course.StartPosition = FormStartPosition.CenterScreen;
+            view_Course.Show();
         }
     }
 }

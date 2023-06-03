@@ -39,28 +39,28 @@
             this.班级管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.添加班级ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查看班级情况ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.课程管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.添加课程ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.查看课程信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.个人信息管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.添加个人信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查看个人信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.学生成绩ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.院内成绩ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.正序成绩ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.倒序成绩ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.专业内成绩ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.正序成绩ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.倒序成绩ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.班级内成绩ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.正序成绩ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.倒序成绩ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.搜索ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.Now_Time = new System.Windows.Forms.ToolStripStatusLabel();
-            this.课程管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.添加课程ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.查看课程信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.正序成绩ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.倒序成绩ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.正序成绩ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.倒序成绩ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.正序成绩ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.倒序成绩ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -153,6 +153,29 @@
             this.查看班级情况ToolStripMenuItem.Text = "查看班级情况";
             this.查看班级情况ToolStripMenuItem.Click += new System.EventHandler(this.查看班级情况ToolStripMenuItem_Click);
             // 
+            // 课程管理ToolStripMenuItem
+            // 
+            this.课程管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.添加课程ToolStripMenuItem,
+            this.查看课程信息ToolStripMenuItem});
+            this.课程管理ToolStripMenuItem.Name = "课程管理ToolStripMenuItem";
+            this.课程管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.课程管理ToolStripMenuItem.Text = "课程管理";
+            // 
+            // 添加课程ToolStripMenuItem
+            // 
+            this.添加课程ToolStripMenuItem.Name = "添加课程ToolStripMenuItem";
+            this.添加课程ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.添加课程ToolStripMenuItem.Text = "添加课程";
+            this.添加课程ToolStripMenuItem.Click += new System.EventHandler(this.添加课程ToolStripMenuItem_Click);
+            // 
+            // 查看课程信息ToolStripMenuItem
+            // 
+            this.查看课程信息ToolStripMenuItem.Name = "查看课程信息ToolStripMenuItem";
+            this.查看课程信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.查看课程信息ToolStripMenuItem.Text = "查看课程情况";
+            this.查看课程信息ToolStripMenuItem.Click += new System.EventHandler(this.查看课程信息ToolStripMenuItem_Click);
+            // 
             // 个人信息管理ToolStripMenuItem
             // 
             this.个人信息管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -192,8 +215,20 @@
             this.正序成绩ToolStripMenuItem,
             this.倒序成绩ToolStripMenuItem});
             this.院内成绩ToolStripMenuItem.Name = "院内成绩ToolStripMenuItem";
-            this.院内成绩ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.院内成绩ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.院内成绩ToolStripMenuItem.Text = "成绩（学院）";
+            // 
+            // 正序成绩ToolStripMenuItem
+            // 
+            this.正序成绩ToolStripMenuItem.Name = "正序成绩ToolStripMenuItem";
+            this.正序成绩ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.正序成绩ToolStripMenuItem.Text = "正序（绩点）";
+            // 
+            // 倒序成绩ToolStripMenuItem
+            // 
+            this.倒序成绩ToolStripMenuItem.Name = "倒序成绩ToolStripMenuItem";
+            this.倒序成绩ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.倒序成绩ToolStripMenuItem.Text = "倒序（绩点）";
             // 
             // 专业内成绩ToolStripMenuItem
             // 
@@ -201,8 +236,21 @@
             this.正序成绩ToolStripMenuItem1,
             this.倒序成绩ToolStripMenuItem1});
             this.专业内成绩ToolStripMenuItem.Name = "专业内成绩ToolStripMenuItem";
-            this.专业内成绩ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.专业内成绩ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.专业内成绩ToolStripMenuItem.Text = "成绩（专业）";
+            // 
+            // 正序成绩ToolStripMenuItem1
+            // 
+            this.正序成绩ToolStripMenuItem1.Name = "正序成绩ToolStripMenuItem1";
+            this.正序成绩ToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.正序成绩ToolStripMenuItem1.Text = "正序（绩点）";
+            // 
+            // 倒序成绩ToolStripMenuItem1
+            // 
+            this.倒序成绩ToolStripMenuItem1.Name = "倒序成绩ToolStripMenuItem1";
+            this.倒序成绩ToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.倒序成绩ToolStripMenuItem1.Text = "倒序（绩点）";
+            this.倒序成绩ToolStripMenuItem1.Click += new System.EventHandler(this.倒序成绩ToolStripMenuItem1_Click);
             // 
             // 班级内成绩ToolStripMenuItem
             // 
@@ -210,8 +258,20 @@
             this.正序成绩ToolStripMenuItem2,
             this.倒序成绩ToolStripMenuItem2});
             this.班级内成绩ToolStripMenuItem.Name = "班级内成绩ToolStripMenuItem";
-            this.班级内成绩ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.班级内成绩ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.班级内成绩ToolStripMenuItem.Text = "成绩（班级）";
+            // 
+            // 正序成绩ToolStripMenuItem2
+            // 
+            this.正序成绩ToolStripMenuItem2.Name = "正序成绩ToolStripMenuItem2";
+            this.正序成绩ToolStripMenuItem2.Size = new System.Drawing.Size(148, 22);
+            this.正序成绩ToolStripMenuItem2.Text = "正序（绩点）";
+            // 
+            // 倒序成绩ToolStripMenuItem2
+            // 
+            this.倒序成绩ToolStripMenuItem2.Name = "倒序成绩ToolStripMenuItem2";
+            this.倒序成绩ToolStripMenuItem2.Size = new System.Drawing.Size(148, 22);
+            this.倒序成绩ToolStripMenuItem2.Text = "倒序（绩点）";
             // 
             // 搜索ToolStripMenuItem
             // 
@@ -251,64 +311,6 @@
             this.Now_Time.Name = "Now_Time";
             this.Now_Time.Size = new System.Drawing.Size(131, 17);
             this.Now_Time.Text = "toolStripStatusLabel1";
-            // 
-            // 课程管理ToolStripMenuItem
-            // 
-            this.课程管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.添加课程ToolStripMenuItem,
-            this.查看课程信息ToolStripMenuItem});
-            this.课程管理ToolStripMenuItem.Name = "课程管理ToolStripMenuItem";
-            this.课程管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.课程管理ToolStripMenuItem.Text = "课程管理";
-            // 
-            // 添加课程ToolStripMenuItem
-            // 
-            this.添加课程ToolStripMenuItem.Name = "添加课程ToolStripMenuItem";
-            this.添加课程ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.添加课程ToolStripMenuItem.Text = "添加课程";
-            // 
-            // 查看课程信息ToolStripMenuItem
-            // 
-            this.查看课程信息ToolStripMenuItem.Name = "查看课程信息ToolStripMenuItem";
-            this.查看课程信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.查看课程信息ToolStripMenuItem.Text = "查看课程情况";
-            // 
-            // 正序成绩ToolStripMenuItem
-            // 
-            this.正序成绩ToolStripMenuItem.Name = "正序成绩ToolStripMenuItem";
-            this.正序成绩ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.正序成绩ToolStripMenuItem.Text = "正序（绩点）";
-            // 
-            // 倒序成绩ToolStripMenuItem
-            // 
-            this.倒序成绩ToolStripMenuItem.Name = "倒序成绩ToolStripMenuItem";
-            this.倒序成绩ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.倒序成绩ToolStripMenuItem.Text = "倒序（绩点）";
-            // 
-            // 正序成绩ToolStripMenuItem1
-            // 
-            this.正序成绩ToolStripMenuItem1.Name = "正序成绩ToolStripMenuItem1";
-            this.正序成绩ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.正序成绩ToolStripMenuItem1.Text = "正序（绩点）";
-            // 
-            // 倒序成绩ToolStripMenuItem1
-            // 
-            this.倒序成绩ToolStripMenuItem1.Name = "倒序成绩ToolStripMenuItem1";
-            this.倒序成绩ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.倒序成绩ToolStripMenuItem1.Text = "倒序（绩点）";
-            this.倒序成绩ToolStripMenuItem1.Click += new System.EventHandler(this.倒序成绩ToolStripMenuItem1_Click);
-            // 
-            // 正序成绩ToolStripMenuItem2
-            // 
-            this.正序成绩ToolStripMenuItem2.Name = "正序成绩ToolStripMenuItem2";
-            this.正序成绩ToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.正序成绩ToolStripMenuItem2.Text = "正序（绩点）";
-            // 
-            // 倒序成绩ToolStripMenuItem2
-            // 
-            this.倒序成绩ToolStripMenuItem2.Name = "倒序成绩ToolStripMenuItem2";
-            this.倒序成绩ToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.倒序成绩ToolStripMenuItem2.Text = "倒序（绩点）";
             // 
             // Main_page
             // 
