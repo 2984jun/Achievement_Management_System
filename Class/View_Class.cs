@@ -62,16 +62,19 @@ namespace Achievement_Management_System.Class
         {
             if(this.dgvClass.CurrentCell != null)
             {
-                Change_Class_Information change_Class_Information = new Change_Class_Information();
-                change_Class_Information.strClsID = this.dgvClass[0, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Class_Information.strClsName = this.dgvClass[1, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Class_Information.strMjrID = this.dgvClass[2, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Class_Information.strTteNum = this.dgvClass[3, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Class_Information.strHeadTea = this.dgvClass[4, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                ClassAdd classAdd = new ClassAdd();
+                classAdd.Text = "                         修改班级信息";
 
-                change_Class_Information.StartPosition = FormStartPosition.CenterScreen;
-                change_Class_Information.ShowDialog();
-                if(change_Class_Information.DialogResult == DialogResult.OK) 
+                classAdd.txtClsId.Text= this.dgvClass[0, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                classAdd.txtClsName.Text= this.dgvClass[1,this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                classAdd.txtMjrId.Text= this.dgvClass[2, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                classAdd.txtClsNum.Text= this.dgvClass[3, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                classAdd.txtHeadTea.Text= this.dgvClass[4, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                classAdd.strSchema = "Update";
+
+                classAdd.StartPosition = FormStartPosition.CenterScreen;
+                classAdd.ShowDialog();
+                if(classAdd.DialogResult == DialogResult.OK) 
                 {
                     showinf();
                 }
@@ -92,13 +95,13 @@ namespace Achievement_Management_System.Class
                     if (this.dgvClass.CurrentCell != null)
                     {
                         string sql = "SELECT * FROM Class c INNER JOIN student s ON c.class_id=s.class_id WHERE c.class_id='" +
-                                this.dgvClass[2, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim() + "';";
+                                this.dgvClass[0, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim() + "';";
 
                         SqlCommand cmd = new SqlCommand(sql, con);
                         SqlDataReader dr = cmd.ExecuteReader();
                         if (dr.Read())
                         {
-                            MessageBox.Show("删除" + this.dgvClass[1, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim() + "失败,请先删除与此班级相关的学生！", "错误提示",
+                            MessageBox.Show("删除" + this.dgvClass[0, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim() + "失败,请先删除与此班级相关的学生！", "错误提示",
                                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else

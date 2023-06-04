@@ -18,9 +18,11 @@ namespace Achievement_Management_System.USER
         {
             InitializeComponent();
         }
+       
 
         private void User_Load(object sender, EventArgs e)
         {
+
             cmbIdentity.SelectedIndex = 0;
             User user = new User();
             user.Owner = this;
@@ -125,6 +127,8 @@ namespace Achievement_Management_System.USER
             frmregister.Owner = this;
             frmregister.StartPosition = FormStartPosition.CenterParent;
             frmregister.ShowDialog();
+           
         }
+
     }
 }

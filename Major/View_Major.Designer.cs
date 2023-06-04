@@ -38,7 +38,7 @@
             // dgvMajor
             // 
             this.dgvMajor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMajor.Location = new System.Drawing.Point(12, 27);
+            this.dgvMajor.Location = new System.Drawing.Point(12, 12);
             this.dgvMajor.Name = "dgvMajor";
             this.dgvMajor.RowTemplate.Height = 23;
             this.dgvMajor.Size = new System.Drawing.Size(639, 305);
@@ -46,7 +46,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(39, 373);
+            this.btnUpdate.Location = new System.Drawing.Point(51, 334);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(272, 372);
+            this.btnDel.Location = new System.Drawing.Point(284, 333);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(512, 372);
+            this.btnExit.Location = new System.Drawing.Point(524, 333);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 431);
+            this.ClientSize = new System.Drawing.Size(663, 384);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnUpdate);

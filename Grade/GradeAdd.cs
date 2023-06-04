@@ -19,15 +19,19 @@ namespace Achievement_Management_System.Grade
         {
             InitializeComponent();
         }
+        private void GradeAdd_Load(object sender, EventArgs e)
+        {
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (this.txtCueID.Text.Trim() == "" || this.txtGaeID.Text.Trim() == "" || this.txtSdtID.Text.Trim() == "" || this.txtSdtName.Text.Trim() == "" || this.txtCueGrade.Text.Trim() == "")
+
+            if (this.txtCueID.Text.Trim() == "" || this.txtGaeID.Text.Trim() == "" || this.txtSdtID.Text.Trim() == "" || this.txtCueGrade.Text.Trim() == "")
             {
                 MessageBox.Show("请输入要添加成绩的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-            {
+                {
                 using (SqlConnection con = new SqlConnection(strConn))
                 {
                     if (con.State == ConnectionState.Closed)
@@ -37,16 +41,16 @@ namespace Achievement_Management_System.Grade
 
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM Grade WHERE cue_id='" + this.txtCueID.Text.Trim() + "' OR (Grade_id='" + this.txtGaeID.Text.Trim() + "' AND student_id='"+
-                                                        this.txtSdtID+"');", con);
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM Grade g INNER JOIN student s ON g.student_id=s.student_id WHERE (s.student_id='"+this.txtSdtID.Text.Trim()+"' AND g.cue_id='"+
+                                                        this.txtCueID.Text.Trim()+"') AND g.Grade_id='"+this.txtGaeID.Text.Trim()+"';", con);
                         if (cmd.ExecuteScalar() != null)
                         {
-                            MessageBox.Show("成绩ID或该学生课程成绩已存在，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("成绩ID或该学生课程成绩已存在或者学号错误或者课程号错误，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else
                         {
-                            string sql = "INSERT INTO Grade(Grade_id,student_id,student_name,cue_id,cue_grade)VALUES('" + this.txtGaeID.Text.Trim() + "','" + this.txtSdtID.Text.Trim() +
-                                "','" + this.txtSdtName.Text.Trim() + "','" + this.txtCueID.Text.Trim() + "','" + this.txtCueGrade.Text.Trim() + "');";
+                            string sql = "INSERT INTO Grade(Grade_id,student_id,cue_id,cue_grade)VALUES('" + this.txtGaeID.Text.Trim() + "','" + this.txtSdtID.Text.Trim() 
+                                 + "','" + this.txtCueID.Text.Trim() + "','" + this.txtCueGrade.Text.Trim() + "');";
 
                             cmd.CommandText = sql;
                             cmd.ExecuteNonQuery();
@@ -55,7 +59,6 @@ namespace Achievement_Management_System.Grade
                             this.txtCueID.Clear();
                             this.txtGaeID.Clear();
                             this.txtSdtID.Clear();
-                            this.txtSdtName.Clear();
                             this.txtCueGrade.Clear();
 
                         }
@@ -75,6 +78,7 @@ namespace Achievement_Management_System.Grade
                     }
                 }
             }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -82,7 +86,7 @@ namespace Achievement_Management_System.Grade
             this.Close();
         }
 
-        private void GradeAdd_Load(object sender, EventArgs e)
+        private void txtCueGrade_TextChanged(object sender, EventArgs e)
         {
 
         }

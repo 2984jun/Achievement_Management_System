@@ -63,6 +63,7 @@ namespace Achievement_Management_System.Major
         {
             if (this.dgvMajor.CurrentCell != null) 
             {
+                /*
                 Change_Major_Information change_Major_Information = new Change_Major_Information();
                 change_Major_Information.strMjrID= this.dgvMajor[0, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
                 change_Major_Information.strCleID= this.dgvMajor[1, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
@@ -73,7 +74,25 @@ namespace Achievement_Management_System.Major
 
                 change_Major_Information.StartPosition=FormStartPosition.CenterScreen;
                 change_Major_Information.ShowDialog();
-                if(change_Major_Information.DialogResult == DialogResult.OK) 
+                */
+
+                MajorAdd majorAdd=new MajorAdd();
+                majorAdd.Text = "                                   修改专业";
+
+                majorAdd.txtMajorId.Text = this.dgvMajor[0, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                majorAdd.txtCleId.Text= this.dgvMajor[1, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                majorAdd.txtMjrName.Text= this.dgvMajor[2, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                majorAdd.txtMjrNum.Text= this.dgvMajor[3, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                majorAdd.txtMjrTtePeople.Text= this.dgvMajor[4, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                majorAdd.txtMjrGLeader.Text= this.dgvMajor[5, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+
+                majorAdd.strSchema = "Update";
+
+                majorAdd.Owner = this;
+                majorAdd.StartPosition=FormStartPosition.CenterScreen;               
+                majorAdd.ShowDialog();
+
+                if (majorAdd.DialogResult == DialogResult.OK) 
                 {
                     showinf();
                 }

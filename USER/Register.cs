@@ -49,7 +49,7 @@ namespace Achievement_Management_System.USER
                         else 
                         {
                             string sql = "INSERT INTO account(Uname,Upassword,Uidentity)VALUES('" + this.txtName.Text.Trim() + "','" + this.txtPassword.Text.Trim()
-                                                                                            + "','" + this.cmbPosition.Text + "');";
+                                          + "','" + this.cmbPosition.Text + "');";
                             cmd.CommandText = sql;
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("注册用户成功！", "提示",MessageBoxButtons.OKCancel);

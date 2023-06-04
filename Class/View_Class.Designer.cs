@@ -41,12 +41,12 @@
             this.dgvClass.Location = new System.Drawing.Point(12, 12);
             this.dgvClass.Name = "dgvClass";
             this.dgvClass.RowTemplate.Height = 23;
-            this.dgvClass.Size = new System.Drawing.Size(661, 357);
+            this.dgvClass.Size = new System.Drawing.Size(661, 315);
             this.dgvClass.TabIndex = 0;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(538, 388);
+            this.btnExit.Location = new System.Drawing.Point(545, 344);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 6;
@@ -56,7 +56,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(281, 388);
+            this.btnDel.Location = new System.Drawing.Point(288, 344);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 5;
@@ -66,7 +66,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(42, 388);
+            this.btnUpdate.Location = new System.Drawing.Point(49, 344);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 4;
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 441);
+            this.ClientSize = new System.Drawing.Size(685, 397);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnUpdate);

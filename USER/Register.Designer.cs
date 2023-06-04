@@ -36,11 +36,13 @@
             this.cmbPosition = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Register
             // 
-            this.btn_Register.Location = new System.Drawing.Point(81, 223);
+            this.btn_Register.Location = new System.Drawing.Point(71, 234);
             this.btn_Register.Name = "btn_Register";
             this.btn_Register.Size = new System.Drawing.Size(75, 23);
             this.btn_Register.TabIndex = 0;
@@ -50,7 +52,7 @@
             // 
             // btn_Exit
             // 
-            this.btn_Exit.Location = new System.Drawing.Point(218, 223);
+            this.btn_Exit.Location = new System.Drawing.Point(208, 234);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(75, 23);
             this.btn_Exit.TabIndex = 1;
@@ -61,7 +63,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 68);
+            this.label1.Location = new System.Drawing.Point(32, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 3;
@@ -70,7 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(91, 111);
+            this.label2.Location = new System.Drawing.Point(44, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 4;
@@ -79,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(91, 155);
+            this.label3.Location = new System.Drawing.Point(44, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 5;
@@ -91,14 +93,14 @@
             this.cmbPosition.Items.AddRange(new object[] {
             "老师",
             "学生"});
-            this.cmbPosition.Location = new System.Drawing.Point(138, 152);
+            this.cmbPosition.Location = new System.Drawing.Point(91, 115);
             this.cmbPosition.Name = "cmbPosition";
             this.cmbPosition.Size = new System.Drawing.Size(155, 20);
             this.cmbPosition.TabIndex = 6;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(138, 65);
+            this.txtName.Location = new System.Drawing.Point(91, 28);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(155, 21);
             this.txtName.TabIndex = 7;
@@ -106,30 +108,40 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(138, 108);
+            this.txtPassword.Location = new System.Drawing.Point(91, 71);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(155, 21);
             this.txtPassword.TabIndex = 8;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.txtPassword);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtName);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.cmbPosition);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(35, 36);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(313, 162);
+            this.panel1.TabIndex = 9;
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 327);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.cmbPosition);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(388, 304);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Register);
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "                                 用户注册";
             this.Load += new System.EventHandler(this.Register_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -143,5 +155,6 @@
         private System.Windows.Forms.ComboBox cmbPosition;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Panel panel1;
     }
 }

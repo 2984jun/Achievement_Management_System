@@ -47,12 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="%24RVYUPTC.cs" />
-    <Compile Include="Class\Change_Class_Information.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Class\Change_Class_Information.Designer.cs">
-      <DependentUpon>Change_Class_Information.cs</DependentUpon>
-    </Compile>
     <Compile Include="Class\ClassAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,12 +58,6 @@
     </Compile>
     <Compile Include="Class\View_Class.Designer.cs">
       <DependentUpon>View_Class.cs</DependentUpon>
-    </Compile>
-    <Compile Include="College\Change_College_Information.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="College\Change_College_Information.Designer.cs">
-      <DependentUpon>Change_College_Information.cs</DependentUpon>
     </Compile>
     <Compile Include="College\CollegeAdd.cs">
       <SubType>Form</SubType>
@@ -83,12 +71,6 @@
     <Compile Include="College\View_College.Designer.cs">
       <DependentUpon>View_College.cs</DependentUpon>
     </Compile>
-    <Compile Include="Course\Change_Course_Informaiton.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Course\Change_Course_Informaiton.Designer.cs">
-      <DependentUpon>Change_Course_Informaiton.cs</DependentUpon>
-    </Compile>
     <Compile Include="Course\CourseAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +82,12 @@
     </Compile>
     <Compile Include="Course\View_Course.Designer.cs">
       <DependentUpon>View_Course.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grade\Change_Grade_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grade\Change_Grade_Information.Designer.cs">
+      <DependentUpon>Change_Grade_Information.cs</DependentUpon>
     </Compile>
     <Compile Include="Grade\GradeAdd.cs">
       <SubType>Form</SubType>
@@ -119,12 +107,6 @@
     <Compile Include="Main_page.Designer.cs">
       <DependentUpon>Main_page.cs</DependentUpon>
     </Compile>
-    <Compile Include="Major\Change_Major_Information.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Major\Change_Major_Information.Designer.cs">
-      <DependentUpon>Change_Major_Information.cs</DependentUpon>
-    </Compile>
     <Compile Include="Major\MajorAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,12 +118,6 @@
     </Compile>
     <Compile Include="Major\View_Major.Designer.cs">
       <DependentUpon>View_Major.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Person\Change_Person_Information.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Person\Change_Person_Information.Designer.cs">
-      <DependentUpon>Change_Person_Information.cs</DependentUpon>
     </Compile>
     <Compile Include="Person\personAdd.cs">
       <SubType>Form</SubType>
@@ -157,6 +133,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Select\Select_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Select\Select_Information.Designer.cs">
+      <DependentUpon>Select_Information.cs</DependentUpon>
+    </Compile>
     <Compile Include="USER\Login_OK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,17 +157,11 @@
     <Compile Include="USER\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Class\Change_Class_Information.resx">
-      <DependentUpon>Change_Class_Information.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Class\ClassAdd.resx">
       <DependentUpon>ClassAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Class\View_Class.resx">
       <DependentUpon>View_Class.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="College\Change_College_Information.resx">
-      <DependentUpon>Change_College_Information.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="College\CollegeAdd.resx">
       <DependentUpon>CollegeAdd.cs</DependentUpon>
@@ -193,14 +169,14 @@
     <EmbeddedResource Include="College\View_College.resx">
       <DependentUpon>View_College.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Course\Change_Course_Informaiton.resx">
-      <DependentUpon>Change_Course_Informaiton.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Course\CourseAdd.resx">
       <DependentUpon>CourseAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Course\View_Course.resx">
       <DependentUpon>View_Course.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grade\Change_Grade_Information.resx">
+      <DependentUpon>Change_Grade_Information.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grade\GradeAdd.resx">
       <DependentUpon>GradeAdd.cs</DependentUpon>
@@ -211,17 +187,11 @@
     <EmbeddedResource Include="Main_page.resx">
       <DependentUpon>Main_page.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Major\Change_Major_Information.resx">
-      <DependentUpon>Change_Major_Information.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Major\MajorAdd.resx">
       <DependentUpon>MajorAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Major\View_Major.resx">
       <DependentUpon>View_Major.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Person\Change_Person_Information.resx">
-      <DependentUpon>Change_Person_Information.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Person\personAdd.resx">
       <DependentUpon>personAdd.cs</DependentUpon>
@@ -238,6 +208,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Select\Select_Information.resx">
+      <DependentUpon>Select_Information.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="USER\Login_OK.resx">
       <DependentUpon>Login_OK.cs</DependentUpon>
     </EmbeddedResource>

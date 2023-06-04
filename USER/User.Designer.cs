@@ -37,6 +37,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbIdentity = new System.Windows.Forms.ComboBox();
+            this.lblPrompt = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSign_In
@@ -51,7 +54,7 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(130, 255);
+            this.btnRegister.Location = new System.Drawing.Point(128, 276);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 23);
             this.btnRegister.TabIndex = 1;
@@ -71,14 +74,14 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(111, 74);
+            this.txtUser.Location = new System.Drawing.Point(85, 27);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(163, 21);
             this.txtUser.TabIndex = 3;
             // 
             // txtPassWord
             // 
-            this.txtPassWord.Location = new System.Drawing.Point(112, 116);
+            this.txtPassWord.Location = new System.Drawing.Point(86, 69);
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.PasswordChar = '*';
             this.txtPassWord.Size = new System.Drawing.Size(163, 21);
@@ -88,7 +91,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 77);
+            this.label1.Location = new System.Drawing.Point(26, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 5;
@@ -97,7 +100,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 119);
+            this.label2.Location = new System.Drawing.Point(38, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 6;
@@ -106,7 +109,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(64, 159);
+            this.label3.Location = new System.Drawing.Point(38, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 7;
@@ -118,30 +121,52 @@
             this.cmbIdentity.Items.AddRange(new object[] {
             "老师",
             "学生"});
-            this.cmbIdentity.Location = new System.Drawing.Point(111, 159);
+            this.cmbIdentity.Location = new System.Drawing.Point(85, 112);
             this.cmbIdentity.Name = "cmbIdentity";
             this.cmbIdentity.Size = new System.Drawing.Size(163, 20);
             this.cmbIdentity.TabIndex = 8;
             this.cmbIdentity.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // lblPrompt
+            // 
+            this.lblPrompt.AutoSize = true;
+            this.lblPrompt.ForeColor = System.Drawing.Color.Red;
+            this.lblPrompt.Location = new System.Drawing.Point(109, 252);
+            this.lblPrompt.Name = "lblPrompt";
+            this.lblPrompt.Size = new System.Drawing.Size(125, 12);
+            this.lblPrompt.TabIndex = 9;
+            this.lblPrompt.Text = "还没有账号？请先注册";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.txtPassWord);
+            this.panel1.Controls.Add(this.txtUser);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.cmbIdentity);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(23, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(298, 163);
+            this.panel1.TabIndex = 11;
+            // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 352);
-            this.Controls.Add(this.cmbIdentity);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtPassWord);
-            this.Controls.Add(this.txtUser);
+            this.ClientSize = new System.Drawing.Size(351, 352);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblPrompt);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnSign_In);
             this.Name = "User";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "                                用户登录";
+            this.Text = "                              用户登录";
             this.Load += new System.EventHandler(this.User_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +183,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbIdentity;
+        private System.Windows.Forms.Label lblPrompt;
+        private System.Windows.Forms.Panel panel1;
     }
 }

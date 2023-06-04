@@ -62,15 +62,20 @@ namespace Achievement_Management_System.Course
         {
             if (this.dgvCourse.CurrentCell != null) 
             {
-                Change_Course_Informaiton change_Course_Informaiton = new Change_Course_Informaiton();
 
-                change_Course_Informaiton.strCueID = this.dgvCourse[0,this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
-                change_Course_Informaiton.strCueName = this.dgvCourse[1, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
-                change_Course_Informaiton.strCueNum = this.dgvCourse[2, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
-                change_Course_Informaiton.strCueTeacher = this.dgvCourse[3, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
+                CourseAdd courseAdd = new CourseAdd();
+                courseAdd.Text = "                           修改课程信息";
 
-                change_Course_Informaiton.ShowDialog();
-                if (change_Course_Informaiton.DialogResult == DialogResult.OK) 
+                courseAdd.txtCueID.Text = this.dgvCourse[0, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
+                courseAdd.txtCueName.Text= this.dgvCourse[1, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
+                courseAdd.txtCueNum.Text= this.dgvCourse[2, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
+                courseAdd.txtTeacher.Text= this.dgvCourse[3, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
+                courseAdd.strSchema = "Update";
+
+                courseAdd.Owner = this;
+                courseAdd.StartPosition = FormStartPosition.CenterScreen;
+                courseAdd.ShowDialog();
+                if (courseAdd.DialogResult == DialogResult.OK) 
                 {
                     showinf();
                 }

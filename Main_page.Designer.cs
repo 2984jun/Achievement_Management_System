@@ -75,7 +75,7 @@
             this.退出系统ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1176, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1175, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -184,14 +184,14 @@
             // 添加个人信息ToolStripMenuItem
             // 
             this.添加个人信息ToolStripMenuItem.Name = "添加个人信息ToolStripMenuItem";
-            this.添加个人信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.添加个人信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.添加个人信息ToolStripMenuItem.Text = "添加学生信息";
             this.添加个人信息ToolStripMenuItem.Click += new System.EventHandler(this.添加个人信息ToolStripMenuItem_Click);
             // 
             // 查看个人信息ToolStripMenuItem
             // 
             this.查看个人信息ToolStripMenuItem.Name = "查看个人信息ToolStripMenuItem";
-            this.查看个人信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.查看个人信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.查看个人信息ToolStripMenuItem.Text = "查看学生信息";
             this.查看个人信息ToolStripMenuItem.Click += new System.EventHandler(this.查看个人信息ToolStripMenuItem_Click);
             // 
@@ -245,20 +245,23 @@
             // 搜索ToolStripMenuItem
             // 
             this.搜索ToolStripMenuItem.Name = "搜索ToolStripMenuItem";
-            this.搜索ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.搜索ToolStripMenuItem.Text = "搜索";
+            this.搜索ToolStripMenuItem.Size = new System.Drawing.Size(116, 21);
+            this.搜索ToolStripMenuItem.Text = "搜索个人在校信息";
+            this.搜索ToolStripMenuItem.Click += new System.EventHandler(this.搜索ToolStripMenuItem_Click);
             // 
             // 关于系统ToolStripMenuItem
             // 
             this.关于系统ToolStripMenuItem.Name = "关于系统ToolStripMenuItem";
             this.关于系统ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.关于系统ToolStripMenuItem.Text = "关于系统";
+            this.关于系统ToolStripMenuItem.Click += new System.EventHandler(this.关于系统ToolStripMenuItem_Click);
             // 
             // 退出系统ToolStripMenuItem
             // 
             this.退出系统ToolStripMenuItem.Name = "退出系统ToolStripMenuItem";
             this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.退出系统ToolStripMenuItem.Text = "退出系统";
+            this.退出系统ToolStripMenuItem.Click += new System.EventHandler(this.退出系统ToolStripMenuItem_Click);
             // 
             // timer1
             // 
@@ -269,9 +272,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Now_Time});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 625);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 639);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1176, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1175, 22);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -286,7 +289,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1176, 647);
+            this.ClientSize = new System.Drawing.Size(1175, 661);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));

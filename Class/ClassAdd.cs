@@ -15,6 +15,8 @@ namespace Achievement_Management_System.Class
     {
 
         public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
+
+        public string strSchema = "Add";
         public ClassAdd()
         {
             InitializeComponent();
@@ -22,64 +24,115 @@ namespace Achievement_Management_System.Class
 
         private void ClassAdd_Load(object sender, EventArgs e)
         {
-
+            btnOK.DialogResult=DialogResult.OK;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (this.txtClsId.Text.Trim() == "" || this.txtClsName.Text.Trim() == "" || this.txtMjrId.Text.Trim() == "" ||
+            if (strSchema == "Add") 
+            {
+                if (this.txtClsId.Text.Trim() == "" || this.txtClsName.Text.Trim() == "" || this.txtMjrId.Text.Trim() == "" ||
                 this.txtClsNum.Text.Trim() == "" || this.txtHeadTea.Text.Trim() == "")
-            {
-                MessageBox.Show("请输入要添加班级的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                using (SqlConnection con = new SqlConnection(strConn))
                 {
-                    if (con.State == ConnectionState.Closed)
+                    MessageBox.Show("请输入要添加班级的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    using (SqlConnection con = new SqlConnection(strConn))
                     {
-                        con.Open();
-                    };
-
-                    try
-                    {
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM Class WHERE class_id='" + this.txtClsId.Text.Trim() + "' OR class_name='" + this.txtClsName.Text.Trim() + "';", con);
-                        if (cmd.ExecuteScalar() != null)
+                        if (con.State == ConnectionState.Closed)
                         {
-                            MessageBox.Show("班级ID或班级名称重复，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            con.Open();
+                        };
+
+                        try
+                        {
+                            SqlCommand cmd = new SqlCommand("SELECT * FROM Class WHERE class_id='" + this.txtClsId.Text.Trim() + "' OR class_name='" + this.txtClsName.Text.Trim() + "';", con);
+                            if (cmd.ExecuteScalar() != null)
+                            {
+                                MessageBox.Show("班级ID或班级名称重复，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                string sql = "INSERT INTO Class(class_id,class_name,major_id,totle_student,Head_teacher)VALUES('" + this.txtClsId.Text.Trim() + "','" + this.txtClsName.Text.Trim() +
+                                    "','" + this.txtMjrId.Text.Trim() + "','" + this.txtClsNum.Text.Trim() + "','" + this.txtHeadTea.Text.Trim() + "');";
+
+                                cmd.CommandText = sql;
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("添加班级信息成功！", "提示", MessageBoxButtons.OK);
+
+                                this.txtClsId.Clear();
+                                this.txtClsName.Clear();
+                                this.txtMjrId.Clear();
+                                this.txtClsNum.Clear();
+                                this.txtHeadTea.Clear();
+                            }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            string sql = "INSERT INTO Class(class_id,class_name,major_id,totle_student,Head_teacher)VALUES('" + this.txtClsId.Text.Trim() + "','" + this.txtClsName.Text.Trim() +
-                                "','" + this.txtMjrId.Text.Trim() + "','" + this.txtClsNum.Text.Trim() + "','" + this.txtHeadTea.Text.Trim() + "');";
+                            MessageBox.Show("错误：" + ex.Message, "错误提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            if (con.State == ConnectionState.Open)
+                            {
+                                con.Close();
+                                con.Dispose();
+                            }
 
-                            cmd.CommandText = sql;
+                        }
+
+                    }
+                }
+            }
+            else 
+            {
+                if (this.txtClsId.Text.Trim() == "" || this.txtClsName.Text.Trim() == "" || this.txtMjrId.Text.Trim() == "" ||
+                this.txtClsNum.Text.Trim() == "" || this.txtHeadTea.Text.Trim() == "")
+                {
+                    MessageBox.Show("请输入要添加班级的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    using (SqlConnection con = new SqlConnection(strConn))
+                    {
+                        if (con.State == ConnectionState.Closed)
+                        {
+                            con.Open();
+                        };
+                        try
+                        {
+                            string sql = "UPDATE Class SET class_id='" + this.txtClsId.Text.Trim() + "',Class_name='" + this.txtClsName.Text.Trim() + "',Major_id='" + this.txtMjrId.Text.Trim() +
+                                        "',totle_student='" + this.txtClsNum.Text.Trim() + "',Head_teacher='" + this.txtHeadTea.Text.Trim() + "' WHERE class_id='" + this.txtClsId.Text.Trim() + "';";
+                            SqlCommand cmd = new SqlCommand(sql, con);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("添加班级信息成功！", "提示", MessageBoxButtons.OK);
+                            MessageBox.Show("修改班级信息成功！", "提示", MessageBoxButtons.OK);
 
                             this.txtClsId.Clear();
                             this.txtClsName.Clear();
                             this.txtMjrId.Clear();
                             this.txtClsNum.Clear();
                             this.txtHeadTea.Clear();
+
+                            strSchema = "Add";
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("错误：" + ex.Message, "错误提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        if (con.State == ConnectionState.Open)
+                        catch (Exception ex)
                         {
-                            con.Close();
-                            con.Dispose();
+                            MessageBox.Show("错误：" + ex.Message, "错误提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                         }
+                        finally
+                        {
+                            if (con.State == ConnectionState.Open)
+                            {
+                                con.Close();
+                                con.Dispose();
+                            }
 
+                        }
                     }
-
                 }
             }
+            
         }
 
         private void label2_Click(object sender, EventArgs e)

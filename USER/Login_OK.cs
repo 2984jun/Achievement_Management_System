@@ -19,9 +19,8 @@ namespace Achievement_Management_System.USER
 
         private void Login_OK_Load(object sender, EventArgs e)
         {
-            Login_OK login_OK = new Login_OK();
-            login_OK.Owner = this;
-            login_OK.StartPosition = FormStartPosition.CenterScreen;
+
+            this.StartPosition = FormStartPosition.CenterScreen;
 
         }
 
@@ -31,6 +30,7 @@ namespace Achievement_Management_System.USER
             user.Owner = this;
             user.StartPosition = FormStartPosition.CenterScreen;
             user.ShowDialog();
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -41,13 +41,13 @@
             this.dgvPerson.Location = new System.Drawing.Point(12, 12);
             this.dgvPerson.Name = "dgvPerson";
             this.dgvPerson.RowTemplate.Height = 23;
-            this.dgvPerson.Size = new System.Drawing.Size(749, 358);
+            this.dgvPerson.Size = new System.Drawing.Size(656, 309);
             this.dgvPerson.TabIndex = 0;
             this.dgvPerson.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPerson_CellContentClick);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(580, 391);
+            this.btnExit.Location = new System.Drawing.Point(559, 336);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 9;
@@ -57,7 +57,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(316, 391);
+            this.btnDel.Location = new System.Drawing.Point(295, 336);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 8;
@@ -67,7 +67,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(65, 391);
+            this.btnUpdate.Location = new System.Drawing.Point(44, 336);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 7;
@@ -79,14 +79,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 441);
+            this.ClientSize = new System.Drawing.Size(684, 391);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvPerson);
             this.Name = "View_Person";
-            this.Text = "                                                                              个人信" +
-    "息表";
+            this.Text = "                                                                     个人信息表";
             this.Load += new System.EventHandler(this.View_Person_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerson)).EndInit();
             this.ResumeLayout(false);

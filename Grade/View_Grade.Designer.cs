@@ -40,25 +40,27 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(438, 430);
+            this.btnExit.Location = new System.Drawing.Point(430, 349);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "退出";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(254, 430);
+            this.btnDel.Location = new System.Drawing.Point(246, 349);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 9;
             this.btnDel.Text = "删除";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(70, 430);
+            this.btnUpdate.Location = new System.Drawing.Point(62, 349);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 8;
@@ -69,16 +71,16 @@
             // dgvGaeCle
             // 
             this.dgvGaeCle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGaeCle.Location = new System.Drawing.Point(12, 72);
+            this.dgvGaeCle.Location = new System.Drawing.Point(12, 39);
             this.dgvGaeCle.Name = "dgvGaeCle";
             this.dgvGaeCle.RowTemplate.Height = 23;
-            this.dgvGaeCle.Size = new System.Drawing.Size(582, 329);
+            this.dgvGaeCle.Size = new System.Drawing.Size(582, 293);
             this.dgvGaeCle.TabIndex = 7;
             this.dgvGaeCle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGaeCle_CellContentClick);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(461, 19);
+            this.btnSearch.Location = new System.Drawing.Point(463, 10);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 12;
@@ -90,7 +92,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Location = new System.Drawing.Point(14, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 12);
             this.label1.TabIndex = 13;
@@ -99,16 +101,16 @@
             // cmbCollege
             // 
             this.cmbCollege.FormattingEnabled = true;
-            this.cmbCollege.Location = new System.Drawing.Point(153, 27);
+            this.cmbCollege.Location = new System.Drawing.Point(155, 12);
             this.cmbCollege.Name = "cmbCollege";
             this.cmbCollege.Size = new System.Drawing.Size(225, 20);
             this.cmbCollege.TabIndex = 14;
             // 
-            // Grade_College
+            // View_Grade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 487);
+            this.ClientSize = new System.Drawing.Size(606, 400);
             this.Controls.Add(this.cmbCollege);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSearch);
@@ -116,7 +118,7 @@
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvGaeCle);
-            this.Name = "Grade_College";
+            this.Name = "View_Grade";
             this.Text = "                                                    学院学生成绩表";
             this.Load += new System.EventHandler(this.Grade_College_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGaeCle)).EndInit();

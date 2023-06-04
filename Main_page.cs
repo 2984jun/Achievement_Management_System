@@ -14,6 +14,7 @@ using Achievement_Management_System.Course;
 using Achievement_Management_System.Grade;
 using Achievement_Management_System.Major;
 using Achievement_Management_System.Person;
+using Achievement_Management_System.Select;
 using Achievement_Management_System.USER;
 
 namespace Achievement_Management_System
@@ -39,94 +40,107 @@ namespace Achievement_Management_System
         private void 添加学院ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CollegeAdd collegeAdd = new CollegeAdd();
-            collegeAdd.Owner = this;
-            collegeAdd.StartPosition = FormStartPosition.CenterScreen;
-            collegeAdd.ShowDialog();
+            collegeAdd.MdiParent = this;
+
+            collegeAdd.Show();
+            LayoutMdi(MdiLayout.Cascade);
         }
 
         private void 查看学院情况ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View_College view_College = new View_College();
-            view_College.Owner = this;
-            view_College.StartPosition = FormStartPosition.CenterScreen;
+
+            view_College.MdiParent = this;
             view_College.Show();
+            LayoutMdi(MdiLayout.Cascade);
         }
 
         private void 添加专业ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MajorAdd majorAdd = new MajorAdd();
-            majorAdd.Owner = this;
-            majorAdd.StartPosition = FormStartPosition.CenterScreen;
-            majorAdd.ShowDialog();
+  
+            majorAdd.MdiParent = this;
+            majorAdd.Show();
+            LayoutMdi(MdiLayout.Cascade);
         }
 
         private void 查看专业情况ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View_Major view_Major = new View_Major();
-            view_Major.Owner = this;
-            view_Major.StartPosition = FormStartPosition.CenterScreen;
+ 
+            view_Major.MdiParent = this;
             view_Major.Show();
+            LayoutMdi(MdiLayout.Cascade);
         }
 
         private void 添加班级ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ClassAdd classAdd = new ClassAdd();
-            classAdd.Owner = this;
-            classAdd.StartPosition = FormStartPosition.CenterScreen;
-            classAdd.ShowDialog();
+
+            classAdd.MdiParent = this;
+            classAdd.Show();
+            LayoutMdi(MdiLayout.Cascade);
+
         }
 
         private void 查看班级情况ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View_Class view_Class = new View_Class();
-            view_Class.Owner = this;
-            view_Class.StartPosition = FormStartPosition.CenterScreen;
+
+            view_Class.MdiParent = this;
             view_Class.Show();
+            LayoutMdi(MdiLayout.Cascade);
         }
 
         private void 添加个人信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             personAdd personAdd= new personAdd();
-            personAdd.Owner = this;
-            personAdd.StartPosition = FormStartPosition.CenterScreen;
-            personAdd.ShowDialog();
+
+            personAdd.MdiParent = this;
+            personAdd.Show();
+            LayoutMdi(MdiLayout.Cascade);
         }
 
         private void 查看个人信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View_Person view_Person = new View_Person();
-            view_Person.Owner = this;
-            view_Person.StartPosition = FormStartPosition.CenterScreen;
+
+            view_Person.MdiParent = this;   
             view_Person.Show();
+            LayoutMdi(MdiLayout.Cascade);
         }
 
         private void 添加课程ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CourseAdd courseAdd= new CourseAdd();
-            courseAdd.Owner = this;
-            courseAdd.StartPosition = FormStartPosition.CenterScreen;
-            courseAdd.ShowDialog();
+
+            courseAdd.MdiParent = this;
+            courseAdd.Show();
+            LayoutMdi(MdiLayout.Cascade);
         }
 
         private void 查看课程信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View_Course view_Course = new View_Course();
-            view_Course.Owner = this;
-            view_Course.StartPosition = FormStartPosition.CenterScreen;
+
+            view_Course.MdiParent = this;
             view_Course.Show();
+            LayoutMdi(MdiLayout.Cascade);
         }
 
         private void 添加学生成绩ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GradeAdd gradeAdd= new GradeAdd();
-            gradeAdd.Owner = this;
-            gradeAdd.StartPosition = FormStartPosition.CenterScreen;
-            gradeAdd.ShowDialog();
+
+            gradeAdd.MdiParent = this;
+            gradeAdd.Show();
+            LayoutMdi(MdiLayout.Cascade);
         }
 
         private void 成绩学院ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View_Grade grade_College = new View_Grade();
+            
 
             grade_College.strSchema = "college";
 
@@ -149,9 +163,10 @@ namespace Achievement_Management_System
                 grade_College.cmbCollege.ValueMember = "college_id";
                 grade_College.cmbCollege.DataSource = ds.Tables[0].DefaultView;
             }
-            grade_College.Owner = this;
-            grade_College.StartPosition = FormStartPosition.CenterScreen;
+
+            grade_College.MdiParent=this;
             grade_College.Show();
+            LayoutMdi(MdiLayout.Cascade);
         }
 
         private void 成绩专业ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,9 +194,10 @@ namespace Achievement_Management_System
                 grade_College.cmbCollege.ValueMember = "major_id";
                 grade_College.cmbCollege.DataSource = ds.Tables[0].DefaultView;
             }
-            grade_College.Owner = this;
-            grade_College.StartPosition = FormStartPosition.CenterScreen;
+            
+            grade_College.MdiParent = this;
             grade_College.Show();
+            LayoutMdi(MdiLayout.Cascade);
         }
 
         private void 成绩班级ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -209,9 +225,30 @@ namespace Achievement_Management_System
                 grade_College.cmbCollege.ValueMember = "class_id";
                 grade_College.cmbCollege.DataSource = ds.Tables[0].DefaultView;
             }
-            grade_College.Owner = this;
-            grade_College.StartPosition = FormStartPosition.CenterScreen;
+            
+            grade_College.MdiParent= this;
             grade_College.Show();
+            LayoutMdi(MdiLayout.Cascade);
+        }
+
+        private void 搜索ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Select_Information select_Information = new Select_Information();
+           
+            select_Information.MdiParent = this;
+            select_Information.Show();
+            LayoutMdi(MdiLayout.Cascade);
+        }
+
+        private void 关于系统ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 退出系统ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }
