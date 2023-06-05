@@ -92,14 +92,14 @@
             // 添加学院ToolStripMenuItem
             // 
             this.添加学院ToolStripMenuItem.Name = "添加学院ToolStripMenuItem";
-            this.添加学院ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.添加学院ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.添加学院ToolStripMenuItem.Text = "添加学院";
             this.添加学院ToolStripMenuItem.Click += new System.EventHandler(this.添加学院ToolStripMenuItem_Click);
             // 
             // 查看学院情况ToolStripMenuItem
             // 
             this.查看学院情况ToolStripMenuItem.Name = "查看学院情况ToolStripMenuItem";
-            this.查看学院情况ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.查看学院情况ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.查看学院情况ToolStripMenuItem.Text = "查看学院情况";
             this.查看学院情况ToolStripMenuItem.Click += new System.EventHandler(this.查看学院情况ToolStripMenuItem_Click);
             // 

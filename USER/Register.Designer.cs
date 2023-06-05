@@ -37,28 +37,31 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtOKPass = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Register
             // 
-            this.btn_Register.Location = new System.Drawing.Point(71, 234);
+            this.btn_Register.Location = new System.Drawing.Point(71, 272);
             this.btn_Register.Name = "btn_Register";
             this.btn_Register.Size = new System.Drawing.Size(75, 23);
             this.btn_Register.TabIndex = 0;
-            this.btn_Register.Text = "注册";
+            this.btn_Register.Text = "注册(&R)";
             this.btn_Register.UseVisualStyleBackColor = true;
             this.btn_Register.Click += new System.EventHandler(this.btn_Register_Click);
             // 
             // btn_Exit
             // 
-            this.btn_Exit.Location = new System.Drawing.Point(208, 234);
+            this.btn_Exit.Location = new System.Drawing.Point(208, 272);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(75, 23);
             this.btn_Exit.TabIndex = 1;
-            this.btn_Exit.Text = "退出";
+            this.btn_Exit.Text = "退出(&E)";
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
@@ -83,7 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 136);
+            this.label3.Location = new System.Drawing.Point(44, 192);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 5;
@@ -95,7 +98,7 @@
             this.cmbPosition.Items.AddRange(new object[] {
             "老师",
             "学生"});
-            this.cmbPosition.Location = new System.Drawing.Point(91, 133);
+            this.cmbPosition.Location = new System.Drawing.Point(91, 189);
             this.cmbPosition.Name = "cmbPosition";
             this.cmbPosition.Size = new System.Drawing.Size(155, 20);
             this.cmbPosition.TabIndex = 6;
@@ -118,6 +121,9 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.txtOKPass);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtPassword);
@@ -128,18 +134,34 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(35, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(313, 192);
+            this.panel1.Size = new System.Drawing.Size(313, 230);
             this.panel1.TabIndex = 9;
             // 
-            // label4
+            // label6
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("宋体", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(89, 52);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 9);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "由1~9和字母组成的10位数字";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("宋体", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(89, 164);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 9);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "由1~9和字母组成的10位数字";
+            // 
+            // txtOKPass
+            // 
+            this.txtOKPass.Location = new System.Drawing.Point(91, 131);
+            this.txtOKPass.Name = "txtOKPass";
+            this.txtOKPass.Size = new System.Drawing.Size(155, 21);
+            this.txtOKPass.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 134);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 12);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "确定密码：";
             // 
             // label5
             // 
@@ -151,11 +173,21 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "由1~9和字母组成的10位数字";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("宋体", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(89, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 9);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "由1~9和字母组成的10位数字";
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 304);
+            this.ClientSize = new System.Drawing.Size(388, 329);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Register);
@@ -182,5 +214,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtOKPass;
+        private System.Windows.Forms.Label label7;
     }
 }

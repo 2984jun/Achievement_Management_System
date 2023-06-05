@@ -69,7 +69,7 @@ namespace Achievement_Management_System.Person
         {
             if(this.dgvPerson.CurrentCell != null) 
             {
-                personAdd personAdd = new personAdd();
+                personAddUpdate personAdd = new personAddUpdate();
                 personAdd.Text = "                                     修改个人信息";
                 personAdd.txtSdtId.Text= this.dgvPerson[0, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
                 personAdd.txtSdtName.Text= this.dgvPerson[1, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();

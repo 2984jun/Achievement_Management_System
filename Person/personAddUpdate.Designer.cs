@@ -1,6 +1,6 @@
 ﻿namespace Achievement_Management_System.Person
 {
-    partial class personAdd
+    partial class personAddUpdate
     {
         /// <summary>
         /// Required designer variable.
@@ -108,7 +108,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 7;
-            this.btnOK.Text = "确定";
+            this.btnOK.Text = "确定(&O)";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -118,7 +118,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 8;
-            this.btnExit.Text = "退出";
+            this.btnExit.Text = "退出(&E)";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -203,7 +203,7 @@
             this.panel1.Size = new System.Drawing.Size(412, 242);
             this.panel1.TabIndex = 18;
             // 
-            // personAdd
+            // personAddUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,7 +211,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnOK);
-            this.Name = "personAdd";
+            this.Name = "personAddUpdate";
             this.Text = "                                     添加个人信息";
             this.Load += new System.EventHandler(this.personAdd_Load);
             this.panel1.ResumeLayout(false);

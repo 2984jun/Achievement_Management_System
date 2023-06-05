@@ -49,7 +49,7 @@
             this.btnLoginIn.Name = "btnLoginIn";
             this.btnLoginIn.Size = new System.Drawing.Size(75, 23);
             this.btnLoginIn.TabIndex = 1;
-            this.btnLoginIn.Text = "登录";
+            this.btnLoginIn.Text = "登录(&S)";
             this.btnLoginIn.UseVisualStyleBackColor = true;
             this.btnLoginIn.Click += new System.EventHandler(this.btnLoginIn_Click);
             // 
@@ -59,7 +59,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "退出";
+            this.btnExit.Text = "退出(&E)";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 

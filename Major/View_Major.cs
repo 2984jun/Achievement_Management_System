@@ -153,5 +153,9 @@ namespace Achievement_Management_System.Major
             this.Close();
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            showinf();
+        }
     }
 }

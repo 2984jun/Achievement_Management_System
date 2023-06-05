@@ -26,13 +26,17 @@ namespace Achievement_Management_System.USER
 
         private void btn_Register_Click(object sender, EventArgs e)
         {
-            if(this.txtName.Text.Trim()==""||this.txtPassword.Text.Trim()==""||this.cmbPosition.Text=="") 
+            if(this.txtName.Text.Trim()==""||this.txtPassword.Text.Trim()==""|| this.txtOKPass.Text.Trim()==""||this.cmbPosition.Text=="") 
             {
                 MessageBox.Show("请输入完整信息!", "错误提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }else if (this.txtPassword.Text.Trim() != this.txtOKPass.Text.Trim())
+            {
+                MessageBox.Show("密码不一致，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                using(SqlConnection con=new SqlConnection(strConn)) 
+
+                using (SqlConnection con=new SqlConnection(strConn)) 
                 {
                     if (con.State == ConnectionState.Closed)
                     {

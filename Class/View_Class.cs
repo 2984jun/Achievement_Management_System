@@ -134,5 +134,10 @@ namespace Achievement_Management_System.Class
         {
             this.Close();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            showinf();
+        }
     }
 }

@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace Achievement_Management_System.Person
 {
-    public partial class personAdd : Form
+    public partial class personAddUpdate : Form
     {
         public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
         public string strSchema = "Add";
 
-        public personAdd()
+        public personAddUpdate()
         {
             InitializeComponent();
         }

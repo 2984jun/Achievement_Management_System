@@ -130,7 +130,7 @@ namespace Achievement_Management_System
 
         private void 添加个人信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            personAdd personAdd= new personAdd();
+            personAddUpdate personAdd= new personAddUpdate();
 
             personAdd.MdiParent = this;
 

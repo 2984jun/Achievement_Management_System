@@ -135,5 +135,10 @@ namespace Achievement_Management_System.Course
         {
             this.Close();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            showinf();
+        }
     }
 }

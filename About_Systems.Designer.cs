@@ -33,6 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label5
@@ -40,9 +41,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(35, 171);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(317, 12);
+            this.label5.Size = new System.Drawing.Size(269, 12);
             this.label5.TabIndex = 16;
-            this.label5.Text = "3、该系统使用SQL server连接数据库Management_System。";
+            this.label5.Text = "3、本系统连接的数据库为：Management_System。";
             // 
             // label4
             // 
@@ -82,11 +83,22 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "关于系统";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(154, 614);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 12);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "制作人：符武俊";
+            // 
             // About_Systems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 310);
+            this.ClientSize = new System.Drawing.Size(583, 301);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -106,5 +118,6 @@
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
     }
 }

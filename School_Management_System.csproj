@@ -125,11 +125,11 @@
     <Compile Include="Major\View_Major.Designer.cs">
       <DependentUpon>View_Major.cs</DependentUpon>
     </Compile>
-    <Compile Include="Person\personAdd.cs">
+    <Compile Include="Person\personAddUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Person\personAdd.Designer.cs">
-      <DependentUpon>personAdd.cs</DependentUpon>
+    <Compile Include="Person\personAddUpdate.Designer.cs">
+      <DependentUpon>personAddUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Person\View_Person.cs">
       <SubType>Form</SubType>
@@ -202,8 +202,8 @@
     <EmbeddedResource Include="Major\View_Major.resx">
       <DependentUpon>View_Major.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Person\personAdd.resx">
-      <DependentUpon>personAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Person\personAddUpdate.resx">
+      <DependentUpon>personAddUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Person\View_Person.resx">
       <DependentUpon>View_Person.cs</DependentUpon>

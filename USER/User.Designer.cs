@@ -48,7 +48,7 @@
             this.btnSign_In.Name = "btnSign_In";
             this.btnSign_In.Size = new System.Drawing.Size(75, 23);
             this.btnSign_In.TabIndex = 0;
-            this.btnSign_In.Text = "登录";
+            this.btnSign_In.Text = "登录(&S)";
             this.btnSign_In.UseVisualStyleBackColor = true;
             this.btnSign_In.Click += new System.EventHandler(this.btnSign_In_Click);
             // 
@@ -58,7 +58,7 @@
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 23);
             this.btnRegister.TabIndex = 1;
-            this.btnRegister.Text = "注册";
+            this.btnRegister.Text = "注册(&R)";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
@@ -68,7 +68,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "退出";
+            this.btnExit.Text = "退出(&E)";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
