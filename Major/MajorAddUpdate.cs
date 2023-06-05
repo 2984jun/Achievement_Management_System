@@ -9,32 +9,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Achievement_Management_System.Class
+namespace Achievement_Management_System.Major
 {
-    public partial class ClassAdd : Form
+    public partial class MajorAddUpdate : Form
     {
-
         public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
         public string strSchema = "Add";
-        public ClassAdd()
+
+        public MajorAddUpdate()
         {
             InitializeComponent();
         }
 
-        private void ClassAdd_Load(object sender, EventArgs e)
+        private void MajorAdd_Load(object sender, EventArgs e)
         {
-            btnOK.DialogResult=DialogResult.OK;
+            this.StartPosition = FormStartPosition.CenterParent;
+            btnOK.DialogResult = DialogResult.OK;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (strSchema == "Add") 
             {
-                if (this.txtClsId.Text.Trim() == "" || this.txtClsName.Text.Trim() == "" || this.txtMjrId.Text.Trim() == "" ||
-                this.txtClsNum.Text.Trim() == "" || this.txtHeadTea.Text.Trim() == "")
+                if (this.txtMajorId.Text.Trim() == "" || this.txtCleId.Text.Trim() == "" || this.txtMjrName.Text.Trim() == "" ||
+                this.txtMjrNum.Text.Trim() == "" || this.txtMjrTtePeople.Text.Trim() == "" || this.txtMjrGLeader.Text.Trim() == "")
                 {
-                    MessageBox.Show("请输入要添加班级的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("请输入要添加专业的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -47,25 +48,27 @@ namespace Achievement_Management_System.Class
 
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("SELECT * FROM Class WHERE class_id='" + this.txtClsId.Text.Trim() + "' OR class_name='" + this.txtClsName.Text.Trim() + "';", con);
+                            SqlCommand cmd = new SqlCommand("SELECT * FROM Major WHERE Major_id='" + this.txtMajorId.Text.Trim() + "' OR Cname='" + this.txtMjrName.Text.Trim() + "';", con);
                             if (cmd.ExecuteScalar() != null)
                             {
-                                MessageBox.Show("班级ID或班级名称重复，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("专业ID或专业名称重复，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                             else
                             {
-                                string sql = "INSERT INTO Class(class_id,class_name,major_id,totle_student,Head_teacher)VALUES('" + this.txtClsId.Text.Trim() + "','" + this.txtClsName.Text.Trim() +
-                                    "','" + this.txtMjrId.Text.Trim() + "','" + this.txtClsNum.Text.Trim() + "','" + this.txtHeadTea.Text.Trim() + "');";
+                                string sql = "INSERT INTO Major(Major_id,college_id,Cname,class_num,totle_people,Gleader)VALUES('" + this.txtMajorId.Text.Trim() + "','" + this.txtCleId.Text.Trim() +
+                                    "','" + this.txtMjrName.Text.Trim() + "','" + this.txtMjrNum.Text.Trim() + "','" + this.txtMjrTtePeople.Text.Trim() + "','" +
+                                    this.txtMjrGLeader.Text.Trim() + "');";
 
                                 cmd.CommandText = sql;
                                 cmd.ExecuteNonQuery();
-                                MessageBox.Show("添加班级信息成功！", "提示", MessageBoxButtons.OK);
+                                MessageBox.Show("添加专业信息成功！", "提示", MessageBoxButtons.OK);
 
-                                this.txtClsId.Clear();
-                                this.txtClsName.Clear();
-                                this.txtMjrId.Clear();
-                                this.txtClsNum.Clear();
-                                this.txtHeadTea.Clear();
+                                this.txtMajorId.Clear();
+                                this.txtCleId.Clear();
+                                this.txtMjrName.Clear();
+                                this.txtMjrNum.Clear();
+                                this.txtMjrTtePeople.Clear();
+                                this.txtMjrGLeader.Clear();
                             }
                         }
                         catch (Exception ex)
@@ -81,16 +84,17 @@ namespace Achievement_Management_System.Class
                             }
 
                         }
-
                     }
                 }
             }
             else 
             {
-                if (this.txtClsId.Text.Trim() == "" || this.txtClsName.Text.Trim() == "" || this.txtMjrId.Text.Trim() == "" ||
-                this.txtClsNum.Text.Trim() == "" || this.txtHeadTea.Text.Trim() == "")
+
+                if (this.txtMajorId.Text.Trim() == "" || this.txtCleId.Text.Trim() == "" || this.txtMjrName.Text.Trim() == "" ||
+                this.txtMjrNum.Text.Trim() == "" || this.txtMjrTtePeople.Text.Trim() == "" || this.txtMjrGLeader.Text.Trim() == "")
                 {
-                    MessageBox.Show("请输入要添加班级的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("请输入要修改专业的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
                 else
                 {
@@ -100,19 +104,22 @@ namespace Achievement_Management_System.Class
                         {
                             con.Open();
                         };
+
                         try
                         {
-                            string sql = "UPDATE Class SET class_id='" + this.txtClsId.Text.Trim() + "',Class_name='" + this.txtClsName.Text.Trim() + "',Major_id='" + this.txtMjrId.Text.Trim() +
-                                        "',totle_student='" + this.txtClsNum.Text.Trim() + "',Head_teacher='" + this.txtHeadTea.Text.Trim() + "' WHERE class_id='" + this.txtClsId.Text.Trim() + "';";
+                            string sql = "UPDATE Major SET major_id='" + this.txtMajorId.Text.Trim() + "',college_id='" + this.txtCleId.Text.Trim() + "',Cname='" + this.txtMjrName.Text.Trim() +
+                                       "',Class_num='" + this.txtMjrNum.Text.Trim() + "',totle_people='" + this.txtMjrTtePeople.Text.Trim() + "',Gleader='" + this.txtMjrGLeader.Text.Trim() +
+                                       "' WHERE major_id='" + this.txtMajorId.Text.Trim() + "';";
                             SqlCommand cmd = new SqlCommand(sql, con);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("修改班级信息成功！", "提示", MessageBoxButtons.OK);
+                            MessageBox.Show("修改专业信息成功！", "提示", MessageBoxButtons.OK);
 
-                            this.txtClsId.Clear();
-                            this.txtClsName.Clear();
-                            this.txtMjrId.Clear();
-                            this.txtClsNum.Clear();
-                            this.txtHeadTea.Clear();
+                            this.txtMajorId.Clear();
+                            this.txtCleId.Clear();
+                            this.txtMjrName.Clear();
+                            this.txtMjrNum.Clear();
+                            this.txtMjrTtePeople.Clear();
+                            this.txtMjrGLeader.Clear();
 
                             strSchema = "Add";
                         }
@@ -133,11 +140,6 @@ namespace Achievement_Management_System.Class
                 }
             }
             
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)

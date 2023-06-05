@@ -5,25 +5,24 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Achievement_Management_System.Course
+namespace Achievement_Management_System.College
 {
-    public partial class CourseAdd : Form
+    public partial class CollegeAddUpdate : Form
     {
-
         public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
         public string strSchema = "Add";
-
-        public CourseAdd()
+        public CollegeAddUpdate()
         {
             InitializeComponent();
         }
 
-        private void CourseAdd_Load(object sender, EventArgs e)
+        private void CollegeAdd_Load(object sender, EventArgs e)
         {
             btnOK.DialogResult=DialogResult.OK;
         }
@@ -32,9 +31,10 @@ namespace Achievement_Management_System.Course
         {
             if (strSchema == "Add") 
             {
-                if (this.txtCueID.Text.Trim() == "" || this.txtCueName.Text.Trim() == "" || this.txtCueNum.Text.Trim() == "" || this.txtTeacher.Text.Trim() == "")
+                if (this.txtCollegeId.Text.Trim() == "" || this.txtCollegeName.Text.Trim() == "" || this.txtMajorNumber.Text.Trim() == "" ||
+                this.txtClePpleTotle.Text.Trim() == "" || this.txtDean.Text.Trim() == "")
                 {
-                    MessageBox.Show("请输入要添加专业的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("请输入学院的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -47,25 +47,27 @@ namespace Achievement_Management_System.Course
 
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("SELECT * FROM Course WHERE cue_id='" + this.txtCueID.Text.Trim() + "' OR cue_name='" + this.txtCueName.Text.Trim() + "';", con);
+                            SqlCommand cmd = new SqlCommand("SELECT * FROM College WHERE college_id='" + this.txtCollegeId.Text.Trim() + "' OR Sname='" + this.txtCollegeName.Text.Trim() + "';", con);
                             if (cmd.ExecuteScalar() != null)
                             {
-                                MessageBox.Show("课程ID或课程名称重复，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("学院ID或学院名称重复，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                             else
                             {
-                                string sql = "INSERT INTO Course(cue_id,cue_name,cue_number,teacher)VALUES('" + this.txtCueID.Text.Trim() + "','" + this.txtCueName.Text.Trim() +
-                                    "','" + this.txtCueNum.Text.Trim() + "','" + this.txtTeacher.Text.Trim() + "');";
+                                string sql = "INSERT INTO College(college_id,Sname,major_amount,totle_people,Dean)VALUES('" + this.txtCollegeId.Text.Trim() + "','" + this.txtCollegeName.Text.Trim() +
+                                    "','" + this.txtMajorNumber.Text.Trim() + "','" + this.txtClePpleTotle.Text.Trim() + "','" + this.txtDean.Text.Trim() + "');";
 
                                 cmd.CommandText = sql;
                                 cmd.ExecuteNonQuery();
-                                MessageBox.Show("添加课程信息成功！", "提示", MessageBoxButtons.OK);
+                                MessageBox.Show("添加学院信息成功！", "提示", MessageBoxButtons.OK);
 
-                                this.txtCueID.Clear();
-                                this.txtCueName.Clear();
-                                this.txtCueNum.Clear();
-                                this.txtTeacher.Clear();
+                                this.txtCollegeId.Clear();
+                                this.txtCollegeName.Clear();
+                                this.txtMajorNumber.Clear();
+                                this.txtDean.Clear();
+                                this.txtClePpleTotle.Clear();
 
+                                
                             }
                         }
                         catch (Exception ex)
@@ -86,9 +88,10 @@ namespace Achievement_Management_System.Course
             }
             else 
             {
-                if (this.txtCueID.Text.Trim() == "" || this.txtCueName.Text.Trim() == "" || this.txtCueNum.Text.Trim() == "" || this.txtTeacher.Text.Trim() == "")
+                if (this.txtCollegeId.Text.Trim() == "" || this.txtCollegeName.Text.Trim() == "" || this.txtMajorNumber.Text.Trim() == "" ||
+                this.txtClePpleTotle.Text.Trim() == "" || this.txtDean.Text.Trim() == "")
                 {
-                    MessageBox.Show("请输入要修改课程的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("请输入学院的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -101,18 +104,23 @@ namespace Achievement_Management_System.Course
 
                         try
                         {
-                            string sql = "UPDATE Course SET cue_id='" + this.txtCueID.Text.Trim() + "',cue_name='" + this.txtCueName.Text.Trim() +
-                                        "',cue_number='" + this.txtCueNum.Text.Trim() + "',teacher='" + this.txtTeacher.Text.Trim() + "' WHERE cue_id='" + this.txtCueID.Text.Trim() + "';";
+
+                            string sql = "UPDATE College SET College_id='" + this.txtCollegeId.Text.Trim() + "',Sname='" + this.txtCollegeName.Text.Trim() +
+                                    "',major_amount='" + this.txtMajorNumber.Text.Trim() + "',totle_people='" + this.txtClePpleTotle.Text.Trim() + "',Dean='" + this.txtDean.Text.Trim()
+                                    + "'WHERE College_id='" + this.txtCollegeId.Text.Trim() + "';";
+
                             SqlCommand cmd = new SqlCommand(sql, con);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("修改课程信息成功！", "提示", MessageBoxButtons.OK);
+                            MessageBox.Show("修改学院信息成功！", "提示", MessageBoxButtons.OK);
 
-                            this.txtCueID.Clear();
-                            this.txtCueName.Clear();
-                            this.txtCueNum.Clear();
-                            this.txtTeacher.Clear();
+                            this.txtCollegeId.Clear();
+                            this.txtCollegeName.Clear();
+                            this.txtMajorNumber.Clear();
+                            this.txtDean.Clear();
+                            this.txtClePpleTotle.Clear();
 
                             strSchema = "Add";
+
                         }
                         catch (Exception ex)
                         {
@@ -130,9 +138,7 @@ namespace Achievement_Management_System.Course
                     }
                 }
             }
-            
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();

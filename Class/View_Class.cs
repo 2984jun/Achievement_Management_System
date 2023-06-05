@@ -62,7 +62,7 @@ namespace Achievement_Management_System.Class
         {
             if(this.dgvClass.CurrentCell != null)
             {
-                ClassAdd classAdd = new ClassAdd();
+                ClassAddUpdate classAdd = new ClassAddUpdate();
                 classAdd.Text = "                         修改班级信息";
 
                 classAdd.txtClsId.Text= this.dgvClass[0, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();

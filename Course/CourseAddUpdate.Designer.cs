@@ -1,6 +1,6 @@
 ﻿namespace Achievement_Management_System.Course
 {
-    partial class CourseAdd
+    partial class CourseAddUpdate
     {
         /// <summary>
         /// Required designer variable.

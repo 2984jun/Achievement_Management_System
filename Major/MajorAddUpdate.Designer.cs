@@ -1,6 +1,6 @@
 ﻿namespace Achievement_Management_System.Major
 {
-    partial class MajorAdd
+    partial class MajorAddUpdate
     {
         /// <summary>
         /// Required designer variable.

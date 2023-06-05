@@ -1,6 +1,6 @@
 ﻿namespace Achievement_Management_System.Class
 {
-    partial class ClassAdd
+    partial class ClassAddUpdate
     {
         /// <summary>
         /// Required designer variable.

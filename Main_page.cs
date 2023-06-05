@@ -39,7 +39,7 @@ namespace Achievement_Management_System
 
         private void 添加学院ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CollegeAdd collegeAdd = new CollegeAdd();
+            CollegeAddUpdate collegeAdd = new CollegeAddUpdate();
             collegeAdd.MdiParent = this;
 
             collegeAdd.Show();
@@ -57,7 +57,7 @@ namespace Achievement_Management_System
 
         private void 添加专业ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MajorAdd majorAdd = new MajorAdd();
+            MajorAddUpdate majorAdd = new MajorAddUpdate();
   
             majorAdd.MdiParent = this;
             majorAdd.Show();
@@ -75,7 +75,7 @@ namespace Achievement_Management_System
 
         private void 添加班级ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClassAdd classAdd = new ClassAdd();
+            ClassAddUpdate classAdd = new ClassAddUpdate();
 
             classAdd.MdiParent = this;
             classAdd.Show();
@@ -112,7 +112,7 @@ namespace Achievement_Management_System
 
         private void 添加课程ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CourseAdd courseAdd= new CourseAdd();
+            CourseAddUpdate courseAdd= new CourseAddUpdate();
 
             courseAdd.MdiParent = this;
             courseAdd.Show();

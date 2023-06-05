@@ -1,6 +1,6 @@
 ﻿namespace Achievement_Management_System.College
 {
-    partial class CollegeAdd
+    partial class CollegeAddUpdate
     {
         /// <summary>
         /// Required designer variable.

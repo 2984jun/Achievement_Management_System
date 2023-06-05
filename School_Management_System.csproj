@@ -47,11 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="%24RVYUPTC.cs" />
-    <Compile Include="Class\ClassAdd.cs">
+    <Compile Include="Class\ClassAddUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Class\ClassAdd.Designer.cs">
-      <DependentUpon>ClassAdd.cs</DependentUpon>
+    <Compile Include="Class\ClassAddUpdate.Designer.cs">
+      <DependentUpon>ClassAddUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\View_Class.cs">
       <SubType>Form</SubType>
@@ -59,11 +59,11 @@
     <Compile Include="Class\View_Class.Designer.cs">
       <DependentUpon>View_Class.cs</DependentUpon>
     </Compile>
-    <Compile Include="College\CollegeAdd.cs">
+    <Compile Include="College\CollegeAddUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="College\CollegeAdd.Designer.cs">
-      <DependentUpon>CollegeAdd.cs</DependentUpon>
+    <Compile Include="College\CollegeAddUpdate.Designer.cs">
+      <DependentUpon>CollegeAddUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="College\View_College.cs">
       <SubType>Form</SubType>
@@ -71,11 +71,11 @@
     <Compile Include="College\View_College.Designer.cs">
       <DependentUpon>View_College.cs</DependentUpon>
     </Compile>
-    <Compile Include="Course\CourseAdd.cs">
+    <Compile Include="Course\CourseAddUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Course\CourseAdd.Designer.cs">
-      <DependentUpon>CourseAdd.cs</DependentUpon>
+    <Compile Include="Course\CourseAddUpdate.Designer.cs">
+      <DependentUpon>CourseAddUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Course\View_Course.cs">
       <SubType>Form</SubType>
@@ -107,11 +107,11 @@
     <Compile Include="Main_page.Designer.cs">
       <DependentUpon>Main_page.cs</DependentUpon>
     </Compile>
-    <Compile Include="Major\MajorAdd.cs">
+    <Compile Include="Major\MajorAddUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Major\MajorAdd.Designer.cs">
-      <DependentUpon>MajorAdd.cs</DependentUpon>
+    <Compile Include="Major\MajorAddUpdate.Designer.cs">
+      <DependentUpon>MajorAddUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Major\View_Major.cs">
       <SubType>Form</SubType>
@@ -157,20 +157,20 @@
     <Compile Include="USER\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Class\ClassAdd.resx">
-      <DependentUpon>ClassAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Class\ClassAddUpdate.resx">
+      <DependentUpon>ClassAddUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Class\View_Class.resx">
       <DependentUpon>View_Class.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="College\CollegeAdd.resx">
-      <DependentUpon>CollegeAdd.cs</DependentUpon>
+    <EmbeddedResource Include="College\CollegeAddUpdate.resx">
+      <DependentUpon>CollegeAddUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="College\View_College.resx">
       <DependentUpon>View_College.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Course\CourseAdd.resx">
-      <DependentUpon>CourseAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Course\CourseAddUpdate.resx">
+      <DependentUpon>CourseAddUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Course\View_Course.resx">
       <DependentUpon>View_Course.cs</DependentUpon>
@@ -187,8 +187,8 @@
     <EmbeddedResource Include="Main_page.resx">
       <DependentUpon>Main_page.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Major\MajorAdd.resx">
-      <DependentUpon>MajorAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Major\MajorAddUpdate.resx">
+      <DependentUpon>MajorAddUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Major\View_Major.resx">
       <DependentUpon>View_Major.cs</DependentUpon>

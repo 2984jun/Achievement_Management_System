@@ -63,7 +63,7 @@ namespace Achievement_Management_System.Course
             if (this.dgvCourse.CurrentCell != null) 
             {
 
-                CourseAdd courseAdd = new CourseAdd();
+                CourseAddUpdate courseAdd = new CourseAddUpdate();
                 courseAdd.Text = "                           修改课程信息";
 
                 courseAdd.txtCueID.Text = this.dgvCourse[0, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();

@@ -76,7 +76,7 @@ namespace Achievement_Management_System.Major
                 change_Major_Information.ShowDialog();
                 */
 
-                MajorAdd majorAdd=new MajorAdd();
+                MajorAddUpdate majorAdd=new MajorAddUpdate();
                 majorAdd.Text = "                                   修改专业";
 
                 majorAdd.txtMajorId.Text = this.dgvMajor[0, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();

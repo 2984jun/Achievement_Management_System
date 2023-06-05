@@ -63,7 +63,7 @@ namespace Achievement_Management_System.College
             if(this.dgv_College.CurrentCell!= null) 
             {
 
-                CollegeAdd collegeAdd = new CollegeAdd();
+                CollegeAddUpdate collegeAdd = new CollegeAddUpdate();
                 collegeAdd.Text = "                                   修改学院信息";
                 collegeAdd.txtCollegeId.Text = this.dgv_College[0, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
                 collegeAdd.txtCollegeName.Text = this.dgv_College[1, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
