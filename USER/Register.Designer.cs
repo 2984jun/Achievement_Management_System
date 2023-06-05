@@ -37,6 +37,8 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +65,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 31);
+            this.label1.Location = new System.Drawing.Point(32, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 3;
@@ -72,7 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 74);
+            this.label2.Location = new System.Drawing.Point(44, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 4;
@@ -81,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 118);
+            this.label3.Location = new System.Drawing.Point(44, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 5;
@@ -93,14 +95,14 @@
             this.cmbPosition.Items.AddRange(new object[] {
             "老师",
             "学生"});
-            this.cmbPosition.Location = new System.Drawing.Point(91, 115);
+            this.cmbPosition.Location = new System.Drawing.Point(91, 133);
             this.cmbPosition.Name = "cmbPosition";
             this.cmbPosition.Size = new System.Drawing.Size(155, 20);
             this.cmbPosition.TabIndex = 6;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(91, 28);
+            this.txtName.Location = new System.Drawing.Point(91, 22);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(155, 21);
             this.txtName.TabIndex = 7;
@@ -108,7 +110,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(91, 71);
+            this.txtPassword.Location = new System.Drawing.Point(91, 77);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(155, 21);
             this.txtPassword.TabIndex = 8;
@@ -116,6 +118,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtName);
@@ -124,8 +128,28 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(35, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(313, 162);
+            this.panel1.Size = new System.Drawing.Size(313, 192);
             this.panel1.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("宋体", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(89, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 9);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "由1~9和字母组成的10位数字";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("宋体", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(89, 110);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 9);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "由1~9和字母组成的10位数字";
             // 
             // Register
             // 
@@ -156,5 +180,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

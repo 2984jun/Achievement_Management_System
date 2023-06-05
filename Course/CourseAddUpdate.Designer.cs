@@ -142,7 +142,7 @@
             this.panel1.Size = new System.Drawing.Size(276, 181);
             this.panel1.TabIndex = 20;
             // 
-            // CourseAdd
+            // CourseAddUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -150,7 +150,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnOK);
-            this.Name = "CourseAdd";
+            this.Name = "CourseAddUpdate";
             this.Text = "                           添加课程信息";
             this.Load += new System.EventHandler(this.CourseAdd_Load);
             this.panel1.ResumeLayout(false);
@@ -166,11 +166,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.TextBox txtTeacher;
         public System.Windows.Forms.TextBox txtCueNum;
         public System.Windows.Forms.TextBox txtCueName;
         public System.Windows.Forms.TextBox txtCueID;
+        public System.Windows.Forms.Button btnOK;
     }
 }

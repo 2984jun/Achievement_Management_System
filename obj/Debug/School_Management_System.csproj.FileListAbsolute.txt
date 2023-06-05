@@ -26,3 +26,4 @@ D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System
 D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.College.CollegeAddUpdate.resources
 D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.Course.CourseAddUpdate.resources
 D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.Major.MajorAddUpdate.resources
+D:\C#期末大作业\Achievement_Management_System\Achievement_Management_System\obj\Debug\Achievement_Management_System.Grade.About_Systems.resources

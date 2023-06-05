@@ -26,7 +26,7 @@ namespace Achievement_Management_System
             InitializeComponent();
         }
 
-
+        public string strIdentified = "";
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.Now_Time.Text = "时间为：" + DateTime.Now.ToString();
@@ -41,6 +41,10 @@ namespace Achievement_Management_System
         {
             CollegeAddUpdate collegeAdd = new CollegeAddUpdate();
             collegeAdd.MdiParent = this;
+            if (strIdentified == "学生") 
+            {
+                collegeAdd.btnOK.Visible = false;
+            }
 
             collegeAdd.Show();
             LayoutMdi(MdiLayout.Cascade);
@@ -49,8 +53,14 @@ namespace Achievement_Management_System
         private void 查看学院情况ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View_College view_College = new View_College();
-
             view_College.MdiParent = this;
+;
+            if (strIdentified == "学生")
+            {
+                view_College.btnUpdate.Visible = false;
+                view_College.btnDel.Visible = false;
+            }
+
             view_College.Show();
             LayoutMdi(MdiLayout.Cascade);
         }
@@ -60,6 +70,12 @@ namespace Achievement_Management_System
             MajorAddUpdate majorAdd = new MajorAddUpdate();
   
             majorAdd.MdiParent = this;
+
+            if (strIdentified == "学生") 
+            {
+                majorAdd.btnOK.Visible = false;
+            }
+
             majorAdd.Show();
             LayoutMdi(MdiLayout.Cascade);
         }
@@ -69,6 +85,13 @@ namespace Achievement_Management_System
             View_Major view_Major = new View_Major();
  
             view_Major.MdiParent = this;
+
+            if (strIdentified == "学生") 
+            {
+                view_Major.btnDel.Visible = false;
+                view_Major.btnUpdate.Visible = false;
+            }
+
             view_Major.Show();
             LayoutMdi(MdiLayout.Cascade);
         }
@@ -78,6 +101,12 @@ namespace Achievement_Management_System
             ClassAddUpdate classAdd = new ClassAddUpdate();
 
             classAdd.MdiParent = this;
+
+            if (strIdentified == "学生")
+            {
+                classAdd.btnOK.Visible=false;
+            }
+
             classAdd.Show();
             LayoutMdi(MdiLayout.Cascade);
 
@@ -88,6 +117,13 @@ namespace Achievement_Management_System
             View_Class view_Class = new View_Class();
 
             view_Class.MdiParent = this;
+
+            if (strIdentified == "学生")
+            {
+                view_Class.btnUpdate.Visible=false;
+                view_Class.btnDel.Visible=false;
+            }
+
             view_Class.Show();
             LayoutMdi(MdiLayout.Cascade);
         }
@@ -97,6 +133,12 @@ namespace Achievement_Management_System
             personAdd personAdd= new personAdd();
 
             personAdd.MdiParent = this;
+
+            if (strIdentified == "学生")
+            {
+                personAdd.btnOK.Visible=false;
+            }
+
             personAdd.Show();
             LayoutMdi(MdiLayout.Cascade);
         }
@@ -104,6 +146,12 @@ namespace Achievement_Management_System
         private void 查看个人信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View_Person view_Person = new View_Person();
+
+            if (strIdentified == "学生")
+            {
+                view_Person.btnUpdate.Visible=false;
+                view_Person.btnDel.Visible=false;
+            }
 
             view_Person.MdiParent = this;   
             view_Person.Show();
@@ -114,6 +162,11 @@ namespace Achievement_Management_System
         {
             CourseAddUpdate courseAdd= new CourseAddUpdate();
 
+            if (strIdentified == "学生")
+            {
+                courseAdd.btnOK.Visible = false;
+            }
+
             courseAdd.MdiParent = this;
             courseAdd.Show();
             LayoutMdi(MdiLayout.Cascade);
@@ -122,6 +175,12 @@ namespace Achievement_Management_System
         private void 查看课程信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View_Course view_Course = new View_Course();
+
+            if (strIdentified == "学生")
+            {
+                view_Course.btnUpdate.Visible = false;
+                view_Course.btnDel.Visible = false;
+            }
 
             view_Course.MdiParent = this;
             view_Course.Show();
@@ -133,6 +192,12 @@ namespace Achievement_Management_System
             GradeAdd gradeAdd= new GradeAdd();
 
             gradeAdd.MdiParent = this;
+
+            if (strIdentified == "学生") 
+            {
+                gradeAdd.button1.Visible = false;
+            }
+
             gradeAdd.Show();
             LayoutMdi(MdiLayout.Cascade);
         }
@@ -141,7 +206,6 @@ namespace Achievement_Management_System
         {
             View_Grade grade_College = new View_Grade();
             
-
             grade_College.strSchema = "college";
 
             string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
@@ -165,6 +229,13 @@ namespace Achievement_Management_System
             }
 
             grade_College.MdiParent=this;
+
+            if (strIdentified == "学生") 
+            {
+                grade_College.btnUpdate.Visible = false;
+                grade_College.btnDel.Visible = false;
+            }
+
             grade_College.Show();
             LayoutMdi(MdiLayout.Cascade);
         }
@@ -196,6 +267,13 @@ namespace Achievement_Management_System
             }
             
             grade_College.MdiParent = this;
+
+            if (strIdentified == "学生")
+            {
+                grade_College.btnUpdate.Visible = false;
+                grade_College.btnDel.Visible = false;
+            }
+
             grade_College.Show();
             LayoutMdi(MdiLayout.Cascade);
         }
@@ -227,6 +305,13 @@ namespace Achievement_Management_System
             }
             
             grade_College.MdiParent= this;
+
+            if (strIdentified == "学生")
+            {
+                grade_College.btnUpdate.Visible = false;
+                grade_College.btnDel.Visible = false;
+            }
+
             grade_College.Show();
             LayoutMdi(MdiLayout.Cascade);
         }
@@ -242,12 +327,19 @@ namespace Achievement_Management_System
 
         private void 关于系统ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            About_Systems about_Systems = new About_Systems();
+            about_Systems.MdiParent = this;
+            about_Systems.Show();
+            LayoutMdi(MdiLayout.Cascade);
         }
 
         private void 退出系统ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Main_page_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -228,7 +228,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
@@ -239,5 +238,6 @@
         public System.Windows.Forms.TextBox txtPhone;
         public System.Windows.Forms.TextBox txtClassId;
         public System.Windows.Forms.ComboBox cmbGender;
+        public System.Windows.Forms.Button btnOK;
     }
 }

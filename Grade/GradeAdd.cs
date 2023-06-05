@@ -41,15 +41,33 @@ namespace Achievement_Management_System.Grade
 
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM Grade g INNER JOIN student s ON g.student_id=s.student_id WHERE (s.student_id='"+this.txtSdtID.Text.Trim()+"' AND g.cue_id='"+
-                                                        this.txtCueID.Text.Trim()+"') AND g.Grade_id='"+this.txtGaeID.Text.Trim()+"';", con);
+                        bool flag=true;
+
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM student WHERE student_id='" + this.txtSdtID.Text.Trim() + "';", con);
+                        if (cmd.ExecuteScalar() == null)
+                        {
+                            MessageBox.Show("不存在该学生，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            flag = false;
+                        };
+
+                        cmd.CommandText ="SELECT * FROM Grade WHERE Grade_id='" + this.txtGaeID.Text.Trim() + "';";
                         if (cmd.ExecuteScalar() != null)
                         {
-                            MessageBox.Show("成绩ID或该学生课程成绩已存在或者学号错误或者课程号错误，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else
+                            MessageBox.Show("成绩ID已存在，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            flag = false;
+                        };
+
+                        string sql="SELECT * FROM Grade g INNER JOIN student s ON g.student_id=s.student_id WHERE s.student_id='" + this.txtSdtID.Text.Trim() + "' AND g.cue_id='" +
+                                                        this.txtCueID.Text.Trim() + "';";                     
+
+                        cmd.CommandText = sql;
+                        if (cmd.ExecuteScalar() != null)
                         {
-                            string sql = "INSERT INTO Grade(Grade_id,student_id,cue_id,cue_grade)VALUES('" + this.txtGaeID.Text.Trim() + "','" + this.txtSdtID.Text.Trim() 
+                            MessageBox.Show("该学生课程成绩已存在，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else if(flag)
+                        {
+                            sql = "INSERT INTO Grade(Grade_id,student_id,cue_id,cue_grade)VALUES('" + this.txtGaeID.Text.Trim() + "','" + this.txtSdtID.Text.Trim() 
                                  + "','" + this.txtCueID.Text.Trim() + "','" + this.txtCueGrade.Text.Trim() + "');";
 
                             cmd.CommandText = sql;

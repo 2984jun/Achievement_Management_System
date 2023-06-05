@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="%24RVYUPTC.cs" />
+    <Compile Include="About_Systems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About_Systems.Designer.cs">
+      <DependentUpon>About_Systems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class\ClassAddUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     <Compile Include="USER\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="About_Systems.resx">
+      <DependentUpon>About_Systems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Class\ClassAddUpdate.resx">
       <DependentUpon>ClassAddUpdate.cs</DependentUpon>
     </EmbeddedResource>

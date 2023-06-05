@@ -183,7 +183,7 @@
             this.panel1.Size = new System.Drawing.Size(369, 219);
             this.panel1.TabIndex = 14;
             // 
-            // MajorAdd
+            // MajorAddUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -191,7 +191,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnExit);
-            this.Name = "MajorAdd";
+            this.Name = "MajorAddUpdate";
             this.Text = "                                   添加专业";
             this.Load += new System.EventHandler(this.MajorAdd_Load);
             this.panel1.ResumeLayout(false);
@@ -203,7 +203,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -217,5 +216,6 @@
         public System.Windows.Forms.TextBox txtMjrNum;
         public System.Windows.Forms.TextBox txtMjrTtePeople;
         public System.Windows.Forms.TextBox txtMjrGLeader;
+        public System.Windows.Forms.Button btnOK;
     }
 }

@@ -163,7 +163,7 @@
             this.panel1.Size = new System.Drawing.Size(289, 199);
             this.panel1.TabIndex = 12;
             // 
-            // ClassAdd
+            // ClassAddUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,7 +171,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnOK);
-            this.Name = "ClassAdd";
+            this.Name = "ClassAddUpdate";
             this.Text = "                              添加班级";
             this.Load += new System.EventHandler(this.ClassAdd_Load);
             this.panel1.ResumeLayout(false);
@@ -185,7 +185,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
@@ -194,5 +193,6 @@
         public System.Windows.Forms.TextBox txtMjrId;
         public System.Windows.Forms.TextBox txtClsNum;
         public System.Windows.Forms.TextBox txtHeadTea;
+        public System.Windows.Forms.Button btnOK;
     }
 }

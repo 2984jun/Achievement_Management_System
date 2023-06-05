@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Achievement_Management_System.College;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -67,8 +68,12 @@ namespace Achievement_Management_System.USER
                             this.Hide();
 
                             Main_page main_Page = new Main_page();
+
+                            main_Page.strIdentified=this.cmbIdentity.Text.Trim();
+
                             main_Page.Owner = this;
                             main_Page.StartPosition=FormStartPosition.CenterParent;
+
                             main_Page.ShowDialog();
 
                             this.Close();
@@ -79,7 +84,7 @@ namespace Achievement_Management_System.USER
                         {
                             string sql2 = "SELECT * FROM account WHERE Uname='" + this.txtUser.Text.Trim() + "';";
                             string sql3 = "SELECT * FROM account WHERE Upassword='" + this.txtPassWord.Text.Trim() + "';";
-                            string sql4 = "SELECT * FROM account WHERE Uidentity='" + this.cmbIdentity.Text + "';";
+                            string sql4 = "SELECT * FROM account WHERE Uname='" +this.txtUser.Text.Trim()+ "'AND Upassword='"+ this.txtPassWord.Text.Trim() + "'AND Uidentity='" + this.cmbIdentity.Text + "';";
 
                             cmd.CommandText = sql2;
                             if (cmd.ExecuteScalar() == null) 

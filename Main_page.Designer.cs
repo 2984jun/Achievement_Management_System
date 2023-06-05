@@ -184,14 +184,14 @@
             // 添加个人信息ToolStripMenuItem
             // 
             this.添加个人信息ToolStripMenuItem.Name = "添加个人信息ToolStripMenuItem";
-            this.添加个人信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.添加个人信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.添加个人信息ToolStripMenuItem.Text = "添加学生信息";
             this.添加个人信息ToolStripMenuItem.Click += new System.EventHandler(this.添加个人信息ToolStripMenuItem_Click);
             // 
             // 查看个人信息ToolStripMenuItem
             // 
             this.查看个人信息ToolStripMenuItem.Name = "查看个人信息ToolStripMenuItem";
-            this.查看个人信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.查看个人信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.查看个人信息ToolStripMenuItem.Text = "查看学生信息";
             this.查看个人信息ToolStripMenuItem.Click += new System.EventHandler(this.查看个人信息ToolStripMenuItem_Click);
             // 
@@ -207,7 +207,7 @@
             // 添加学生成绩ToolStripMenuItem
             // 
             this.添加学生成绩ToolStripMenuItem.Name = "添加学生成绩ToolStripMenuItem";
-            this.添加学生成绩ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.添加学生成绩ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.添加学生成绩ToolStripMenuItem.Text = "添加学生成绩";
             this.添加学生成绩ToolStripMenuItem.Click += new System.EventHandler(this.添加学生成绩ToolStripMenuItem_Click);
             // 
@@ -218,27 +218,27 @@
             this.成绩专业ToolStripMenuItem,
             this.成绩班级ToolStripMenuItem});
             this.查看学生成绩ToolStripMenuItem.Name = "查看学生成绩ToolStripMenuItem";
-            this.查看学生成绩ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.查看学生成绩ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.查看学生成绩ToolStripMenuItem.Text = "查看学生成绩";
             // 
             // 成绩学院ToolStripMenuItem
             // 
             this.成绩学院ToolStripMenuItem.Name = "成绩学院ToolStripMenuItem";
-            this.成绩学院ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.成绩学院ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.成绩学院ToolStripMenuItem.Text = "成绩（学院）";
             this.成绩学院ToolStripMenuItem.Click += new System.EventHandler(this.成绩学院ToolStripMenuItem_Click);
             // 
             // 成绩专业ToolStripMenuItem
             // 
             this.成绩专业ToolStripMenuItem.Name = "成绩专业ToolStripMenuItem";
-            this.成绩专业ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.成绩专业ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.成绩专业ToolStripMenuItem.Text = "成绩（专业）";
             this.成绩专业ToolStripMenuItem.Click += new System.EventHandler(this.成绩专业ToolStripMenuItem_Click);
             // 
             // 成绩班级ToolStripMenuItem
             // 
             this.成绩班级ToolStripMenuItem.Name = "成绩班级ToolStripMenuItem";
-            this.成绩班级ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.成绩班级ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.成绩班级ToolStripMenuItem.Text = "成绩（班级）";
             this.成绩班级ToolStripMenuItem.Click += new System.EventHandler(this.成绩班级ToolStripMenuItem_Click);
             // 
@@ -300,6 +300,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "                                                                                 " +
     "                                    简单学校管理系统主页面";
+            this.Load += new System.EventHandler(this.Main_page_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);

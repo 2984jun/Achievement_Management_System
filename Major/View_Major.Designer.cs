@@ -94,8 +94,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvMajor;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnExit;
+        public System.Windows.Forms.Button btnUpdate;
+        public System.Windows.Forms.Button btnDel;
     }
 }

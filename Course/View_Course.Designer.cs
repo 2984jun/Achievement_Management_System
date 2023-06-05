@@ -95,7 +95,7 @@
 
         private System.Windows.Forms.DataGridView dgvCourse;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnUpdate;
+        public System.Windows.Forms.Button btnDel;
+        public System.Windows.Forms.Button btnUpdate;
     }
 }

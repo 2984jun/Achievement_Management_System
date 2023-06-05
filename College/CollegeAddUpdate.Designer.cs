@@ -163,7 +163,7 @@
             this.panel1.Size = new System.Drawing.Size(313, 217);
             this.panel1.TabIndex = 12;
             // 
-            // CollegeAdd
+            // CollegeAddUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,7 +171,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnOK);
-            this.Name = "CollegeAdd";
+            this.Name = "CollegeAddUpdate";
             this.Text = "                                   添加学院信息";
             this.Load += new System.EventHandler(this.CollegeAdd_Load);
             this.panel1.ResumeLayout(false);
@@ -186,7 +186,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.Panel panel1;
@@ -195,5 +194,6 @@
         public System.Windows.Forms.TextBox txtMajorNumber;
         public System.Windows.Forms.TextBox txtClePpleTotle;
         public System.Windows.Forms.TextBox txtDean;
+        public System.Windows.Forms.Button btnOK;
     }
 }

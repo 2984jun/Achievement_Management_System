@@ -130,11 +130,11 @@
         #endregion
 
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridView dgvGaeCle;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ComboBox cmbCollege;
+        public System.Windows.Forms.Button btnDel;
+        public System.Windows.Forms.Button btnUpdate;
     }
 }
