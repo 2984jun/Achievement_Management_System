@@ -84,6 +84,7 @@
             this.btnRefresh.TabIndex = 10;
             this.btnRefresh.Text = "刷新(&R)";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // View_Person
             // 

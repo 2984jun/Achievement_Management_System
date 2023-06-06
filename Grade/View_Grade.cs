@@ -96,11 +96,11 @@ namespace Achievement_Management_System.Grade
             if(this.dgvGaeCle.CurrentCell!=null) 
             {
                 Change_Grade_Information change_Grade_Information = new Change_Grade_Information();
-                change_Grade_Information.strID = this.dgvGaeCle[0, this.dgvGaeCle.CurrentCell.RowIndex].Value.ToString();
-                change_Grade_Information.strCueName= this.dgvGaeCle[1, this.dgvGaeCle.CurrentCell.RowIndex].Value.ToString();
-                change_Grade_Information.strSdtID= this.dgvGaeCle[2, this.dgvGaeCle.CurrentCell.RowIndex].Value.ToString();
-                change_Grade_Information.strSdtName= this.dgvGaeCle[3, this.dgvGaeCle.CurrentCell.RowIndex].Value.ToString(); 
-                change_Grade_Information.strGrade= this.dgvGaeCle[4, this.dgvGaeCle.CurrentCell.RowIndex].Value.ToString();
+                change_Grade_Information.strID = this.dgvGaeCle[1, this.dgvGaeCle.CurrentCell.RowIndex].Value.ToString();
+                change_Grade_Information.strCueName= this.dgvGaeCle[2, this.dgvGaeCle.CurrentCell.RowIndex].Value.ToString();
+                change_Grade_Information.strSdtID= this.dgvGaeCle[3, this.dgvGaeCle.CurrentCell.RowIndex].Value.ToString();
+                change_Grade_Information.strSdtName= this.dgvGaeCle[4, this.dgvGaeCle.CurrentCell.RowIndex].Value.ToString(); 
+                change_Grade_Information.strGrade= this.dgvGaeCle[5, this.dgvGaeCle.CurrentCell.RowIndex].Value.ToString();
 
                 if (strSchema == "college")
                 {

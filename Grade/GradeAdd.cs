@@ -57,6 +57,13 @@ namespace Achievement_Management_System.Grade
                             flag = false;
                         };
 
+                        cmd.CommandText = "SELECT * FROM Course WHERE cue_id='" + this.txtCueID.Text.Trim() + "';";
+                        if (cmd.ExecuteScalar() == null)
+                        {
+                            MessageBox.Show("不存在该课程，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            flag = false;
+                        };
+
                         string sql="SELECT * FROM Grade g INNER JOIN student s ON g.student_id=s.student_id WHERE s.student_id='" + this.txtSdtID.Text.Trim() + "' AND g.cue_id='" +
                                                         this.txtCueID.Text.Trim() + "';";                     
 

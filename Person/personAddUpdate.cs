@@ -58,19 +58,28 @@ namespace Achievement_Management_System.Person
                             }
                             else
                             {
-                                string sql = "INSERT INTO student(student_id,Sname,gender,age,adress,phone,class_id)VALUES('" + this.txtSdtId.Text.Trim() + "','" +
+                                string sql = "SELECT * FROM Class WHERE class_id='" + this.txtClassId.Text.Trim() + "';";
+                                cmd.CommandText = sql;
+                                if (cmd.ExecuteScalar() == null)
+                                {
+                                    MessageBox.Show("不存在该班级，请重新输入班级编号！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                                else 
+                                {
+                                    sql = "INSERT INTO student(student_id,Sname,gender,age,adress,phone,class_id)VALUES('" + this.txtSdtId.Text.Trim() + "','" +
                                             this.txtSdtName.Text.Trim() + "','" + this.cmbGender.Text + "','" + this.txtAge.Text.Trim() + "','" +
                                             this.txtAdress.Text.Trim() + "','" + this.txtPhone.Text.Trim() + "','" + this.txtClassId.Text.Trim() + "');";
-                                cmd.CommandText = sql;
-                                cmd.ExecuteNonQuery();
-                                MessageBox.Show("添加个人信息成功！", "提示", MessageBoxButtons.OK);
+                                    cmd.CommandText = sql;
+                                    cmd.ExecuteNonQuery();
+                                    MessageBox.Show("添加个人信息成功！", "提示", MessageBoxButtons.OK);
 
-                                this.txtSdtId.Clear();
-                                this.txtSdtName.Clear();
-                                this.txtAge.Clear();
-                                this.txtAdress.Clear();
-                                this.txtPhone.Clear();
-                                this.txtClassId.Clear();
+                                    this.txtSdtId.Clear();
+                                    this.txtSdtName.Clear();
+                                    this.txtAge.Clear();
+                                    this.txtAdress.Clear();
+                                    this.txtPhone.Clear();
+                                    this.txtClassId.Clear();
+                                }                              
                             }
                         }
                         catch (Exception ex)
@@ -107,22 +116,31 @@ namespace Achievement_Management_System.Person
 
                         try
                         {
-                            string sql = "UPDATE student SET student_id='" + this.txtSdtId.Text.Trim() + "',Sname='" + this.txtSdtName.Text.Trim() + "',gender='" + this.cmbGender.Text +
+                            string sql = "SELECT * FROM Class WHERE class_id='" + this.txtClassId.Text.Trim() + "';";
+                            SqlCommand cmd = new SqlCommand(sql, con);
+                            if (cmd.ExecuteScalar() == null)
+                            {
+                                MessageBox.Show("不存在该班级，请重新输入班级编号！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else 
+                            {
+                                sql = "UPDATE student SET student_id='" + this.txtSdtId.Text.Trim() + "',Sname='" + this.txtSdtName.Text.Trim() + "',gender='" + this.cmbGender.Text +
                                 "',age='" + this.txtAge.Text.Trim() + "',adress='" + this.txtAdress.Text.Trim() + "',class_id='" + this.txtClassId.Text.Trim() + "',phone='" +
                                 this.txtPhone.Text.Trim() + "' WHERE student_id='" + this.txtSdtId.Text.Trim() + "';";
 
-                            SqlCommand cmd = new SqlCommand(sql, con);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("修改个人信息成功！", "提示", MessageBoxButtons.OK);
+                                cmd.CommandText = sql;
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("修改个人信息成功！", "提示", MessageBoxButtons.OK);
 
-                            this.txtSdtId.Clear();
-                            this.txtSdtName.Clear();
-                            this.txtAge.Clear();
-                            this.txtAdress.Clear();
-                            this.txtPhone.Clear();
-                            this.txtClassId.Clear();
+                                this.txtSdtId.Clear();
+                                this.txtSdtName.Clear();
+                                this.txtAge.Clear();
+                                this.txtAdress.Clear();
+                                this.txtPhone.Clear();
+                                this.txtClassId.Clear();
 
-                            strSchema = "Add";
+                                strSchema = "Add";
+                            }
                         }
                         catch (Exception ex)
                         {

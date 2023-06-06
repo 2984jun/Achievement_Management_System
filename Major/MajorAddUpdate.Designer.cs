@@ -72,18 +72,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(46, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 2;
-            this.label1.Text = "专业ID：";
+            this.label1.Text = "专业编号：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(198, 25);
+            this.label2.Location = new System.Drawing.Point(189, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 3;
-            this.label2.Text = "学院ID：";
+            this.label2.Text = "学院编号：";
             // 
             // label3
             // 
@@ -130,9 +130,9 @@
             // 
             // txtCleId
             // 
-            this.txtCleId.Location = new System.Drawing.Point(257, 22);
+            this.txtCleId.Location = new System.Drawing.Point(260, 22);
             this.txtCleId.Name = "txtCleId";
-            this.txtCleId.Size = new System.Drawing.Size(69, 21);
+            this.txtCleId.Size = new System.Drawing.Size(66, 21);
             this.txtCleId.TabIndex = 9;
             // 
             // txtMjrName

@@ -41,11 +41,11 @@ namespace Achievement_Management_System.Grade
                 this.lblID.Text = "班级编号：";
             }
 
-            this.txtID.Text= strID;
-            this.txtCueName.Text = strCueName;
-            this.txtSdtID.Text = strSdtID;
-            this.txtSdtName.Text = strSdtName;
-            this.txtCueGrade.Text = strGrade;
+            this.txtID.Text= strID.Trim();
+            this.txtCueName.Text = strCueName.Trim();
+            this.txtSdtID.Text = strSdtID.Trim();
+            this.txtSdtName.Text = strSdtName.Trim();
+            this.txtCueGrade.Text = strGrade.Trim();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,35 +65,111 @@ namespace Achievement_Management_System.Grade
 
                     try
                     {
-                        SqlCommand cmd=con.CreateCommand();
-                        if (strSchema == "college") 
+                        bool flag = true;
+
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM student WHERE student_id='" + this.txtSdtID.Text.Trim() + "';", con);
+                        if (cmd.ExecuteScalar() == null)
                         {
-                            string sql1 = "UPDATE College SET college_id='" + this.txtID.Text.Trim() + "' WHERE college_id='" + strID + "';";
-                            cmd.CommandText = sql1;
-                        }
-                        else if(strSchema == "major") 
+                            MessageBox.Show("不存在该学生！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            flag = false;
+                        };
+
+                        cmd.CommandText = "SELECT * FROM student WHERE Sname='" + this.txtSdtName.Text.Trim() + "';";
+                        if (cmd.ExecuteScalar() == null)
                         {
-                            string sql1 = "UPDATE Major SET major_id='" + this.txtID.Text.Trim() + "' WHERE major_id='" + strID + "';";
-                            cmd.CommandText = sql1;
-                        }
-                        else 
+                            MessageBox.Show("不存在该学生！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            flag = false;
+                        };
+
+                        cmd.CommandText = "SELECT * FROM Course WHERE cue_name='" + this.txtCueName.Text.Trim() + "';";
+                        if (cmd.ExecuteScalar() == null)
                         {
-                            string sql1 = "UPDATE Class SET class_id='" + this.txtID.Text.Trim() + "' WHERE class_id='" + strID + "';";
-                            cmd.CommandText = sql1;
+                            MessageBox.Show("不存在该课程！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            flag = false;
+                        };
+                        if (flag)
+                        {
+                            if (strSchema == "college")
+                            {
+                                cmd.CommandText = "SELECT * FROM College WHERE college_id='" + this.txtID.Text.Trim() + "';";
+                                if (cmd.ExecuteScalar() == null)
+                                {
+                                    MessageBox.Show("不存在该学院！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                                else 
+                                {
+                                    string sql1 = "UPDATE College SET college_id='" + this.txtID.Text.Trim() + "' WHERE college_id='" + strID + "';";
+                                    cmd.CommandText = sql1;
+
+                                    string sql2 = "UPDATE Course SET cue_name='" + this.txtCueName.Text.Trim() + "' WHERE cue_name='" + strCueName + "';";
+                                    string sql3 = "UPDATE student SET student_id='" + this.txtSdtID.Text.Trim() + "' WHERE student_id='" + strSdtID + "';";
+                                    string sql4 = "UPDATE student SET Sname='" + this.txtSdtName.Text.Trim() + "' WHERE Sname='" + strSdtName + "';";
+                                    string sql5 = "UPDATE Grade SET cue_grade='" + this.txtCueGrade.Text.Trim() + "' WHERE cue_grade='" + strGrade + "';";
+
+                                    cmd.CommandText = sql2;
+                                    cmd.CommandText = sql3;
+                                    cmd.CommandText = sql4;
+                                    cmd.CommandText = sql5;
+
+                                    cmd.ExecuteNonQuery();
+                                    MessageBox.Show("修改个人成绩信息成功！，请点击“开始查询”更新成绩信息。", "提示", MessageBoxButtons.OK);
+                                }
+                            }
+                            else if (strSchema == "major")
+                            {
+                                cmd.CommandText = "SELECT * FROM Major WHERE major_id='" + this.txtID.Text.Trim() + "';";
+                                if (cmd.ExecuteScalar() == null)
+                                {
+                                    MessageBox.Show("不存在该专业！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                                else 
+                                {
+                                    string sql1 = "UPDATE Major SET major_id='" + this.txtID.Text.Trim() + "' WHERE major_id='" + strID + "';";
+                                    cmd.CommandText = sql1;
+
+                                    string sql2 = "UPDATE Course SET cue_name='" + this.txtCueName.Text.Trim() + "' WHERE cue_name='" + strCueName + "';";
+                                    string sql3 = "UPDATE student SET student_id='" + this.txtSdtID.Text.Trim() + "' WHERE student_id='" + strSdtID + "';";
+                                    string sql4 = "UPDATE student SET Sname='" + this.txtSdtName.Text.Trim() + "' WHERE Sname='" + strSdtName + "';";
+                                    string sql5 = "UPDATE Grade SET cue_grade='" + this.txtCueGrade.Text.Trim() + "' WHERE cue_grade='" + strGrade + "';";
+
+                                    cmd.CommandText = sql2;
+                                    cmd.CommandText = sql3;
+                                    cmd.CommandText = sql4;
+                                    cmd.CommandText = sql5;
+
+                                    cmd.ExecuteNonQuery();
+                                    MessageBox.Show("修改个人成绩信息成功！，请点击“开始查询”更新成绩信息。", "提示", MessageBoxButtons.OK);
+                                }
+                            }
+                            else
+                            {
+                                cmd.CommandText = "SELECT * FROM Class WHERE class_id='" + this.txtID.Text.Trim() + "';";
+                                if (cmd.ExecuteScalar() == null)
+                                {
+                                    MessageBox.Show("不存在该班级！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                                else 
+                                {
+                                    string sql1 = "UPDATE Class SET class_id='" + this.txtID.Text.Trim() + "' WHERE class_id='" + strID + "';";
+                                    cmd.CommandText = sql1;
+
+                                    string sql2 = "UPDATE Course SET cue_name='" + this.txtCueName.Text.Trim() + "' WHERE cue_name='" + strCueName + "';";
+                                    string sql3 = "UPDATE student SET student_id='" + this.txtSdtID.Text.Trim() + "' WHERE student_id='" + strSdtID + "';";
+                                    string sql4 = "UPDATE student SET Sname='" + this.txtSdtName.Text.Trim() + "' WHERE Sname='" + strSdtName + "';";
+                                    string sql5 = "UPDATE Grade SET cue_grade='" + this.txtCueGrade.Text.Trim() + "' WHERE cue_grade='" + strGrade + "';";
+
+                                    cmd.CommandText = sql2;
+                                    cmd.CommandText = sql3;
+                                    cmd.CommandText = sql4;
+                                    cmd.CommandText = sql5;
+
+                                    cmd.ExecuteNonQuery();
+                                    MessageBox.Show("修改个人成绩信息成功！，请点击“开始查询”更新成绩信息。", "提示", MessageBoxButtons.OK);
+                                }
+                            }
                         }
+
                         
-                        string sql2 = "UPDATE Course SET cue_name='" + this.txtCueName.Text.Trim() + "' WHERE cue_name='" + strCueName + "';";
-                        string sql3 = "UPDATE student SET student_id='" + this.txtSdtID.Text.Trim() + "' WHERE student_id='" + strSdtID + "';";
-                        string sql4 = "UPDATE student SET Sname='" + this.txtSdtName.Text.Trim() + "' WHERE Sname='" + strSdtName + "';";
-                        string sql5 = "UPDATE Grade SET cue_grade='" + this.txtCueGrade.Text.Trim() + "' WHERE cue_grade='" + strGrade + "';";
-
-                        cmd.CommandText = sql2;
-                        cmd.CommandText = sql3;
-                        cmd.CommandText = sql4;
-                        cmd.CommandText = sql5;
-
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("修改个人成绩信息成功！，请点击“开始查询”更新成绩信息。", "提示", MessageBoxButtons.OK);
                     }
                     catch (Exception ex)
                     {
