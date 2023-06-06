@@ -36,12 +36,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(44, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(406, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "欢迎使用简易学校管理系统！请先登录！";
+            this.label1.Text = "欢迎使用学校信息管理系统！请先登录！";
             // 
             // btnLoginIn
             // 

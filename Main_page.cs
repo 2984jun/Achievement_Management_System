@@ -32,6 +32,29 @@ namespace Achievement_Management_System
             this.Now_Time.Text = "时间为：" + DateTime.Now.ToString();
         }
 
+        private void Main_page_Load(object sender, EventArgs e)
+        {
+            this.Text = "                                                                                                                 学校信息管理系统主页面(" + strIdentified + "端)";
+            if (strIdentified == "学生") 
+            {
+                this.添加学院ToolStripMenuItem.Visible = false;
+                this.添加专业ToolStripMenuItem.Visible = false;
+                this.添加班级ToolStripMenuItem.Visible=false;
+                this.添加课程ToolStripMenuItem.Visible=false;
+                this.添加学生成绩ToolStripMenuItem.Visible = false;
+                this.添加个人信息ToolStripMenuItem.Visible=false;
+
+            }
+            else if(strIdentified == "老师") 
+            {
+                this.添加学院ToolStripMenuItem.Visible = false;
+                this.添加专业ToolStripMenuItem.Visible = false;
+                this.添加班级ToolStripMenuItem.Visible = false;
+                this.添加课程ToolStripMenuItem.Visible = false;
+            }
+           
+        }
+
         private void 学院管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -41,11 +64,6 @@ namespace Achievement_Management_System
         {
             CollegeAddUpdate collegeAdd = new CollegeAddUpdate();
             collegeAdd.MdiParent = this;
-            if (strIdentified == "学生") 
-            {
-                collegeAdd.btnOK.Visible = false;
-            }
-
             collegeAdd.Show();
             LayoutMdi(MdiLayout.Cascade);
         }
@@ -55,7 +73,7 @@ namespace Achievement_Management_System
             View_College view_College = new View_College();
             view_College.MdiParent = this;
 ;
-            if (strIdentified == "学生")
+            if (strIdentified == "学生" || strIdentified=="老师")
             {
                 view_College.btnUpdate.Visible = false;
                 view_College.btnDel.Visible = false;
@@ -71,11 +89,6 @@ namespace Achievement_Management_System
   
             majorAdd.MdiParent = this;
 
-            if (strIdentified == "学生") 
-            {
-                majorAdd.btnOK.Visible = false;
-            }
-
             majorAdd.Show();
             LayoutMdi(MdiLayout.Cascade);
         }
@@ -86,7 +99,7 @@ namespace Achievement_Management_System
  
             view_Major.MdiParent = this;
 
-            if (strIdentified == "学生") 
+            if (strIdentified == "学生" || strIdentified == "老师") 
             {
                 view_Major.btnDel.Visible = false;
                 view_Major.btnUpdate.Visible = false;
@@ -102,11 +115,6 @@ namespace Achievement_Management_System
 
             classAdd.MdiParent = this;
 
-            if (strIdentified == "学生")
-            {
-                classAdd.btnOK.Visible=false;
-            }
-
             classAdd.Show();
             LayoutMdi(MdiLayout.Cascade);
 
@@ -118,7 +126,7 @@ namespace Achievement_Management_System
 
             view_Class.MdiParent = this;
 
-            if (strIdentified == "学生")
+            if (strIdentified == "学生" || strIdentified == "老师")
             {
                 view_Class.btnUpdate.Visible=false;
                 view_Class.btnDel.Visible=false;
@@ -134,10 +142,7 @@ namespace Achievement_Management_System
 
             personAdd.MdiParent = this;
 
-            if (strIdentified == "学生")
-            {
-                personAdd.btnOK.Visible=false;
-            }
+     
 
             personAdd.Show();
             LayoutMdi(MdiLayout.Cascade);
@@ -162,11 +167,6 @@ namespace Achievement_Management_System
         {
             CourseAddUpdate courseAdd= new CourseAddUpdate();
 
-            if (strIdentified == "学生")
-            {
-                courseAdd.btnOK.Visible = false;
-            }
-
             courseAdd.MdiParent = this;
             courseAdd.Show();
             LayoutMdi(MdiLayout.Cascade);
@@ -176,7 +176,7 @@ namespace Achievement_Management_System
         {
             View_Course view_Course = new View_Course();
 
-            if (strIdentified == "学生")
+            if (strIdentified == "学生" || strIdentified == "老师")
             {
                 view_Course.btnUpdate.Visible = false;
                 view_Course.btnDel.Visible = false;
@@ -192,12 +192,6 @@ namespace Achievement_Management_System
             GradeAdd gradeAdd= new GradeAdd();
 
             gradeAdd.MdiParent = this;
-
-            if (strIdentified == "学生") 
-            {
-                gradeAdd.button1.Visible = false;
-            }
-
             gradeAdd.Show();
             LayoutMdi(MdiLayout.Cascade);
         }
@@ -338,9 +332,5 @@ namespace Achievement_Management_System
             this.Close();
         }
 
-        private void Main_page_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

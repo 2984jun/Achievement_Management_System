@@ -113,14 +113,11 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 7;
-            this.label3.Text = "职位：";
+            this.label3.Text = "身份：";
             // 
             // cmbIdentity
             // 
             this.cmbIdentity.FormattingEnabled = true;
-            this.cmbIdentity.Items.AddRange(new object[] {
-            "老师",
-            "学生"});
             this.cmbIdentity.Location = new System.Drawing.Point(85, 112);
             this.cmbIdentity.Name = "cmbIdentity";
             this.cmbIdentity.Size = new System.Drawing.Size(163, 20);
@@ -155,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 352);
+            this.ClientSize = new System.Drawing.Size(351, 330);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblPrompt);
             this.Controls.Add(this.btnExit);

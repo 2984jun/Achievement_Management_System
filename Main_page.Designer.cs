@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_page));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.学院管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.添加学院ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,6 +58,9 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.Now_Time = new System.Windows.Forms.ToolStripStatusLabel();
+            this.选课管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.添加学生选课信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.查看学生选课信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +73,7 @@
             this.班级管理ToolStripMenuItem,
             this.课程管理ToolStripMenuItem,
             this.个人信息管理ToolStripMenuItem,
+            this.选课管理ToolStripMenuItem,
             this.学生成绩管理ToolStripMenuItem,
             this.搜索ToolStripMenuItem,
             this.关于系统ToolStripMenuItem,
@@ -92,14 +97,14 @@
             // 添加学院ToolStripMenuItem
             // 
             this.添加学院ToolStripMenuItem.Name = "添加学院ToolStripMenuItem";
-            this.添加学院ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.添加学院ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.添加学院ToolStripMenuItem.Text = "添加学院";
             this.添加学院ToolStripMenuItem.Click += new System.EventHandler(this.添加学院ToolStripMenuItem_Click);
             // 
             // 查看学院情况ToolStripMenuItem
             // 
             this.查看学院情况ToolStripMenuItem.Name = "查看学院情况ToolStripMenuItem";
-            this.查看学院情况ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.查看学院情况ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.查看学院情况ToolStripMenuItem.Text = "查看学院情况";
             this.查看学院情况ToolStripMenuItem.Click += new System.EventHandler(this.查看学院情况ToolStripMenuItem_Click);
             // 
@@ -284,11 +289,13 @@
             this.Now_Time.Size = new System.Drawing.Size(131, 17);
             this.Now_Time.Text = "toolStripStatusLabel1";
             // 
+            // 
             // Main_page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1175, 661);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -299,7 +306,7 @@
             this.Name = "Main_page";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "                                                                                 " +
-    "                                    简单学校管理系统主页面";
+    "                                    学校信息管理系统主页面";
             this.Load += new System.EventHandler(this.Main_page_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -322,24 +329,27 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel Now_Time;
-        private System.Windows.Forms.ToolStripMenuItem 添加学院ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 添加专业ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查看专业情况ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查看学院情况ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 添加班级ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查看班级情况ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 添加个人信息ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查看个人信息ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 搜索ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 课程管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 添加课程ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查看课程信息ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 学生成绩管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 添加学生成绩ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查看学生成绩ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 成绩学院ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 成绩专业ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 成绩班级ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 添加专业ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 添加班级ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 添加个人信息ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 添加课程ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 添加学生成绩ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 添加学院ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 选课管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 添加学生选课信息ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 查看学生选课信息ToolStripMenuItem;
     }
 }
 

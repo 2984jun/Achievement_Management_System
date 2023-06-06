@@ -36,24 +36,30 @@ namespace Achievement_Management_System.Select
 
                 try 
                 {
-                    string sql = "SELECT s.student_id AS 学号,s.Sname AS 姓名,s.gender AS 性别,s.age AS 年龄,s.adress AS 家庭地址,s.phone AS 联系电话,c.Sname AS 所在学院,m.Cname AS 所在专业," +
-                            "cs.Class_name AS 所在班级,(SELECT COUNT(*) FROM Course INNER JOIN Grade ON Course.cue_id=Grade.cue_id WHERE Grade.student_name='"+this.txtName.Text.Trim()+"') AS 所修课程数量" +
-                           " FROM College c INNER JOIN Major m ON c.college_id=m.college_id INNER JOIN Class cs ON m.major_id=cs.major_id INNER JOIN student s ON cs.class_id=s.class_id " +
-                           "WHERE s.Sname='" + this.txtName.Text.Trim() + "';";
-                    SqlCommand cmd =new SqlCommand(sql,con);
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if(!dr.Read()) 
+                    if (this.txtName.Text.Trim() == "") 
                     {
-                        MessageBox.Show("学校没有该学生！","提示",MessageBoxButtons.OK);
+                        MessageBox.Show("请输入要查询的学生姓名","提示",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     }
-                    dr.Close();
+                    else 
+                    {
+                        string sql = "SELECT s.student_id AS 学号,s.Sname AS 姓名,s.gender AS 性别,s.age AS 年龄,s.adress AS 家庭地址,s.phone AS 联系电话,c.Sname AS 所在学院,m.Cname AS 所在专业," +
+                           "cs.Class_name AS 所在班级,(SELECT COUNT(*) FROM Course INNER JOIN Grade ON Course.cue_id=Grade.cue_id WHERE Grade.student_name='" + this.txtName.Text.Trim() + "') AS 所修课程数量" +
+                          " FROM College c INNER JOIN Major m ON c.college_id=m.college_id INNER JOIN Class cs ON m.major_id=cs.major_id INNER JOIN student s ON cs.class_id=s.class_id " +
+                          "WHERE s.Sname='" + this.txtName.Text.Trim() + "';";
+                        SqlCommand cmd = new SqlCommand(sql, con);
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        if (!dr.Read())
+                        {
+                            MessageBox.Show("学校没有该学生！", "提示", MessageBoxButtons.OK);
+                        }
+                        dr.Close();
 
-                    SqlDataAdapter da = new SqlDataAdapter(sql,con);
-                    DataSet ds = new DataSet();
-                    ds.Clear();
-                    da.Fill(ds, "Select");
-                    this.dgvSelect.DataSource = ds.Tables[0].DefaultView;
-
+                        SqlDataAdapter da = new SqlDataAdapter(sql, con);
+                        DataSet ds = new DataSet();
+                        ds.Clear();
+                        da.Fill(ds, "Select");
+                        this.dgvSelect.DataSource = ds.Tables[0].DefaultView;
+                    }
                 }
                 catch (Exception ex)
                 {

@@ -90,18 +90,16 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 5;
-            this.label3.Text = "职位：";
+            this.label3.Text = "身份：";
             // 
             // cmbPosition
             // 
             this.cmbPosition.FormattingEnabled = true;
-            this.cmbPosition.Items.AddRange(new object[] {
-            "老师",
-            "学生"});
             this.cmbPosition.Location = new System.Drawing.Point(91, 189);
             this.cmbPosition.Name = "cmbPosition";
             this.cmbPosition.Size = new System.Drawing.Size(155, 20);
             this.cmbPosition.TabIndex = 6;
+            this.cmbPosition.SelectedIndexChanged += new System.EventHandler(this.cmbPosition_SelectedIndexChanged);
             // 
             // txtName
             // 
@@ -136,6 +134,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(313, 230);
             this.panel1.TabIndex = 9;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label6
             // 
@@ -157,7 +156,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 134);
+            this.label7.Location = new System.Drawing.Point(20, 134);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 12);
             this.label7.TabIndex = 11;

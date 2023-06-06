@@ -24,6 +24,19 @@ namespace Achievement_Management_System.USER
 
         }
 
+        private void Register_Load(object sender, EventArgs e)
+        {
+            this.cmbPosition.Items.Add("管理员");
+            this.cmbPosition.Items.Add("老师");
+            this.cmbPosition.Items.Add("学生");
+            this.cmbPosition.SelectedIndex = 0;
+            this.cmbPosition.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void cmbPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
         private void btn_Register_Click(object sender, EventArgs e)
         {
             if(this.txtName.Text.Trim()==""||this.txtPassword.Text.Trim()==""|| this.txtOKPass.Text.Trim()==""||this.cmbPosition.Text=="") 
@@ -58,6 +71,7 @@ namespace Achievement_Management_System.USER
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("注册用户成功！", "提示",MessageBoxButtons.OKCancel);
                             this.txtName.Clear();
+                            this.txtOKPass.Clear();
                             this.txtPassword.Clear();
                         }
                         
@@ -85,9 +99,8 @@ namespace Achievement_Management_System.USER
             this.Close();
         }
 
-        private void Register_Load(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }

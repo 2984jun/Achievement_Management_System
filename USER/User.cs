@@ -24,11 +24,16 @@ namespace Achievement_Management_System.USER
         private void User_Load(object sender, EventArgs e)
         {
 
-            cmbIdentity.SelectedIndex = 0;
             User user = new User();
             user.Owner = this;
             user.StartPosition = FormStartPosition.CenterParent;
 
+            this.cmbIdentity.Items.Add("管理员");
+            this.cmbIdentity.Items.Add("老师");
+            this.cmbIdentity.Items.Add("学生");
+            this.cmbIdentity.SelectedIndex = 0;
+            this.cmbIdentity.DropDownStyle = ComboBoxStyle.DropDownList;
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -38,7 +43,6 @@ namespace Achievement_Management_System.USER
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void btnSign_In_Click(object sender, EventArgs e)
@@ -76,6 +80,8 @@ namespace Achievement_Management_System.USER
 
                             main_Page.ShowDialog();
 
+                            Login_OK login_OK = new Login_OK();
+
                             this.Close();
 
 
@@ -101,7 +107,7 @@ namespace Achievement_Management_System.USER
                             cmd.CommandText = sql4;
                             if(cmd.ExecuteScalar() == null) 
                             {
-                                MessageBox.Show("职位错误!", "错误提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                                MessageBox.Show("身份错误!", "错误提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                             }
                         }
                     }
