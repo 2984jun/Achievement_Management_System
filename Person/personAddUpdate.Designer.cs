@@ -45,6 +45,7 @@
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSdtID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -184,6 +185,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.lblSdtID);
             this.panel1.Controls.Add(this.txtSdtName);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label1);
@@ -202,6 +204,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(412, 242);
             this.panel1.TabIndex = 18;
+            // 
+            // lblSdtID
+            // 
+            this.lblSdtID.AutoSize = true;
+            this.lblSdtID.Location = new System.Drawing.Point(125, 28);
+            this.lblSdtID.Name = "lblSdtID";
+            this.lblSdtID.Size = new System.Drawing.Size(17, 12);
+            this.lblSdtID.TabIndex = 18;
+            this.lblSdtID.Text = "ID";
             // 
             // personAddUpdate
             // 
@@ -239,5 +250,6 @@
         public System.Windows.Forms.TextBox txtClassId;
         public System.Windows.Forms.ComboBox cmbGender;
         public System.Windows.Forms.Button btnOK;
+        public System.Windows.Forms.Label lblSdtID;
     }
 }

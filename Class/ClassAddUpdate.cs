@@ -17,6 +17,7 @@ namespace Achievement_Management_System.Class
         public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
         public string strSchema = "Add";
+        public bool strlblClassID=false;
         public ClassAddUpdate()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace Achievement_Management_System.Class
         private void ClassAdd_Load(object sender, EventArgs e)
         {
             btnOK.DialogResult=DialogResult.OK;
+            this.lblClsID.Visible = strlblClassID;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -96,7 +98,7 @@ namespace Achievement_Management_System.Class
             }
             else 
             {
-                if (this.txtClsId.Text.Trim() == "" || this.txtClsName.Text.Trim() == "" || this.txtMjrId.Text.Trim() == "" ||
+                if (this.txtClsName.Text.Trim() == "" || this.txtMjrId.Text.Trim() == "" ||
                 this.txtClsNum.Text.Trim() == "" || this.txtHeadTea.Text.Trim() == "")
                 {
                     MessageBox.Show("请输入要添加班级的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -119,8 +121,8 @@ namespace Achievement_Management_System.Class
                             }
                             else 
                             {
-                                sql = "UPDATE Class SET class_id='" + this.txtClsId.Text.Trim() + "',Class_name='" + this.txtClsName.Text.Trim() + "',Major_id='" + this.txtMjrId.Text.Trim() +
-                                        "',totle_student='" + this.txtClsNum.Text.Trim() + "',Head_teacher='" + this.txtHeadTea.Text.Trim() + "' WHERE class_id='" + this.txtClsId.Text.Trim() + "';";
+                                sql = "UPDATE Class SET Class_name='" + this.txtClsName.Text.Trim() + "',Major_id='" + this.txtMjrId.Text.Trim() +
+                                        "',totle_student='" + this.txtClsNum.Text.Trim() + "',Head_teacher='" + this.txtHeadTea.Text.Trim() + "' WHERE class_id='" + this.lblClsID.Text.Trim() + "';";
                                 cmd.CommandText = sql;
                                 cmd.ExecuteNonQuery();
                                 MessageBox.Show("修改班级信息成功！", "提示", MessageBoxButtons.OK);

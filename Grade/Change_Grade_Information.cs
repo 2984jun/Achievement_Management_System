@@ -17,6 +17,8 @@ namespace Achievement_Management_System.Grade
 
 
         public string strSchema = "";
+
+        public string strGaeID = "";
         public string strID = "";
         public string strCueName = "";
         public string strSdtID = "";
@@ -40,7 +42,7 @@ namespace Achievement_Management_System.Grade
             {
                 this.lblID.Text = "班级编号：";
             }
-
+            this.lblGaeID.Text=strGaeID.Trim();
             this.txtID.Text= strID.Trim();
             this.txtCueName.Text = strCueName.Trim();
             this.txtSdtID.Text = strSdtID.Trim();
@@ -72,7 +74,7 @@ namespace Achievement_Management_System.Grade
                         {
                             MessageBox.Show("不存在该学生！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             flag = false;
-                        };
+                        };                 
 
                         cmd.CommandText = "SELECT * FROM student WHERE Sname='" + this.txtSdtName.Text.Trim() + "';";
                         if (cmd.ExecuteScalar() == null)
@@ -87,6 +89,8 @@ namespace Achievement_Management_System.Grade
                             MessageBox.Show("不存在该课程！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             flag = false;
                         };
+
+
                         if (flag)
                         {
                             if (strSchema == "college")
@@ -104,7 +108,7 @@ namespace Achievement_Management_System.Grade
                                     string sql2 = "UPDATE Course SET cue_name='" + this.txtCueName.Text.Trim() + "' WHERE cue_name='" + strCueName + "';";
                                     string sql3 = "UPDATE student SET student_id='" + this.txtSdtID.Text.Trim() + "' WHERE student_id='" + strSdtID + "';";
                                     string sql4 = "UPDATE student SET Sname='" + this.txtSdtName.Text.Trim() + "' WHERE Sname='" + strSdtName + "';";
-                                    string sql5 = "UPDATE Grade SET cue_grade='" + this.txtCueGrade.Text.Trim() + "' WHERE cue_grade='" + strGrade + "';";
+                                    string sql5 = "UPDATE Grade SET cue_grade='" + this.txtCueGrade.Text.Trim() + "' WHERE Grade_id='" + strGaeID + "';";
 
                                     cmd.CommandText = sql2;
                                     cmd.CommandText = sql3;
@@ -130,7 +134,7 @@ namespace Achievement_Management_System.Grade
                                     string sql2 = "UPDATE Course SET cue_name='" + this.txtCueName.Text.Trim() + "' WHERE cue_name='" + strCueName + "';";
                                     string sql3 = "UPDATE student SET student_id='" + this.txtSdtID.Text.Trim() + "' WHERE student_id='" + strSdtID + "';";
                                     string sql4 = "UPDATE student SET Sname='" + this.txtSdtName.Text.Trim() + "' WHERE Sname='" + strSdtName + "';";
-                                    string sql5 = "UPDATE Grade SET cue_grade='" + this.txtCueGrade.Text.Trim() + "' WHERE cue_grade='" + strGrade + "';";
+                                    string sql5 = "UPDATE Grade SET cue_grade='" + this.txtCueGrade.Text.Trim() + "' WHERE Grade_id='" + strGaeID + "';";                                   
 
                                     cmd.CommandText = sql2;
                                     cmd.CommandText = sql3;
@@ -156,12 +160,12 @@ namespace Achievement_Management_System.Grade
                                     string sql2 = "UPDATE Course SET cue_name='" + this.txtCueName.Text.Trim() + "' WHERE cue_name='" + strCueName + "';";
                                     string sql3 = "UPDATE student SET student_id='" + this.txtSdtID.Text.Trim() + "' WHERE student_id='" + strSdtID + "';";
                                     string sql4 = "UPDATE student SET Sname='" + this.txtSdtName.Text.Trim() + "' WHERE Sname='" + strSdtName + "';";
-                                    string sql5 = "UPDATE Grade SET cue_grade='" + this.txtCueGrade.Text.Trim() + "' WHERE cue_grade='" + strGrade + "';";
+                                    string sql5 = "UPDATE Grade SET cue_grade='" + this.txtCueGrade.Text.Trim() + "' WHERE Grade_id='" + strGaeID + "';";                                 
 
                                     cmd.CommandText = sql2;
                                     cmd.CommandText = sql3;
                                     cmd.CommandText = sql4;
-                                    cmd.CommandText = sql5;
+                                    cmd.CommandText = sql5;                                 
 
                                     cmd.ExecuteNonQuery();
                                     MessageBox.Show("修改个人成绩信息成功！，请点击“开始查询”更新成绩信息。", "提示", MessageBoxButtons.OK);

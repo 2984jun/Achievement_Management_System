@@ -62,19 +62,22 @@ namespace Achievement_Management_System.Class
         {
             if(this.dgvClass.CurrentCell != null)
             {
-                ClassAddUpdate classAdd = new ClassAddUpdate();
-                classAdd.Text = "                         修改班级信息";
+                ClassAddUpdate classAddUpdate = new ClassAddUpdate();
+                classAddUpdate.Text = "                         修改班级信息";
 
-                classAdd.txtClsId.Text= this.dgvClass[0, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
-                classAdd.txtClsName.Text= this.dgvClass[1,this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
-                classAdd.txtMjrId.Text= this.dgvClass[2, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
-                classAdd.txtClsNum.Text= this.dgvClass[3, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
-                classAdd.txtHeadTea.Text= this.dgvClass[4, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
-                classAdd.strSchema = "Update";
+                classAddUpdate.lblClsID.Text= this.dgvClass[0, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                classAddUpdate.txtClsName.Text= this.dgvClass[1,this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                classAddUpdate.txtMjrId.Text= this.dgvClass[2, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                classAddUpdate.txtClsNum.Text= this.dgvClass[3, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                classAddUpdate.txtHeadTea.Text= this.dgvClass[4, this.dgvClass.CurrentCell.RowIndex].Value.ToString().Trim();
+                classAddUpdate.strSchema = "Update";
 
-                classAdd.StartPosition = FormStartPosition.CenterScreen;
-                classAdd.ShowDialog();
-                if(classAdd.DialogResult == DialogResult.OK) 
+                classAddUpdate.strlblClassID = true;
+                classAddUpdate.txtClsId.Visible = false;
+
+                classAddUpdate.StartPosition = FormStartPosition.CenterScreen;
+                classAddUpdate.ShowDialog();
+                if(classAddUpdate.DialogResult == DialogResult.OK) 
                 {
                     showinf();
                 }

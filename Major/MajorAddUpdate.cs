@@ -16,7 +16,7 @@ namespace Achievement_Management_System.Major
         public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
         public string strSchema = "Add";
-
+        public bool strlblMjrID=false;
         public MajorAddUpdate()
         {
             InitializeComponent();
@@ -26,11 +26,11 @@ namespace Achievement_Management_System.Major
         {
             this.StartPosition = FormStartPosition.CenterParent;
             btnOK.DialogResult = DialogResult.OK;
+            this.lblMjrID.Visible = strlblMjrID;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-
 
             if (strSchema == "Add") 
             {
@@ -101,7 +101,7 @@ namespace Achievement_Management_System.Major
             else 
             {
 
-                if (this.txtMajorId.Text.Trim() == "" || this.txtCleId.Text.Trim() == "" || this.txtMjrName.Text.Trim() == "" ||
+                if (this.txtCleId.Text.Trim() == "" || this.txtMjrName.Text.Trim() == "" ||
                 this.txtMjrNum.Text.Trim() == "" || this.txtMjrTtePeople.Text.Trim() == "" || this.txtMjrGLeader.Text.Trim() == "")
                 {
                     MessageBox.Show("请输入要修改专业的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -126,9 +126,9 @@ namespace Achievement_Management_System.Major
                             }
                             else 
                             {
-                                sql = "UPDATE Major SET major_id='" + this.txtMajorId.Text.Trim() + "',college_id='" + this.txtCleId.Text.Trim() + "',Cname='" + this.txtMjrName.Text.Trim() +
+                                sql = "UPDATE Major SET college_id='" + this.txtCleId.Text.Trim() + "',Cname='" + this.txtMjrName.Text.Trim() +
                                        "',Class_num='" + this.txtMjrNum.Text.Trim() + "',totle_people='" + this.txtMjrTtePeople.Text.Trim() + "',Gleader='" + this.txtMjrGLeader.Text.Trim() +
-                                       "' WHERE major_id='" + this.txtMajorId.Text.Trim() + "';";
+                                       "' WHERE major_id='" + this.lblMjrID.Text.Trim() + "';";
                                 cmd.CommandText = sql;
                                 cmd.ExecuteNonQuery();
                                 MessageBox.Show("修改专业信息成功！", "提示", MessageBoxButtons.OK);

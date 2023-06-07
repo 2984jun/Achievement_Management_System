@@ -53,7 +53,7 @@ namespace Achievement_Management_System.Grade
                         cmd.CommandText ="SELECT * FROM Grade WHERE Grade_id='" + this.txtGaeID.Text.Trim() + "';";
                         if (cmd.ExecuteScalar() != null)
                         {
-                            MessageBox.Show("成绩ID已存在，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("成绩编号已存在，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             flag = false;
                         };
 
@@ -85,7 +85,7 @@ namespace Achievement_Management_System.Grade
                             this.txtGaeID.Clear();
                             this.txtSdtID.Clear();
                             this.txtCueGrade.Clear();
-
+                            
                         }
                     }
                     catch (Exception ex)

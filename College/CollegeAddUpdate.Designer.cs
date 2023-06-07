@@ -41,6 +41,7 @@
             this.txtDean = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblCleID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,9 +50,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(52, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "学院ID：";
+            this.label1.Text = "学院编号：";
             // 
             // label2
             // 
@@ -148,6 +149,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.lblCleID);
             this.panel1.Controls.Add(this.txtMajorNumber);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label1);
@@ -162,6 +164,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(313, 217);
             this.panel1.TabIndex = 12;
+            // 
+            // lblCleID
+            // 
+            this.lblCleID.AutoSize = true;
+            this.lblCleID.Location = new System.Drawing.Point(112, 28);
+            this.lblCleID.Name = "lblCleID";
+            this.lblCleID.Size = new System.Drawing.Size(17, 12);
+            this.lblCleID.TabIndex = 12;
+            this.lblCleID.Text = "ID";
             // 
             // CollegeAddUpdate
             // 
@@ -195,5 +206,6 @@
         public System.Windows.Forms.TextBox txtClePpleTotle;
         public System.Windows.Forms.TextBox txtDean;
         public System.Windows.Forms.Button btnOK;
+        public System.Windows.Forms.Label lblCleID;
     }
 }

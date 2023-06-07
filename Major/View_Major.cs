@@ -63,36 +63,26 @@ namespace Achievement_Management_System.Major
         {
             if (this.dgvMajor.CurrentCell != null) 
             {
-                /*
-                Change_Major_Information change_Major_Information = new Change_Major_Information();
-                change_Major_Information.strMjrID= this.dgvMajor[0, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Major_Information.strCleID= this.dgvMajor[1, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Major_Information.strMname= this.dgvMajor[2, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Major_Information.strClsNum= this.dgvMajor[3, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Major_Information.strTotPle= this.dgvMajor[4, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                change_Major_Information.strLeader= this.dgvMajor[5, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
 
-                change_Major_Information.StartPosition=FormStartPosition.CenterScreen;
-                change_Major_Information.ShowDialog();
-                */
+                MajorAddUpdate majorAddUpdate=new MajorAddUpdate();
+                majorAddUpdate.Text = "                                   修改专业";
 
-                MajorAddUpdate majorAdd=new MajorAddUpdate();
-                majorAdd.Text = "                                   修改专业";
+                majorAddUpdate.lblMjrID.Text = this.dgvMajor[0, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                majorAddUpdate.txtCleId.Text= this.dgvMajor[1, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                majorAddUpdate.txtMjrName.Text= this.dgvMajor[2, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                majorAddUpdate.txtMjrNum.Text= this.dgvMajor[3, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                majorAddUpdate.txtMjrTtePeople.Text= this.dgvMajor[4, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                majorAddUpdate.txtMjrGLeader.Text= this.dgvMajor[5, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
 
-                majorAdd.txtMajorId.Text = this.dgvMajor[0, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                majorAdd.txtCleId.Text= this.dgvMajor[1, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                majorAdd.txtMjrName.Text= this.dgvMajor[2, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                majorAdd.txtMjrNum.Text= this.dgvMajor[3, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                majorAdd.txtMjrTtePeople.Text= this.dgvMajor[4, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
-                majorAdd.txtMjrGLeader.Text= this.dgvMajor[5, this.dgvMajor.CurrentCell.RowIndex].Value.ToString().Trim();
+                majorAddUpdate.strSchema = "Update";
+                majorAddUpdate.strlblMjrID = true;
+                majorAddUpdate.txtMajorId.Visible = false;
 
-                majorAdd.strSchema = "Update";
+                majorAddUpdate.Owner = this;
+                majorAddUpdate.StartPosition=FormStartPosition.CenterScreen;               
+                majorAddUpdate.ShowDialog();
 
-                majorAdd.Owner = this;
-                majorAdd.StartPosition=FormStartPosition.CenterScreen;               
-                majorAdd.ShowDialog();
-
-                if (majorAdd.DialogResult == DialogResult.OK) 
+                if (majorAddUpdate.DialogResult == DialogResult.OK) 
                 {
                     showinf();
                 }

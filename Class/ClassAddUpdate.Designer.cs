@@ -41,6 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtHeadTea = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblClsID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,6 +149,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.lblClsID);
             this.panel1.Controls.Add(this.txtMjrId);
             this.panel1.Controls.Add(this.txtHeadTea);
             this.panel1.Controls.Add(this.txtClsId);
@@ -162,6 +164,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(289, 199);
             this.panel1.TabIndex = 12;
+            // 
+            // lblClsID
+            // 
+            this.lblClsID.AutoSize = true;
+            this.lblClsID.Location = new System.Drawing.Point(112, 17);
+            this.lblClsID.Name = "lblClsID";
+            this.lblClsID.Size = new System.Drawing.Size(17, 12);
+            this.lblClsID.TabIndex = 12;
+            this.lblClsID.Text = "ID";
             // 
             // ClassAddUpdate
             // 
@@ -194,5 +205,6 @@
         public System.Windows.Forms.TextBox txtClsNum;
         public System.Windows.Forms.TextBox txtHeadTea;
         public System.Windows.Forms.Button btnOK;
+        public System.Windows.Forms.Label lblClsID;
     }
 }

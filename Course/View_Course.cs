@@ -63,19 +63,21 @@ namespace Achievement_Management_System.Course
             if (this.dgvCourse.CurrentCell != null) 
             {
 
-                CourseAddUpdate courseAdd = new CourseAddUpdate();
-                courseAdd.Text = "                           修改课程信息";
+                CourseAddUpdate courseAddUpdate = new CourseAddUpdate();
+                courseAddUpdate.Text = "                           修改课程信息";
 
-                courseAdd.txtCueID.Text = this.dgvCourse[0, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
-                courseAdd.txtCueName.Text= this.dgvCourse[1, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
-                courseAdd.txtCueNum.Text= this.dgvCourse[2, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
-                courseAdd.txtTeacher.Text= this.dgvCourse[3, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
-                courseAdd.strSchema = "Update";
+                courseAddUpdate.lblCueID.Text = this.dgvCourse[0, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
+                courseAddUpdate.txtCueName.Text= this.dgvCourse[1, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
+                courseAddUpdate.txtCueNum.Text= this.dgvCourse[2, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
+                courseAddUpdate.txtTeacher.Text= this.dgvCourse[3, this.dgvCourse.CurrentCell.RowIndex].Value.ToString();
+                courseAddUpdate.strSchema = "Update";
+                courseAddUpdate.strlblCueID = true;
+                courseAddUpdate.txtCueID.Visible = false;
 
-                courseAdd.Owner = this;
-                courseAdd.StartPosition = FormStartPosition.CenterScreen;
-                courseAdd.ShowDialog();
-                if (courseAdd.DialogResult == DialogResult.OK) 
+                courseAddUpdate.Owner = this;
+                courseAddUpdate.StartPosition = FormStartPosition.CenterScreen;
+                courseAddUpdate.ShowDialog();
+                if (courseAddUpdate.DialogResult == DialogResult.OK) 
                 {
                     showinf();
                 }

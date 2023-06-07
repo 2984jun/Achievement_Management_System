@@ -17,6 +17,7 @@ namespace Achievement_Management_System.College
         public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
         public string strSchema = "Add";
+        public bool strlblID=false;
         public CollegeAddUpdate()
         {
             InitializeComponent();
@@ -25,12 +26,14 @@ namespace Achievement_Management_System.College
         private void CollegeAdd_Load(object sender, EventArgs e)
         {
             btnOK.DialogResult=DialogResult.OK;
+            this.lblCleID.Visible = strlblID;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (strSchema == "Add") 
-            {
+            {             
+
                 if (this.txtCollegeId.Text.Trim() == "" || this.txtCollegeName.Text.Trim() == "" || this.txtMajorNumber.Text.Trim() == "" ||
                 this.txtClePpleTotle.Text.Trim() == "" || this.txtDean.Text.Trim() == "")
                 {
@@ -88,7 +91,8 @@ namespace Achievement_Management_System.College
             }
             else 
             {
-                if (this.txtCollegeId.Text.Trim() == "" || this.txtCollegeName.Text.Trim() == "" || this.txtMajorNumber.Text.Trim() == "" ||
+                
+                if (this.txtCollegeName.Text.Trim() == "" || this.txtMajorNumber.Text.Trim() == "" ||
                 this.txtClePpleTotle.Text.Trim() == "" || this.txtDean.Text.Trim() == "")
                 {
                     MessageBox.Show("请输入学院的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -105,9 +109,8 @@ namespace Achievement_Management_System.College
                         try
                         {
 
-                            string sql = "UPDATE College SET College_id='" + this.txtCollegeId.Text.Trim() + "',Sname='" + this.txtCollegeName.Text.Trim() +
-                                    "',major_amount='" + this.txtMajorNumber.Text.Trim() + "',totle_people='" + this.txtClePpleTotle.Text.Trim() + "',Dean='" + this.txtDean.Text.Trim()
-                                    + "'WHERE College_id='" + this.txtCollegeId.Text.Trim() + "';";
+                            string sql = "UPDATE College SET Sname='" + this.txtCollegeName.Text.Trim() + "',major_amount='" + this.txtMajorNumber.Text.Trim() + "',totle_people='" + this.txtClePpleTotle.Text.Trim() + 
+                                        "',Dean='" + this.txtDean.Text.Trim() +"' WHERE College_id='" + this.lblCleID.Text.Trim() + "';";
 
                             SqlCommand cmd = new SqlCommand(sql, con);
                             cmd.ExecuteNonQuery();

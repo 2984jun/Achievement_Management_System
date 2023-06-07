@@ -63,20 +63,23 @@ namespace Achievement_Management_System.College
             if(this.dgv_College.CurrentCell!= null) 
             {
 
-                CollegeAddUpdate collegeAdd = new CollegeAddUpdate();
-                collegeAdd.Text = "                                   修改学院信息";
-                collegeAdd.txtCollegeId.Text = this.dgv_College[0, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
-                collegeAdd.txtCollegeName.Text = this.dgv_College[1, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
-                collegeAdd.txtMajorNumber.Text = this.dgv_College[2, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
-                collegeAdd.txtClePpleTotle.Text = this.dgv_College[3, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
-                collegeAdd.txtDean.Text = this.dgv_College[4, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
-                collegeAdd.strSchema = "Update";
-                
-                collegeAdd.Owner = this;
-                collegeAdd.StartPosition = FormStartPosition.CenterScreen;
-                collegeAdd.ShowDialog();
+                CollegeAddUpdate collegeAddUpdate = new CollegeAddUpdate();
+                collegeAddUpdate.Text = "                                   修改学院信息";
+                collegeAddUpdate.lblCleID.Text = this.dgv_College[0, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
+                collegeAddUpdate.txtCollegeName.Text = this.dgv_College[1, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
+                collegeAddUpdate.txtMajorNumber.Text = this.dgv_College[2, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
+                collegeAddUpdate.txtClePpleTotle.Text = this.dgv_College[3, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
+                collegeAddUpdate.txtDean.Text = this.dgv_College[4, this.dgv_College.CurrentCell.RowIndex].Value.ToString().Trim();
+                collegeAddUpdate.strSchema = "Update";
 
-                if (collegeAdd.DialogResult == DialogResult.OK)
+                collegeAddUpdate.strlblID = true;
+                collegeAddUpdate.txtCollegeId.Visible = false;
+                
+                collegeAddUpdate.Owner = this;
+                collegeAddUpdate.StartPosition = FormStartPosition.CenterScreen;
+                collegeAddUpdate.ShowDialog();
+
+                if (collegeAddUpdate.DialogResult == DialogResult.OK)
                 {
                     showinf();
                 }

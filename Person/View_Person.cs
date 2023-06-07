@@ -69,21 +69,24 @@ namespace Achievement_Management_System.Person
         {
             if(this.dgvPerson.CurrentCell != null) 
             {
-                personAddUpdate personAdd = new personAddUpdate();
-                personAdd.Text = "                                     修改个人信息";
-                personAdd.txtSdtId.Text= this.dgvPerson[0, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
-                personAdd.txtSdtName.Text= this.dgvPerson[1, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
-                personAdd.cmbGender.Text= this.dgvPerson[2, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
-                personAdd.txtAge.Text= this.dgvPerson[3, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
-                personAdd.txtAdress.Text= this.dgvPerson[4, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
-                personAdd.txtPhone.Text= this.dgvPerson[5, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
-                personAdd.txtClassId.Text= this.dgvPerson[6, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
-                personAdd.strSchema = "Update";
+                personAddUpdate personAddUpdate = new personAddUpdate();
+                personAddUpdate.Text = "                                     修改个人信息";
+                personAddUpdate.lblSdtID.Text= this.dgvPerson[0, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
+                personAddUpdate.txtSdtName.Text= this.dgvPerson[1, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
+                personAddUpdate.cmbGender.Text= this.dgvPerson[2, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
+                personAddUpdate.txtAge.Text= this.dgvPerson[3, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
+                personAddUpdate.txtAdress.Text= this.dgvPerson[4, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
+                personAddUpdate.txtPhone.Text= this.dgvPerson[5, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
+                personAddUpdate.txtClassId.Text= this.dgvPerson[6, this.dgvPerson.CurrentCell.RowIndex].Value.ToString();
+                
+                personAddUpdate.strSchema = "Update";
+                personAddUpdate.strSdtID = true;
+                personAddUpdate.txtSdtId.Visible = false;
 
-                personAdd.Owner = this;
-                personAdd.StartPosition = FormStartPosition.CenterScreen;
-                personAdd.ShowDialog();
-                if(personAdd.DialogResult == DialogResult.OK) 
+                personAddUpdate.Owner = this;
+                personAddUpdate.StartPosition = FormStartPosition.CenterScreen;
+                personAddUpdate.ShowDialog();
+                if(personAddUpdate.DialogResult == DialogResult.OK) 
                 {
                     showinf();
                 }

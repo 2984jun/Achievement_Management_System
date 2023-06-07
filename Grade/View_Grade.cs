@@ -48,7 +48,7 @@ namespace Achievement_Management_System.Grade
                     {
                         string sql = "SELECT g.Grade_id AS 成绩编号, c.college_id AS 学院编号,ce.cue_name AS 课程,s.student_id AS 学号,s.Sname AS 姓名,g.cue_grade AS 成绩 FROM College c INNER JOIN Major m ON c.college_id=m.college_id " +
                                 "INNER JOIN Class cs ON m.major_id=cs.major_id INNER JOIN student s ON cs.class_id=s.class_id INNER JOIN Grade g ON s.student_id=g.student_id " +
-                                "INNER JOIN Course ce ON g.cue_id=ce.cue_id WHERE c.Sname='" + this.cmbCollege.Text + "';";
+                                "INNER JOIN Course ce ON g.cue_id=ce.cue_id WHERE c.Sname='" + this.cmbCollege.Text + "' ORDER BY g.Grade_id;";
                         SqlDataAdapter adp = new SqlDataAdapter(sql, con);
                         DataSet ds = new DataSet();
                         ds.Clear();
@@ -58,7 +58,7 @@ namespace Achievement_Management_System.Grade
                     {
                         string sql = "SELECT g.Grade_id AS 成绩编号,m.major_id AS 专业编号,ce.cue_name AS 课程,s.student_id AS 学号,s.Sname AS 姓名,g.cue_grade AS 成绩 FROM Major m INNER JOIN Class cs ON m.major_id=cs.major_id " +
                                 "INNER JOIN student s ON cs.class_id=s.class_id INNER JOIN Grade g ON s.student_id=g.student_id INNER JOIN Course ce ON g.cue_id=ce.cue_id "+
-                                " WHERE m.Cname='" + this.cmbCollege.Text + "';";
+                                " WHERE m.Cname='" + this.cmbCollege.Text + "' ORDER BY g.Grade_id;";
                         SqlDataAdapter adp = new SqlDataAdapter(sql, con);
                         DataSet ds = new DataSet();
                         ds.Clear();
@@ -67,7 +67,7 @@ namespace Achievement_Management_System.Grade
                     }else if(strSchema == "class") 
                     {
                         string sql = "SELECT g.Grade_id AS 成绩编号,cs.class_id AS 班级编号,ce.cue_name AS 课程,s.student_id AS 学号,s.Sname AS 姓名,g.cue_grade AS 成绩 FROM Class cs  INNER JOIN student s " +
-                        "ON cs.class_id=s.class_id INNER JOIN Grade g ON s.student_id=g.student_id INNER JOIN Course ce ON g.cue_id=ce.cue_id WHERE cs.class_name='" + this.cmbCollege.Text + "';";
+                        "ON cs.class_id=s.class_id INNER JOIN Grade g ON s.student_id=g.student_id INNER JOIN Course ce ON g.cue_id=ce.cue_id WHERE cs.class_name='" + this.cmbCollege.Text + "' ORDER BY g.Grade_id;";
                         SqlDataAdapter adp = new SqlDataAdapter(sql, con);
                         DataSet ds = new DataSet();
                         ds.Clear();
@@ -96,6 +96,7 @@ namespace Achievement_Management_System.Grade
             if(this.dgvGaeCle.CurrentCell!=null) 
             {
                 Change_Grade_Information change_Grade_Information = new Change_Grade_Information();
+                change_Grade_Information.strGaeID= this.dgvGaeCle[0, this.dgvGaeCle.CurrentCell.RowIndex].Value.ToString();
                 change_Grade_Information.strID = this.dgvGaeCle[1, this.dgvGaeCle.CurrentCell.RowIndex].Value.ToString();
                 change_Grade_Information.strCueName= this.dgvGaeCle[2, this.dgvGaeCle.CurrentCell.RowIndex].Value.ToString();
                 change_Grade_Information.strSdtID= this.dgvGaeCle[3, this.dgvGaeCle.CurrentCell.RowIndex].Value.ToString();

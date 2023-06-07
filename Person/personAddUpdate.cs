@@ -16,6 +16,7 @@ namespace Achievement_Management_System.Person
         public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
         public string strSchema = "Add";
+        public bool strSdtID=false;
 
         public personAddUpdate()
         {
@@ -29,6 +30,8 @@ namespace Achievement_Management_System.Person
             cmbGender.Items.Add("男");
             cmbGender.Items.Add("女");
             cmbGender.SelectedIndex = 0;
+
+            this.lblSdtID.Visible = strSdtID;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -100,7 +103,7 @@ namespace Achievement_Management_System.Person
             }
             else 
             {
-                if (this.txtSdtId.Text.Trim() == "" || this.txtSdtName.Text.Trim() == "" || this.cmbGender.Text == "" || this.txtAge.Text.Trim() == "" ||
+                if (this.txtSdtName.Text.Trim() == "" || this.cmbGender.Text == "" || this.txtAge.Text.Trim() == "" ||
                 this.txtAdress.Text.Trim() == "" || this.txtPhone.Text.Trim() == "" || this.txtClassId.Text.Trim() == "")
                 {
                     MessageBox.Show("请输入要修改的个人的完整信息!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -124,9 +127,9 @@ namespace Achievement_Management_System.Person
                             }
                             else 
                             {
-                                sql = "UPDATE student SET student_id='" + this.txtSdtId.Text.Trim() + "',Sname='" + this.txtSdtName.Text.Trim() + "',gender='" + this.cmbGender.Text +
+                                sql = "UPDATE student SET Sname='" + this.txtSdtName.Text.Trim() + "',gender='" + this.cmbGender.Text +
                                 "',age='" + this.txtAge.Text.Trim() + "',adress='" + this.txtAdress.Text.Trim() + "',class_id='" + this.txtClassId.Text.Trim() + "',phone='" +
-                                this.txtPhone.Text.Trim() + "' WHERE student_id='" + this.txtSdtId.Text.Trim() + "';";
+                                this.txtPhone.Text.Trim() + "' WHERE student_id='" + this.lblSdtID.Text.Trim() + "';";
 
                                 cmd.CommandText = sql;
                                 cmd.ExecuteNonQuery();
