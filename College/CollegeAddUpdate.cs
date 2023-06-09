@@ -10,13 +10,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+//本窗体实现college的添加与修改
+
 namespace Achievement_Management_System.College
 {
     public partial class CollegeAddUpdate : Form
     {
         public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
-        public string strSchema = "Add";
+        public string strSchema = "Add";        //判断是添加还是修改的条件，Add则添加，update则修改
         public bool strlblID=false;
         public CollegeAddUpdate()
         {
@@ -73,13 +76,13 @@ namespace Achievement_Management_System.College
                                 
                             }
                         }
-                        catch (Exception ex)
+                        catch (Exception ex)            //一但出现错误，跳转至此，显示原因
                         {
                             MessageBox.Show("错误：" + ex.Message, "错误提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                         }
                         finally
                         {
-                            if (con.State == ConnectionState.Open)
+                            if (con.State == ConnectionState.Open)  //关闭数据库连接
                             {
                                 con.Close();
                                 con.Dispose();

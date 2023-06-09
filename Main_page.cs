@@ -34,6 +34,8 @@ namespace Achievement_Management_System
 
         private void Main_page_Load(object sender, EventArgs e)
         {
+            //系统权限的赋予
+
             this.Text = "                                                                                                                 学校信息管理系统主页面(" + strIdentified + "端)";
             if (strIdentified == "学生") 
             {
@@ -73,7 +75,7 @@ namespace Achievement_Management_System
             View_College view_College = new View_College();
             view_College.MdiParent = this;
 ;
-            if (strIdentified == "学生" || strIdentified=="老师")
+            if (strIdentified == "学生" || strIdentified=="老师")       //限制权限
             {
                 view_College.btnUpdate.Visible = false;
                 view_College.btnDel.Visible = false;
@@ -99,7 +101,7 @@ namespace Achievement_Management_System
  
             view_Major.MdiParent = this;
 
-            if (strIdentified == "学生" || strIdentified == "老师") 
+            if (strIdentified == "学生" || strIdentified == "老师")   //限制权限
             {
                 view_Major.btnDel.Visible = false;
                 view_Major.btnUpdate.Visible = false;
@@ -126,7 +128,7 @@ namespace Achievement_Management_System
 
             view_Class.MdiParent = this;
 
-            if (strIdentified == "学生" || strIdentified == "老师")
+            if (strIdentified == "学生" || strIdentified == "老师")   //限制权限
             {
                 view_Class.btnUpdate.Visible=false;
                 view_Class.btnDel.Visible=false;
@@ -152,7 +154,7 @@ namespace Achievement_Management_System
         {
             View_Person view_Person = new View_Person();
 
-            if (strIdentified == "学生")
+            if (strIdentified == "学生")           //限制权限
             {
                 view_Person.btnUpdate.Visible=false;
                 view_Person.btnDel.Visible=false;
@@ -176,7 +178,7 @@ namespace Achievement_Management_System
         {
             View_Course view_Course = new View_Course();
 
-            if (strIdentified == "学生" || strIdentified == "老师")
+            if (strIdentified == "学生" || strIdentified == "老师")      //限制权限
             {
                 view_Course.btnUpdate.Visible = false;
                 view_Course.btnDel.Visible = false;
@@ -200,7 +202,7 @@ namespace Achievement_Management_System
         {
             View_Grade grade_College = new View_Grade();
             
-            grade_College.strSchema = "college";
+            grade_College.strSchema = "college";            //成绩识别条件
 
             string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
@@ -224,7 +226,7 @@ namespace Achievement_Management_System
 
             grade_College.MdiParent=this;
 
-            if (strIdentified == "学生") 
+            if (strIdentified == "学生")               //限制权限
             {
                 grade_College.btnUpdate.Visible = false;
                 grade_College.btnDel.Visible = false;
@@ -240,7 +242,7 @@ namespace Achievement_Management_System
 
             string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
             
-            grade_College.strSchema = "major";
+            grade_College.strSchema = "major";           //成绩识别条件
 
             using (SqlConnection con = new SqlConnection(strConn))
             {
@@ -262,7 +264,7 @@ namespace Achievement_Management_System
             
             grade_College.MdiParent = this;
 
-            if (strIdentified == "学生")
+            if (strIdentified == "学生")          //限制系统权限
             {
                 grade_College.btnUpdate.Visible = false;
                 grade_College.btnDel.Visible = false;
@@ -278,7 +280,7 @@ namespace Achievement_Management_System
 
             string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
-            grade_College.strSchema = "class";
+            grade_College.strSchema = "class";      //成绩识别条件
 
             using (SqlConnection con = new SqlConnection(strConn))
             {
@@ -300,7 +302,7 @@ namespace Achievement_Management_System
             
             grade_College.MdiParent= this;
 
-            if (strIdentified == "学生")
+            if (strIdentified == "学生")          //限制系统权限
             {
                 grade_College.btnUpdate.Visible = false;
                 grade_College.btnDel.Visible = false;

@@ -15,7 +15,7 @@ namespace Achievement_Management_System.Grade
     {
         public static string strConn = "Data Source=DESKTOP-SK9ALMG;Initial Catalog = Management_System; Integrated Security = True";
 
-
+        //传递view_grade中的值，然后进行修改
         public string strSchema = "";
 
         public string strGaeID = "";
@@ -90,10 +90,12 @@ namespace Achievement_Management_System.Grade
                             flag = false;
                         };
 
+                        //判断添加的信息的上级信息是否存在
+
 
                         if (flag)
                         {
-                            if (strSchema == "college")
+                            if (strSchema == "college")                 //按学院显示成绩的修改
                             {
                                 cmd.CommandText = "SELECT * FROM College WHERE college_id='" + this.txtID.Text.Trim() + "';";
                                 if (cmd.ExecuteScalar() == null)
@@ -119,7 +121,7 @@ namespace Achievement_Management_System.Grade
                                     MessageBox.Show("修改个人成绩信息成功！，请点击“开始查询”更新成绩信息。", "提示", MessageBoxButtons.OK);
                                 }
                             }
-                            else if (strSchema == "major")
+                            else if (strSchema == "major")                 //按专业显示成绩的修改
                             {
                                 cmd.CommandText = "SELECT * FROM Major WHERE major_id='" + this.txtID.Text.Trim() + "';";
                                 if (cmd.ExecuteScalar() == null)
@@ -145,7 +147,7 @@ namespace Achievement_Management_System.Grade
                                     MessageBox.Show("修改个人成绩信息成功！，请点击“开始查询”更新成绩信息。", "提示", MessageBoxButtons.OK);
                                 }
                             }
-                            else
+                            else                  //按班级显示成绩的修改
                             {
                                 cmd.CommandText = "SELECT * FROM Class WHERE class_id='" + this.txtID.Text.Trim() + "';";
                                 if (cmd.ExecuteScalar() == null)
